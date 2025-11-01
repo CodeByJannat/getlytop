@@ -1,72 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectShop — Professional Services & Products</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-text {
-            background: linear-gradient(90deg, #4f46e5, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .product-card, .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product-card:hover, .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .floating-cart {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        .cart-notification {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            z-index: 100;
-            animation: slideIn 0.3s ease;
-        }
-        @keyframes slideIn {
-            from { transform: translateX(100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Getly Project Shop - Service & Product Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/Getly_logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
     <!-- Navigation -->
     <header class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="#" class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">PS</div>
+                    <img src="assets/Getly_logo.png" alt="Site Logo" class="w-10 h-10">
                     <div class="hidden sm:block">
-                        <div class="text-lg font-bold gradient-text">ProjectShop</div>
+                        <div class="text-lg font-bold gradient-text">Getly Project Shop</div>
                         <div class="text-xs text-slate-500">Service & Product Marketplace</div>
                     </div>
                 </a>
@@ -77,13 +33,18 @@
                     <a href="#contact" class="hover:text-indigo-600 font-medium transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center gap-3">
-                    <button id="cartBtn" class="px-4 py-2 rounded-md bg-indigo-600 text-white text-sm shadow hover:bg-indigo-700 transition-colors flex items-center gap-2">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Cart (<span id="cartCount">0</span>)</span>
-                    </button>
-                    <a href="#" class="hidden sm:inline-block px-4 py-2 border rounded-md text-sm hover:bg-slate-50 transition-colors">Login</a>
-                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <div class="relative">
+                        <button id="cartBtn"
+                            class="px-4 py-2 rounded-md bg-indigo-600 text-white text-sm shadow hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                            <i class="fas fa-shopping-cart"></i>
+                            Cart
+                            <span id="cartCount"
+                                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                        </button>
+                    </div>
+                    <button
+                        class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 text-sm hover:bg-indigo-50 transition-colors">
+                        Contact Us
                     </button>
                 </div>
             </div>
@@ -99,42 +60,50 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <main>
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-2">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <div class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
-                        <i class="fas fa-rocket mr-1"></i> Expert Team for Your Projects
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
+                        <i class="fas fa-rocket mr-1"></i> CSE Project Expert Team
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Need a Project Done? <span class="gradient-text">We're Here</span></h1>
-                    <p class="mt-4 text-slate-600 text-lg">Specialized services and custom products — you choose, we deliver. From Facebook page to professional online store.</p>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">🎓 "CSE প্রজেক্ট এখন আরও সহজ — Getly
+                        তে!"<span class="gradient-text">We're Here</span></h1>
+                    <p class="mt-4 text-slate-600 text-lg">বিশ্ববিদ্যালয়ের সিএসই প্রজেক্ট নিয়ে ঝামেলা? Getly তোমার পাশে
+                        — আমরা দেই Complete Project Assistance, Design থেকে Documentation পর্যন্ত।</p>
                     <div class="mt-8 flex gap-3 flex-wrap">
-                        <a href="#services" class="px-6 py-3 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
-                            <i class="fas fa-laptop-code"></i> View Services
+                        <a href="#services"
+                            class="px-6 py-3 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                            <i class="fas fa-laptop-code"></i> আমাদের সার্ভিস
                         </a>
-                        <a href="#shop" class="px-6 py-3 rounded-md border hover:bg-slate-50 transition-colors flex items-center gap-2">
-                            <i class="fas fa-shopping-bag"></i> Browse Shop
+                        <a href="#shop"
+                            class="px-6 py-3 rounded-md border hover:bg-slate-50 transition-colors flex items-center gap-2">
+                            <i class="fas fa-shopping-bag"></i> প্রজেক্ট অর্ডার করো
                         </a>
                     </div>
 
                     <div class="mt-10 grid grid-cols-3 gap-4 text-sm">
                         <div class="p-4 bg-white rounded-lg shadow-sm text-center service-card">
-                            <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-2">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-2">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <div class="font-semibold">Guarantee</div>
                             <div class="text-slate-500">3 Months Support</div>
                         </div>
                         <div class="p-4 bg-white rounded-lg shadow-sm text-center service-card">
-                            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2">
                                 <i class="fas fa-palette"></i>
                             </div>
                             <div class="font-semibold">Customization</div>
                             <div class="text-slate-500">Tailored to Your Needs</div>
                         </div>
                         <div class="p-4 bg-white rounded-lg shadow-sm text-center service-card">
-                            <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-2">
+                            <div
+                                class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-2">
                                 <i class="fas fa-shipping-fast"></i>
                             </div>
                             <div class="font-semibold">Fast Delivery</div>
@@ -145,7 +114,8 @@
                 <div class="fade-in">
                     <div class="relative">
                         <div class="rounded-2xl overflow-hidden shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="preview" class="w-full h-auto object-cover">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                alt="preview" class="w-full h-auto object-cover">
                         </div>
                         <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
                             <div class="flex items-center gap-2">
@@ -162,51 +132,73 @@
         <section id="services" class="py-16 bg-gradient-to-b from-slate-50 to-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold">Our Services</h2>
-                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">We build any type of project you need — web, mobile, graphics, from idea to delivery.</p>
+                    <h2 class="text-3xl font-bold">আমাদের সার্ভিস সমূহ</h2>
+                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">We build any type of project you need — web,
+                        mobile, graphics, from idea to delivery.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
-                        <div class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+                    <div
+                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
                             <i class="fas fa-code text-xl"></i>
                         </div>
                         <div class="text-indigo-600 font-semibold text-lg">Web Development</div>
-                        <p class="mt-3 text-slate-600">JSP, Java, Oracle, HTML/CSS — from university/bureau projects to commercial websites.</p>
+                        <p class="mt-3 text-slate-600">JSP, Java, Oracle, HTML/CSS — from university/bureau projects to
+                            commercial websites.</p>
                         <div class="mt-4 flex gap-2">
-                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors">Details →</a>
+                            <button
+                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+                                onclick="details_1.showModal()">Details →
+                            </button>
                         </div>
                     </div>
 
-                    <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
-                        <div class="w-12 h-12 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
+                    <div
+                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
                             <i class="fas fa-palette text-xl"></i>
                         </div>
                         <div class="text-indigo-600 font-semibold text-lg">UI/UX & Design</div>
                         <p class="mt-3 text-slate-600">Professional layouts, mobile-first design, and branding.</p>
                         <div class="mt-4 flex gap-2">
-                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors">Details →</a>
+                            <button
+                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+                                onclick="details_2.showModal()">Details →
+                            </button>
                         </div>
                     </div>
 
-                    <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
-                        <div class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+                    <div
+                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
                             <i class="fas fa-mobile-alt text-xl"></i>
                         </div>
                         <div class="text-indigo-600 font-semibold text-lg">Mobile Apps</div>
                         <p class="mt-3 text-slate-600">Android and iOS application development with UI/UX design.</p>
                         <div class="mt-4 flex gap-2">
-                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors">Details →</a>
+                            <button
+                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+                                onclick="details_3.showModal()">Details →
+                            </button>
                         </div>
                     </div>
 
-                    <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
-                        <div class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                    <div
+                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
                             <i class="fas fa-box text-xl"></i>
                         </div>
                         <div class="text-indigo-600 font-semibold text-lg">Ready-to-Sell Products</div>
                         <p class="mt-3 text-slate-600">Templates, themes, and small tools you can sell directly.</p>
                         <div class="mt-4 flex gap-2">
-                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors">Details →</a>
+                            <button
+                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+                                onclick="details_4.showModal()">Details →
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -220,7 +212,8 @@
                     <h2 class="text-3xl font-bold mb-4 md:mb-0">Popular Products</h2>
                     <div class="flex items-center gap-3">
                         <label class="text-sm text-slate-500">Sort</label>
-                        <select id="sortSelect" class="border rounded px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                        <select id="sortSelect"
+                            class="border rounded px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
                             <option value="newest">Newest</option>
                             <option value="bestselling">Best Selling</option>
                             <option value="price-low">Price: Low to High</option>
@@ -235,40 +228,145 @@
             </div>
         </section>
 
+        <!-- Pricing Section -->
+        <section class="py-20 bg-white">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <p class="text-sm font-semibold text-indigo-600">Pricing</p>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Pricing that grows with you</h2>
+                <p class="text-gray-500 mt-4">
+                    Choose an affordable plan that's packed with the best features for engaging your audience,
+                    creating customer loyalty, and driving sales.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+                <!-- Freelancer Card -->
+                <div class="border rounded-3xl p-8 shadow-sm hover:shadow-xl transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Freelancer</h3>
+                    <p class="text-gray-500 mb-6">The essentials to provide your best work for clients.</p>
+
+                    <p class="text-4xl font-bold text-gray-900 mb-6">$19<span
+                            class="text-lg font-medium text-gray-600">/month</span></p>
+
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 5 products
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Up to 1,000
+                            subscribers</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Basic
+                            analytics</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 48-hour
+                            support response time</li>
+                    </ul>
+
+                    <button
+                        class="w-full border border-indigo-500 text-indigo-600 py-3 rounded-xl font-medium hover:bg-indigo-500 hover:text-white transition">
+                        Buy plan
+                    </button>
+                </div>
+
+                <!-- Startup Card (Highlighted) -->
+                <div class="border-2 border-indigo-600 rounded-3xl p-8 shadow-xl bg-white relative">
+                    <span
+                        class="absolute top-4 right-4 bg-indigo-100 text-indigo-600 text-xs font-medium px-3 py-1 rounded-lg">
+                        Most popular
+                    </span>
+
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Startup</h3>
+                    <p class="text-gray-500 mb-6">A plan that scales with your rapidly growing business.</p>
+
+                    <p class="text-4xl font-bold text-gray-900 mb-6">$49<span
+                            class="text-lg font-medium text-gray-600">/month</span></p>
+
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 25 products
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Up to 10,000
+                            subscribers</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Advanced
+                            analytics</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 24-hour
+                            support response time</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Marketing
+                            automations</li>
+                    </ul>
+
+                    <button
+                        class="w-full bg-indigo-600 text-white py-3 rounded-xl font-medium hover:bg-indigo-700 transition">
+                        Buy plan
+                    </button>
+                </div>
+
+                <!-- Enterprise Card -->
+                <div class="border rounded-3xl p-8 shadow-sm hover:shadow-xl transition">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise</h3>
+                    <p class="text-gray-500 mb-6">Dedicated support and infrastructure for your company.</p>
+
+                    <p class="text-4xl font-bold text-gray-900 mb-6">$99<span
+                            class="text-lg font-medium text-gray-600">/month</span></p>
+
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Unlimited
+                            products</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Unlimited
+                            subscribers</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Advanced
+                            analytics</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 1-hour
+                            dedicated support response time</li>
+                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Marketing
+                            automations</li>
+                    </ul>
+
+                    <button
+                        class="w-full border border-indigo-500 text-indigo-600 py-3 rounded-xl font-medium hover:bg-indigo-500 hover:text-white transition">
+                        Buy plan
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about" class="py-16 bg-gradient-to-r from-slate-50 to-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold">Why Choose Us?</h2>
-                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Our team works on projects for many students and live clients — we deliver all types of projects, small to large.</p>
+                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Our team works on projects for many students and
+                        live clients — we deliver all types of projects, small to large.</p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-3">
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <h3 class="font-semibold text-lg">Experienced Team</h3>
-                                <p class="mt-2 text-slate-600 text-sm">Developers and designers with experience in various projects</p>
+                                <p class="mt-2 text-slate-600 text-sm">Developers and designers with experience in
+                                    various projects</p>
                             </div>
                             <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-3">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <h3 class="font-semibold text-lg">Timely Delivery</h3>
                                 <p class="mt-2 text-slate-600 text-sm">Work delivered before deadlines</p>
                             </div>
                             <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-3">
                                     <i class="fas fa-headset"></i>
                                 </div>
                                 <h3 class="font-semibold text-lg">24/7 Support</h3>
-                                <p class="mt-2 text-slate-600 text-sm">Necessary support provided even after project completion</p>
+                                <p class="mt-2 text-slate-600 text-sm">Necessary support provided even after project
+                                    completion</p>
                             </div>
                             <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-3">
                                     <i class="fas fa-money-bill-wave"></i>
                                 </div>
                                 <h3 class="font-semibold text-lg">Affordable Pricing</h3>
@@ -287,9 +385,13 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <blockquote class="text-slate-700 text-lg">"Very fast work and professional service — great customer service! My project was delivered on time and the quality was perfect."</blockquote>
+                            <blockquote class="text-slate-700 text-lg">"Very fast work and professional service — great
+                                customer service! My project was delivered on time and the quality was perfect."
+                            </blockquote>
                             <div class="mt-6 flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold">R</div>
+                                <div
+                                    class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold">
+                                    R</div>
                                 <div>
                                     <div class="font-semibold">Rahat</div>
                                     <div class="text-sm text-slate-500">Startup Founder</div>
@@ -308,7 +410,7 @@
                     <h2 class="text-3xl font-bold">Contact Us</h2>
                     <p class="text-slate-500 mt-4">Discuss your project with us now</p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="bg-indigo-600 text-white p-8 rounded-xl shadow-lg">
                         <h4 class="text-2xl font-bold mb-4">Contact Information</h4>
@@ -320,7 +422,8 @@
                                 </div>
                                 <div>
                                     <div class="font-medium">Facebook Page</div>
-                                    <a href="#" class="text-indigo-100 hover:text-white underline">facebook.com/projectshop</a>
+                                    <a href="https://www.facebook.com/getly.top" target="_blank"
+                                        class="text-indigo-100 hover:text-white underline">facebook.com/getly.top</a>
                                 </div>
                             </div>
                             <div class="flex items-center gap-3">
@@ -329,7 +432,8 @@
                                 </div>
                                 <div>
                                     <div class="font-medium">Email</div>
-                                    <a href="mailto:hello@projectshop.com" class="text-indigo-100 hover:text-white">hello@projectshop.com</a>
+                                    <a href="mailto:getlytop@gmail.com"
+                                        class="text-indigo-100 hover:text-white">getlytop@gmail.com</a>
                                 </div>
                             </div>
                             <div class="flex items-center gap-3">
@@ -338,7 +442,10 @@
                                 </div>
                                 <div>
                                     <div class="font-medium">Phone</div>
-                                    <a href="tel:+8801XXXXXXXXX" class="text-indigo-100 hover:text-white">+880 1XXXXXXXXX</a>
+                                    <a href="tel:+8801732854793"
+                                        class="text-indigo-100 hover:text-white">+8801732-854793</a> <br>
+                                    <a href="tel:+8801521789039"
+                                        class="text-indigo-100 hover:text-white">+8801521-789039</a>
                                 </div>
                             </div>
                         </div>
@@ -347,23 +454,38 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                                <input id="nameInput" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors" placeholder="Your name" required />
+                                <input id="nameInput"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
+                                    placeholder="Your name" required />
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Email / Phone</label>
-                                <input id="contactInput" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors" placeholder="example@mail.com" required />
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                                <input id="contactInput"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
+                                    placeholder="Your phone number" required />
                             </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input id="emailInput"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
+                                placeholder="example@mail.com" required />
                         </div>
                         <div class="mt-4">
                             <label class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
-                            <input id="subjectInput" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors" placeholder="Your project type" required />
+                            <input id="subjectInput"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
+                                placeholder="Your project type" required />
                         </div>
                         <div class="mt-4">
                             <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                            <textarea id="messageInput" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors" rows="4" placeholder="What you need..." required></textarea>
+                            <textarea id="messageInput"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors resize-none"
+                                rows="4" placeholder="What you need..." required></textarea>
                         </div>
                         <div class="mt-6 flex justify-end">
-                            <button type="submit" id="submitBtn" class="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                            <button type="submit" id="submitBtn"
+                                class="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
                                 <i class="fas fa-paper-plane"></i> Send Message
                             </button>
                         </div>
@@ -372,482 +494,269 @@
             </div>
         </section>
 
-        <footer class="bg-slate-800 text-white py-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">PS</div>
-                            <div class="text-lg font-bold">ProjectShop</div>
-                        </div>
-                        <p class="text-slate-300 text-sm">Expert services and products for your projects</p>
-                    </div>
-                    <div>
-                        <h5 class="font-semibold mb-4">Links</h5>
-                        <ul class="space-y-2 text-slate-300 text-sm">
-                            <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                            <li><a href="#shop" class="hover:text-white transition-colors">Shop</a></li>
-                            <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
-                            <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-semibold mb-4">Services</h5>
-                        <ul class="space-y-2 text-slate-300 text-sm">
-                            <li><a href="#" class="hover:text-white transition-colors">Web Development</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">UI/UX Design</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">Mobile Apps</a></li>
-                            <li><a href="#" class="hover:text-white transition-colors">Ready Products</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-semibold mb-4">Social Media</h5>
-                        <div class="flex gap-3">
-                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-indigo-600 transition-colors">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-400 transition-colors">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-pink-600 transition-colors">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+        <!-- FAQ Section -->
+        <section id="accordion" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
+                <p class="text-slate-500 mt-4">Find answers to common questions about our services</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <div class="collapse-title font-semibold">আমি কি পুরো প্রজেক্টটা আপনাদেরকে লিখিয়ে দিতে পারি?</div>
+                    <div class="collapse-content text-sm">Getly প্রজেক্ট-সহায়তা প্রদান করে — আমরা কোড, ডিজাইন এবং
+                        ডকুমেন্টেশন তৈরি করে দিই। তবে আমরা সবসময় উপস্থাপন করি এটি "Assistance / Implementation Support"
+                        হিসেবে; শিক্ষার্থীদের শেখার ও বুঝার সুযোগ রেখে করি। আপনি চাইলে আমরা কাজের প্রতিটি ধাপ ব্যাখ্যা
+                        করবো যাতে আপনি viva-তে নিজে উত্তর দিতে পারেন।</div>
+                </div>
+                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title font-semibold">ডেলিভারি সময় কীভাবে কাজ করে? কত দিনে কাজ শেষ হবে</div>
+                    <div class="collapse-content text-sm">সময়সীমা সার্ভিসের ওপর নির্ভর করে — Mini Project সাধারণত ৩–৫
+                        দিন, Major Project ৭–১৫ দিন। অর্ডার কনফার্মেশনের সময় আমরা একটি নির্দিষ্ট ডেলিভারি ডেট সেট করব
+                        এবং সেই অনুযায়ী কাজ সম্পন্ন করব। জরুরি ডেলিভারির ক্ষেত্রে অতিরিক্ত চার্জ লাগতে পারে।</div>
+                </div>
+                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title font-semibold">পেমেন্ট কীভাবে করবেন? রিফান্ড পলিসি কেমন?</div>
+                    <div class="collapse-content text-sm">পেমেন্ট অনলাইন (bKash/Bank/SSLCommerz ইত্যাদি) বা
+                        প্রাক-পেমেন্ট হিসেবে নেয়া হয়। কাজ শুরু হওয়ার আগে আংশিক/পূর্ণ পেমেন্ট নেওয়া হতে পারে—এটি অর্ডার
+                        টাইপ অনুযায়ী উল্লেখ করা থাকবে। যদি আমরা ঠিক সময়ে কাজ শুরু না করি বা কাজ শুরু না হয় তবে
+                        সম্পূর্ণ রিফান্ড দেওয়া হবে। কাজ শুরু হওয়ার বা ডেলিভারি হওয়ার পর সাধারণত রিফান্ড প্রযোজ্য নয় —
+                        বিস্তারিত পলিসি Terms পেজে পাওয়া যাবে।
                     </div>
                 </div>
-                <div class="border-t border-slate-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-                    <div>© 2025 ProjectShop. All rights reserved.</div>
-                    <div class="flex gap-4 mt-4 md:mt-0">
-                        <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                        <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title font-semibold">আমার প্রজেক্ট প্লেজিয়ারিজম বা ইউনিক না হলে কি হবে?</div>
+                    <div class="collapse-content text-sm">আমরা ইউনিক, নিজের লেখা কোড এবং আউটপুট দেওয়ার ওপর জোর দিই।
+                        অনুরোধ করলে কোড-বেস/রিপোজিটরি প্রদান করা হবে। যেকোনো প্লেজিয়ারিজম-সংক্রান্ত সমস্যা পেলে দ্রুত
+                        সমাধান করবো এবং প্রয়োজনীয় সংশোধন করবো।
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title font-semibold">প্রজেক্ট দেওয়া হলে কতবার রিভিশন করা যাবে?</div>
+                    <div class="collapse-content text-sm">প্রতিটি প্যাকেজে ১–২ বার মাইনর রিভিশন ফ্রি থাকে (প্যাকেজ
+                        অনুযায়ী ভিন্ন হতে পারে)। বড় বদল/নতুন ফিচার যোগ করার ক্ষেত্রে অতিরিক্ত চার্জ প্রযোজ্য হতে পারে।
+                        রিভিশন পলিসি অর্ডার কনফার্মেশনের সময় পরিষ্কার করে বলা হবে।
                     </div>
                 </div>
             </div>
-        </footer>
+        </section>
+
+        <!-- Details modals -->
+        <dialog id="details_1" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold">Web Development Service</h3>
+                <p class="py-4">We provide complete web development solutions using modern technologies:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Frontend: HTML5, CSS3, JavaScript, React, Vue.js</li>
+                    <li>Backend: Node.js, Express, PHP, Java, Python</li>
+                    <li>Database: MySQL, MongoDB, PostgreSQL</li>
+                    <li>Additional: REST APIs, Authentication, Deployment</li>
+                </ul>
+                <div class="modal-action">
+                    <button class="btn btn-primary">Get Quote</button>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="details_2" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold">UI/UX Design Service</h3>
+                <p class="py-4">Professional design services for your projects:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>User Interface Design</li>
+                    <li>User Experience Planning</li>
+                    <li>Wireframing & Prototyping</li>
+                    <li>Responsive Design</li>
+                    <li>Brand Identity Design</li>
+                </ul>
+                <div class="modal-action">
+                    <button class="btn btn-primary">Get Quote</button>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="details_3" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold">Mobile App Development</h3>
+                <p class="py-4">Complete mobile application development:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Android Development (Java, Kotlin)</li>
+                    <li>iOS Development (Swift)</li>
+                    <li>Cross-platform (React Native, Flutter)</li>
+                    <li>App Store Deployment</li>
+                    <li>Backend Integration</li>
+                </ul>
+                <div class="modal-action">
+                    <button class="btn btn-primary">Get Quote</button>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="details_4" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold">Ready-to-Sell Products</h3>
+                <p class="py-4">Pre-built products and templates:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Website Templates</li>
+                    <li>Mobile App Templates</li>
+                    <li>Admin Dashboard Templates</li>
+                    <li>E-commerce Solutions</li>
+                    <li>Customizable Code Bases</li>
+                </ul>
+                <div class="modal-action">
+                    <button class="btn btn-primary">Browse Products</button>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Order Modal -->
+        <dialog id="details_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold mb-4">Place Your Order</h3>
+                <form id="orderForm" action="https://formspree.io/f/mrboovzb" method="POST">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Select Your Order Item</label>
+                            <select id="itemSelect" name="service"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                <option value="">Select a product...</option>
+                                <!-- Options will be loaded dynamically -->
+                            </select>
+                        </div>
+
+                        <div id="selectedProductInfo" class="hidden p-4 bg-slate-50 rounded-lg">
+                            <div class="flex items-center gap-4">
+                                <img id="selectedProductImage" src="" alt="" class="w-16 h-16 object-cover rounded">
+                                <div>
+                                    <h4 id="selectedProductName" class="font-semibold"></h4>
+                                    <p id="selectedProductDescription" class="text-sm text-slate-600"></p>
+                                    <p id="selectedProductPrice" class="text-lg font-bold text-indigo-600"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
+                                <input type="text" id="orderName" name="name"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                    placeholder="Enter your name" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                                <input type="tel" id="orderPhone" name="phone"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                    placeholder="Your phone number" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Additional Requirements</label>
+                            <textarea id="orderRequirements" name="projectDetails"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 resize-none"
+                                rows="3" placeholder="Any special requirements..."></textarea>
+                        </div>
+
+                        <!-- ✅ Google reCAPTCHA -->
+                        <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"></div>
+
+                        <div class="flex justify-between items-center pt-4">
+                            <div>
+                                <span class="text-sm text-slate-600">Total:</span>
+                                <span id="orderTotal" class="text-xl font-bold text-indigo-600 ml-2">৳0</span>
+                            </div>
+                            <button type="submit"
+                                class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                Confirm Order
+                            </button>
+                        </div>
+                        <p id="status"></p>
+                    </div>
+                </form>
+            </div>
+        </dialog>
     </main>
 
-    <!-- Floating Cart Button -->
-    <button id="floatingCartBtn" class="floating-cart w-14 h-14 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg hover:bg-indigo-700 transition-colors">
-        <i class="fas fa-shopping-cart text-xl"></i>
-        <span id="floatingCartCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-    </button>
-
-    <!-- CART MODAL -->
-    <div id="cartModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-xl w-full max-w-md p-6 max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4">
-                <h4 class="font-semibold text-lg">Your Cart</h4>
-                <button id="closeCart" class="text-slate-500 hover:text-slate-700">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/Getly_logo.png" alt="Site Logo" class="w-10 h-10">
+                        <div class="text-lg font-bold gradient-text">Getly Project Shop</div>
+                    </div>
+                    <p class="text-slate-300 text-sm">Expert services and products for your CSE projects</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Links</h5>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#shop" class="hover:text-white transition-colors">Shop</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Services</h5>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Ready Products</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Social Media</h5>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/getly.top" target="_blank"
+                            class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-indigo-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-pink-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div id="cartItems" class="mt-4 space-y-3 text-sm text-slate-700">Cart is empty</div>
-            <div class="mt-6 pt-4 border-t border-slate-200 flex justify-between items-center">
-                <div class="font-bold text-lg">Total: $<span id="cartTotal">0</span></div>
-                <div class="flex gap-2">
-                    <button id="closeCartBtn" class="px-4 py-2 border rounded-lg hover:bg-slate-50 transition-colors">Close</button>
-                    <button id="checkoutBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">Checkout</button>
+            <div
+                class="border-t border-slate-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <div>© 2025 Getly Project Shop. All rights reserved.</div>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <script>
-        // Product data
-        const products = [
-            {
-                id: 1,
-                name: "Web Template - Business",
-                description: "Responsive and SEO-friendly business template",
-                price: 1500,
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                category: "template",
-                tags: ["bestseller", "new"],
-                rating: 4.8,
-                reviews: 24
-            },
-            {
-                id: 2,
-                name: "UI Kit - Modern Design",
-                description: "Customizable components for modern applications",
-                price: 900,
-                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                category: "ui-kit",
-                tags: ["new"],
-                rating: 4.5,
-                reviews: 18
-            },
-            {
-                id: 3,
-                name: "Application Backend",
-                description: "JSP + Oracle setup service",
-                price: 5000,
-                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                category: "service",
-                tags: ["bestseller"],
-                rating: 4.9,
-                reviews: 32
-            },
-            {
-                id: 4,
-                name: "Business Card Design",
-                description: "Professional business card design",
-                price: 700,
-                image: "https://images.unsplash.com/photo-1601935111741-ae98b2b230b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                category: "design",
-                tags: [],
-                rating: 4.3,
-                reviews: 12
-            },
-            {
-                id: 5,
-                name: "E-commerce Website",
-                description: "Complete e-commerce solution with admin panel",
-                price: 8000,
-                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                category: "template",
-                tags: ["bestseller"],
-                rating: 4.7,
-                reviews: 41
-            },
-            {
-                id: 6,
-                name: "Mobile App UI",
-                description: "Figma UI kit for mobile applications",
-                price: 1200,
-                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                category: "ui-kit",
-                tags: ["new"],
-                rating: 4.6,
-                reviews: 15
-            }
-        ];
-
-        // Cart functionality
-        let cart = [];
-        const cartBtn = document.getElementById('cartBtn');
-        const cartModal = document.getElementById('cartModal');
-        const cartItems = document.getElementById('cartItems');
-        const cartTotalEl = document.getElementById('cartTotal');
-        const closeCart = document.getElementById('closeCart');
-        const closeCartBtn = document.getElementById('closeCartBtn');
-        const floatingCartBtn = document.getElementById('floatingCartBtn');
-        const cartCount = document.getElementById('cartCount');
-        const floatingCartCount = document.getElementById('floatingCartCount');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const sortSelect = document.getElementById('sortSelect');
-        const productsContainer = document.getElementById('productsContainer');
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            renderProducts();
-            setupEventListeners();
-        });
-
-        // Render products to the page
-        function renderProducts() {
-            productsContainer.innerHTML = '';
-            
-            // Sort products based on selection
-            let sortedProducts = [...products];
-            const sortValue = sortSelect.value;
-            
-            if (sortValue === 'bestselling') {
-                sortedProducts.sort((a, b) => b.reviews - a.reviews);
-            } else if (sortValue === 'price-low') {
-                sortedProducts.sort((a, b) => a.price - b.price);
-            } else if (sortValue === 'price-high') {
-                sortedProducts.sort((a, b) => b.price - a.price);
-            }
-            // Default is newest (original order)
-            
-            sortedProducts.forEach(product => {
-                const productCard = document.createElement('article');
-                productCard.className = 'bg-white rounded-xl shadow overflow-hidden product-card border border-slate-100';
-                
-                let tagHtml = '';
-                if (product.tags.includes('bestseller')) {
-                    tagHtml = '<div class="absolute top-2 right-2 bg-indigo-600 text-white text-xs px-2 py-1 rounded">Bestseller</div>';
-                } else if (product.tags.includes('new')) {
-                    tagHtml = '<div class="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">New</div>';
-                }
-                
-                productCard.innerHTML = `
-                    <div class="relative">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-44 object-cover">
-                        ${tagHtml}
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold">${product.name}</h3>
-                        <p class="text-slate-500 text-sm mt-1">${product.description}</p>
-                        <div class="mt-2 flex items-center">
-                            <div class="text-yellow-400 text-sm">
-                                ${generateStarRating(product.rating)}
-                            </div>
-                            <span class="text-slate-500 text-sm ml-1">(${product.reviews})</span>
-                        </div>
-                        <div class="mt-3 flex items-center justify-between">
-                            <div class="font-bold text-lg">$${product.price}</div>
-                            <div class="flex gap-2">
-                                <button class="px-3 py-1 border rounded text-sm hover:bg-slate-50 transition-colors view-details" data-id="${product.id}">Details</button>
-                                <button class="px-3 py-1 rounded bg-indigo-600 text-white text-sm hover:bg-indigo-700 transition-colors add-to-cart" data-id="${product.id}">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                productsContainer.appendChild(productCard);
-            });
-            
-            // Add event listeners to the new buttons
-            document.querySelectorAll('.add-to-cart').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const productId = parseInt(this.dataset.id);
-                    addToCart(productId);
-                });
-            });
-            
-            document.querySelectorAll('.view-details').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const productId = parseInt(this.dataset.id);
-                    viewProductDetails(productId);
-                });
-            });
-        }
-
-        // Generate star rating HTML
-        function generateStarRating(rating) {
-            let stars = '';
-            const fullStars = Math.floor(rating);
-            const hasHalfStar = rating % 1 >= 0.5;
-            
-            for (let i = 0; i < fullStars; i++) {
-                stars += '<i class="fas fa-star"></i>';
-            }
-            
-            if (hasHalfStar) {
-                stars += '<i class="fas fa-star-half-alt"></i>';
-            }
-            
-            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-            for (let i = 0; i < emptyStars; i++) {
-                stars += '<i class="far fa-star"></i>';
-            }
-            
-            return stars;
-        }
-
-        // View product details (placeholder function)
-        function viewProductDetails(productId) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                alert(Product Details:\n\nName: ${product.name}\nDescription: ${product.description}\nPrice: $${product.price}\nRating: ${product.rating}/5 (${product.reviews} reviews));
-            }
-        }
-
-        // Add product to cart
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image
-                });
-                updateCartUI();
-                
-                // Show notification
-                showNotification(${product.name} added to cart);
-            }
-        }
-
-        // Show notification
-        function showNotification(message) {
-            // Remove existing notification if any
-            const existingNotification = document.querySelector('.cart-notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            const notification = document.createElement('div');
-            notification.className = 'cart-notification bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg';
-            notification.innerHTML = <i class="fas fa-check-circle mr-2"></i> ${message};
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-
-        // Update cart UI
-        function updateCartUI() {
-            cartCount.textContent = cart.length;
-            floatingCartCount.textContent = cart.length;
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<div class="text-center py-8 text-slate-500">Your cart is empty</div>';
-                cartTotalEl.textContent = '0';
-            } else {
-                cartItems.innerHTML = '';
-                let total = 0;
-                cart.forEach((item, idx) => {
-                    total += Number(item.price);
-                    const el = document.createElement('div');
-                    el.className = 'flex items-center justify-between p-3 bg-slate-50 rounded-lg';
-                    el.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-cover rounded">
-                            <div class="flex-1">
-                                <div class="font-medium text-sm">${item.name}</div>
-                                <div class="text-slate-500 text-sm">$${item.price}</div>
-                            </div>
-                        </div>
-                        <button class="text-red-500 hover:text-red-700 remove-from-cart" data-index="${idx}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
-                    cartItems.appendChild(el);
-                });
-                cartTotalEl.textContent = total;
-                
-                // Add event listeners to remove buttons
-                document.querySelectorAll('.remove-from-cart').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const index = parseInt(e.currentTarget.dataset.index);
-                        cart.splice(index, 1);
-                        updateCartUI();
-                    });
-                });
-            }
-        }
-
-        // Setup event listeners
-        function setupEventListeners() {
-            // Mobile menu toggle
-            document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.toggle('hidden');
-            });
-
-            // Cart functionality
-            cartBtn.addEventListener('click', () => {
-                cartModal.classList.remove('hidden');
-                cartModal.classList.add('flex');
-                updateCartUI();
-            });
-
-            floatingCartBtn.addEventListener('click', () => {
-                cartModal.classList.remove('hidden');
-                cartModal.classList.add('flex');
-                updateCartUI();
-            });
-
-            closeCart.addEventListener('click', () => {
-                cartModal.classList.add('hidden');
-                cartModal.classList.remove('flex');
-            });
-
-            closeCartBtn.addEventListener('click', () => {
-                cartModal.classList.add('hidden');
-                cartModal.classList.remove('flex');
-            });
-
-            // Close modal when clicking outside
-            cartModal.addEventListener('click', (e) => {
-                if (e.target === cartModal) {
-                    cartModal.classList.add('hidden');
-                    cartModal.classList.remove('flex');
-                }
-            });
-
-            // Sort products
-            sortSelect.addEventListener('change', renderProducts);
-
-            // Checkout button
-            checkoutBtn.addEventListener('click', () => {
-                if (cart.length === 0) {
-                    alert('Your cart is empty!');
-                    return;
-                }
-                
-                // Show loading state
-                checkoutBtn.innerHTML = '<div class="loading-spinner"></div> Processing...';
-                checkoutBtn.disabled = true;
-                
-                // Simulate checkout process
-                setTimeout(() => {
-                    alert('Checkout completed successfully! Thank you for your purchase.');
-                    cart = [];
-                    updateCartUI();
-                    cartModal.classList.add('hidden');
-                    cartModal.classList.remove('flex');
-                    
-                    // Reset checkout button
-                    checkoutBtn.innerHTML = 'Checkout';
-                    checkoutBtn.disabled = false;
-                }, 2000);
-            });
-
-            // Contact form submission
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('nameInput').value;
-                const contact = document.getElementById('contactInput').value;
-                const subject = document.getElementById('subjectInput').value;
-                const message = document.getElementById('messageInput').value;
-                
-                // Show loading state
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<div class="loading-spinner"></div> Sending...';
-                submitBtn.disabled = true;
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    alert(Thank you, ${name}! Your message has been sent. We'll contact you at ${contact} soon.);
-                    contactForm.reset();
-                    
-                    // Reset button
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-
-        // Add fade-in animation to elements when they come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <script src="script.js"></script>
+    <!-- ✅ reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
+
 </html>

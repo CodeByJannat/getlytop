@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Web Template - Business",
+        "description": "Responsive and SEO-friendly business template",
+        "price": 1500,
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "category": "template",
+        "tags": ["bestseller", "new"]
+    },
+    {
+        "id": 2,
+        "name": "UI Kit - Modern Design",
+        "description": "Customizable components for modern applications",
+        "price": 900,
+        "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "category": "ui-kit",
+        "tags": ["new"],
+        "rating": 4.5,
+        "reviews": 18
+    },
+    {
+        "id": 3,
+        "name": "Application Backend",
+        "description": "JSP + Oracle setup service",
+        "price": 5000,
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "category": "service",
+        "tags": ["bestseller"]
+    },
+    {
+        "id": 4,
+        "name": "Business Card Design",
+        "description": "Professional business card design",
+        "price": 700,
+        "image": "https://images.unsplash.com/photo-1601935111741-ae98b2b230b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "category": "design",
+        "tags": []
+    },
+    {
+        "id": 5,
+        "name": "E-commerce Website",
+        "description": "Complete e-commerce solution with admin panel",
+        "price": 8000,
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "category": "template",
+        "tags": ["bestseller"]
+    },
+    {
+        "id": 6,
+        "name": "Mobile App UI",
+        "description": "Figma UI kit for mobile applications",
+        "price": 1200,
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "category": "ui-kit",
+        "tags": ["new"]
+    }
+]
