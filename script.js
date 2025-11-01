@@ -112,11 +112,6 @@ function setupOrderModal() {
             document.getElementById('orderTotal').textContent = '৳0';
         }
     });
-    
-    // orderForm.addEventListener('submit', function(e) {
-    //     e.preventDefault();
-    //     submitOrder();
-    // });
 }
 
 // Update selected product information
@@ -351,9 +346,7 @@ document.getElementById('cartBtn').addEventListener('click', function() {
     });
 });
 
-
-// <!-- ✅ Google reCAPTCHA -->
-// Order form submission with reCAPTCHA
+// ✅ Google reCAPTCHA for order form
 const orderForm = document.getElementById("orderForm");
 const status = document.getElementById("status");
 
@@ -383,7 +376,7 @@ orderForm.addEventListener("submit", async function (e) {
       orderForm.reset();
       grecaptcha.reset();
       
-      // Show success message
+      // Show success message and close modal
       setTimeout(() => {
         document.getElementById('details_5').close();
         status.innerText = "";
