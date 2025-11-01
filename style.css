@@ -114,19 +114,36 @@
     background: #94a3b8;
 }
 
-/* Ensure reCAPTCHA stays on top inside modal */
-.g-recaptcha {
+/* reCAPTCHA iframe স্টাইলিং */
+.g-recaptcha iframe {
   position: relative !important;
   z-index: 999999 !important;
+  transform: scale(0.9);
+  transform-origin: 0 0;
 }
 
-/* DaisyUI modal overrides */
-.modal-box {
-  z-index: 99999 !important;
-}
+/* Modal এর জন্য z-index ব্যবস্থাপনা */
 .modal {
   z-index: 99998 !important;
 }
-.modal-backdrop {
-  z-index: 99997 !important;
+
+.modal-box {
+  z-index: 99999 !important;
+  position: relative;
+}
+
+/* reCAPTCHA এর জন্য অতিরিক্ত স্টাইল */
+.g-recaptcha {
+  position: relative;
+  z-index: 100000 !important;
+}
+
+/* reCAPTCHA challenge modal এর জন্য */
+.grecaptcha-badge {
+  z-index: 100001 !important;
+}
+
+/* reCAPTCHA popup/modal */
+.grecaptcha-popup {
+  z-index: 100002 !important;
 }

@@ -353,26 +353,46 @@ document.getElementById('cartBtn').addEventListener('click', function() {
 
 
 // <!-- ✅ Google reCAPTCHA -->
-const form = document.getElementById("orderForm");
-  const status = document.getElementById("status");
+// Order form submission with reCAPTCHA
+const orderForm = document.getElementById("orderForm");
+const status = document.getElementById("status");
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    status.innerText = "Sending...";
+orderForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  
+  // reCAPTCHA validation
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    status.innerText = "❌ Please complete the reCAPTCHA verification";
+    return;
+  }
 
-    const formData = new FormData(form);
+  status.innerText = "Sending...";
 
-    let response = await fetch(form.action, {
+  const formData = new FormData(orderForm);
+
+  try {
+    let response = await fetch(orderForm.action, {
       method: "POST",
       body: formData,
       headers: { "Accept": "application/json" }
     });
 
     if (response.ok) {
-      status.innerText = "✅ Message Sent Successfully!";
-      form.reset();
+      status.innerText = "✅ Order Submitted Successfully!";
+      orderForm.reset();
       grecaptcha.reset();
+      
+      // Show success message
+      setTimeout(() => {
+        document.getElementById('details_5').close();
+        status.innerText = "";
+        alert('Order placed successfully! We will contact you shortly.');
+      }, 2000);
     } else {
-      status.innerText = "❌ Failed! Check reCAPTCHA or try again.";
+      status.innerText = "❌ Failed to submit order. Please try again.";
     }
-  });
+  } catch (error) {
+    status.innerText = "❌ Network error. Please check your connection.";
+  }
+});
