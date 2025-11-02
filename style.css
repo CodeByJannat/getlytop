@@ -279,40 +279,6 @@
     background: linear-gradient(180deg, #ec4899, #4f46e5);
 }
 
-/* Enhanced reCAPTCHA Styling */
-.g-recaptcha iframe {
-    position: relative !important;
-    z-index: 999999 !important;
-    transform: scale(0.95);
-    transform-origin: 0 0;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-.g-recaptcha {
-    position: relative;
-    z-index: 100000 !important;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Enhanced Modal z-index management */
-.modal {
-    z-index: 99998 !important;
-}
-
-.modal-box {
-    z-index: 99999 !important;
-    position: relative;
-}
-
-/* Enhanced reCAPTCHA badge */
-.grecaptcha-badge {
-    z-index: 100001 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    border-radius: 4px !important;
-}
-
 /* Pulse animation for attention */
 @keyframes pulse-glow {
     0%, 100% {
@@ -355,4 +321,29 @@
 
 .btn-hover-effect:hover::before {
     left: 100%;
+}
+
+/* ✅ reCAPTCHA widget top */
+.g-recaptcha {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+/* ✅ reCAPTCHA challenge popup force top */
+.g-recaptcha iframe, .grecaptcha-badge, .rc-anchor, .rc-anchor-helper, 
+.rc-anchor-invisible-text, .rc-anchor-normal-footer, 
+#rc-imageselect, .rc-popup {
+  position: relative !important;
+  z-index: 2147483647 !important; /* Highest possible */
+}
+
+/* ✅ DaisyUI Modal layering adjust */
+.modal-box {
+  z-index: 99999 !important;
+}
+.modal {
+  z-index: 99998 !important;
+}
+.modal-backdrop {
+  z-index: 99997 !important;
 }
