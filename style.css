@@ -330,25 +330,3 @@
 .modal-backdrop {
     z-index: 900 !important;
 }
-
-/* ✅ Recaptcha popup always top */
-/* ✅ Ensure modal stays below Recaptcha popup */
-.modal,
-.modal-box,
-.modal-backdrop {
-    z-index: 900 !important;
-}
-
-/* ✅ Recaptcha widget + popup always above */
-.g-recaptcha iframe,
-.grecaptcha-badge,
-iframe[src*="recaptcha"],
-.g-recaptcha {
-    z-index: 999999 !important;
-    position: relative;
-}
-
-/* Fix overflow blocking Recaptcha popup visibility */
-html, body {
-    overflow: visible !important;
-}

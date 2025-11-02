@@ -15,6 +15,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- ✅ reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
@@ -781,9 +783,8 @@
                         </div>
 
                         <!-- ✅ Google reCAPTCHA -->
-                        <div class="captcha-container">
-                            <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"></div>
-                        </div>
+                        <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"
+                            data-callback="onRecaptchaSuccess" data-expired-callback="onRecaptchaExpired"></div>
 
                         <div id="status"></div>
 
@@ -950,8 +951,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <!-- ✅ reCAPTCHA script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
