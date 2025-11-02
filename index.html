@@ -10,8 +10,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/Getly_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- ✅ reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
@@ -34,17 +37,16 @@
                 </nav>
                 <div class="flex items-center gap-3">
                     <div class="relative">
-                        <button id="cartBtn"
-                            class="px-4 py-2 rounded-md bg-indigo-600 text-white text-sm shadow hover:bg-indigo-700 transition-colors flex items-center gap-2">
-                            <i class="fas fa-shopping-cart"></i>
-                            Cart
-                            <span id="cartCount"
-                                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                        <button id="whatsappBtn"
+                            class="px-4 py-2 rounded-md bg-green-600 text-white text-sm shadow hover:bg-green-700 transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            WhatsApp
                         </button>
                     </div>
-                    <button
+                    <button id="quickOrderBtn"
                         class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 text-sm hover:bg-indigo-50 transition-colors">
-                        Contact Us
+                        <i class="fa-brands fa-first-order" style="color: #74C0FC;"></i>
+                        Quick Order
                     </button>
                 </div>
             </div>
@@ -149,7 +151,7 @@
                         <div class="mt-4 flex gap-2">
                             <button
                                 class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="details_1.showModal()">Details →
+                                onclick="openServiceModal('web-development')">Details →
                             </button>
                         </div>
                     </div>
@@ -165,7 +167,7 @@
                         <div class="mt-4 flex gap-2">
                             <button
                                 class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="details_2.showModal()">Details →
+                                onclick="openServiceModal('ui-design')">Details →
                             </button>
                         </div>
                     </div>
@@ -181,7 +183,7 @@
                         <div class="mt-4 flex gap-2">
                             <button
                                 class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="details_3.showModal()">Details →
+                                onclick="openServiceModal('mobile-apps')">Details →
                             </button>
                         </div>
                     </div>
@@ -197,7 +199,7 @@
                         <div class="mt-4 flex gap-2">
                             <button
                                 class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="details_4.showModal()">Details →
+                                onclick="openServiceModal('ready-products')">Details →
                             </button>
                         </div>
                     </div>
@@ -326,82 +328,192 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-gradient-to-r from-slate-50 to-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold">Why Choose Us?</h2>
-                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Our team works on projects for many students and
-                        live clients — we deliver all types of projects, small to large.</p>
-                </div>
+        
+        <!--  About Section -->
+<section id="about" class="py-20 bg-gradient-to-b from-white to-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Our Story -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-extrabold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-indigo-600">
+        Our Story
+      </h2>
+      <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
+        Getly Project Shop began with a simple mission — to make CSE projects accessible and stress-free for students across Bangladesh.
+      </p>
+    </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-3">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <h3 class="font-semibold text-lg">Experienced Team</h3>
-                                <p class="mt-2 text-slate-600 text-sm">Developers and designers with experience in
-                                    various projects</p>
-                            </div>
-                            <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-3">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <h3 class="font-semibold text-lg">Timely Delivery</h3>
-                                <p class="mt-2 text-slate-600 text-sm">Work delivered before deadlines</p>
-                            </div>
-                            <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-3">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <h3 class="font-semibold text-lg">24/7 Support</h3>
-                                <p class="mt-2 text-slate-600 text-sm">Necessary support provided even after project
-                                    completion</p>
-                            </div>
-                            <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-100">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-3">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                </div>
-                                <h3 class="font-semibold text-lg">Affordable Pricing</h3>
-                                <p class="mt-2 text-slate-600 text-sm">Quality work at very reasonable prices</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg">
-                            <div class="flex items-start mb-4">
-                                <div class="text-yellow-400 text-xl mr-1">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <blockquote class="text-slate-700 text-lg">"Very fast work and professional service — great
-                                customer service! My project was delivered on time and the quality was perfect."
-                            </blockquote>
-                            <div class="mt-6 flex items-center gap-3">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold">
-                                    R</div>
-                                <div>
-                                    <div class="font-semibold">Rahat</div>
-                                    <div class="text-sm text-slate-500">Startup Founder</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+      <div class="fade-in">
+        <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1171&q=80"
+            alt="Getly Team" class="w-full h-auto object-cover">
+        </div>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-slate-800 mb-4 relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-indigo-600">
+          Our Journey
+        </h3>
+        <p class="text-slate-600 mb-4 leading-relaxed">
+          Founded in 2020, Getly Project Shop started as a small initiative to help fellow CSE students with their academic projects. We understood the challenges students face — tight deadlines, complex requirements, and limited resources.
+        </p>
+        <p class="text-slate-600 mb-4 leading-relaxed">
+          What began as a peer-to-peer assistance program has grown into a comprehensive project development service, helping hundreds of students successfully complete their academic requirements while learning valuable skills along the way.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Our team of dedicated developers, designers, and project managers work together to ensure every project meets academic standards while providing students with the understanding they need to defend their work.
+        </p>
+      </div>
+    </div>
+
+    <!-- Our Philosophy -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-indigo-600">
+        Our Philosophy
+      </h2>
+      <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
+        We believe in empowering students with quality project assistance that enhances their learning experience.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+        <div class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+          <i class="fas fa-graduation-cap text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-slate-800 mb-2">Educational Focus</h3>
+        <p class="text-slate-600">We don't just deliver projects — we ensure students understand the concepts behind them, preparing them for viva and future endeavors.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+        <div class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
+          <i class="fas fa-handshake text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-slate-800 mb-2">Ethical Approach</h3>
+        <p class="text-slate-600">We maintain academic integrity while providing the support students need to succeed in their coursework.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+        <div class="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+          <i class="fas fa-users text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-slate-800 mb-2">Collaborative Process</h3>
+        <p class="text-slate-600">We work closely with students throughout the project lifecycle, incorporating their feedback and requirements.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+        <div class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+          <i class="fas fa-rocket text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-slate-800 mb-2">Innovation Driven</h3>
+        <p class="text-slate-600">We stay updated with the latest technologies and academic trends to deliver relevant, cutting-edge solutions.</p>
+      </div>
+    </div>
+
+    <!-- Our Team -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-indigo-600">
+        Our Team
+      </h2>
+      <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
+        Meet the passionate developers and designers behind Getly Project Shop
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+      <!-- Team Member -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
+        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-indigo-500">
+          <img src="assets/my.jpg" alt="Team Member" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-bold text-lg text-slate-800">Md Sohan Bhuyan</h3>
+        <p class="text-indigo-600 font-medium mb-2">Founder & Project Lead</p>
+        <p class="text-slate-500 text-sm">Full-Stack Developer with 5+ years experience</p>
+        <a href="mailto:sohanbhuyan7@gmail.com" class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">sohanbhuyan7@gmail.com</a>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
+        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-indigo-500">
+          <img src="assets/mollah.jpg" alt="Team Member" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-bold text-lg text-slate-800">Jannatul Ferdous Mollah</h3>
+        <p class="text-indigo-600 font-medium mb-2">UI/UX Designer & Manager</p>
+        <p class="text-slate-500 text-sm">Creative designer with expertise in user-centered design</p>
+        <a href="mailto:jannatmollah7@gmail.com" class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">jannatmollah7@gmail.com</a>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
+        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-indigo-500">
+          <img src="assets/shafiul.jpg" alt="Team Member" class="w-full h-full object-cover">
+        </div>
+        <h3 class="font-bold text-lg text-slate-800">Md Shafiul Islam Shafi</h3>
+        <p class="text-indigo-600 font-medium mb-2">Backend Developer</p>
+        <p class="text-slate-500 text-sm">Database and server-side development specialist</p>
+        <a href="mailto:shafiul3718@gmail.com" class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">shafiul3718@gmail.com</a>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
+        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-indigo-500">
+          <img src="assets/rm.jpg" alt="Team Member" class="w-full h-full object-cover ">
+        </div>
+        <h3 class="font-bold text-lg text-slate-800">Boishakhi Akter Rimi</h3>
+        <p class="text-indigo-600 font-medium mb-2">Project Coordinator</p>
+        <p class="text-slate-500 text-sm">Ensures smooth communication and project delivery</p>
+        <a href="mailto:boishakhirimi123@gmail.com" class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">boishakhirimi123@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- Our Commitment -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-indigo-600">
+        Our Commitment
+      </h2>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+              <i class="fas fa-check text-xs"></i>
             </div>
-        </section>
+            <span class="text-slate-700">Providing high-quality, well-documented code</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+              <i class="fas fa-check text-xs"></i>
+            </div>
+            <span class="text-slate-700">Ensuring timely delivery of all projects</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+              <i class="fas fa-check text-xs"></i>
+            </div>
+            <span class="text-slate-700">Maintaining clear communication throughout the process</span>
+          </li>
+        </ul>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+              <i class="fas fa-check text-xs"></i>
+            </div>
+            <span class="text-slate-700">Offering post-delivery support and revisions</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+              <i class="fas fa-check text-xs"></i>
+            </div>
+            <span class="text-slate-700">Respecting academic integrity and guidelines</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+              <i class="fas fa-check text-xs"></i>
+            </div>
+            <span class="text-slate-700">Keeping student requirements and learning at the forefront</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <!-- Contact Section -->
         <section id="contact" class="py-16 bg-slate-50">
@@ -418,10 +530,11 @@
                         <div class="space-y-4">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i class="fa-brands fa-facebook"></i>
                                 </div>
                                 <div>
                                     <div class="font-medium">Facebook Page</div>
+                                    
                                     <a href="https://www.facebook.com/getly.top" target="_blank"
                                         class="text-indigo-100 hover:text-white underline">facebook.com/getly.top</a>
                                 </div>
@@ -469,7 +582,7 @@
                             <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
                             <input id="emailInput"
                                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
-                                placeholder="example@mail.com" required />
+                                placeholder="example@gmail.com" required />
                         </div>
                         <div class="mt-4">
                             <label class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
@@ -546,89 +659,21 @@
             </div>
         </section>
 
-        <!-- Details modals -->
-        <dialog id="details_1" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
+        <!-- Service Details Modal -->
+        <dialog id="serviceModal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box max-w-4xl">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <h3 class="text-lg font-bold">Web Development Service</h3>
-                <p class="py-4">We provide complete web development solutions using modern technologies:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Frontend: HTML5, CSS3, JavaScript, React, Vue.js</li>
-                    <li>Backend: Node.js, Express, PHP, Java, Python</li>
-                    <li>Database: MySQL, MongoDB, PostgreSQL</li>
-                    <li>Additional: REST APIs, Authentication, Deployment</li>
-                </ul>
-                <div class="modal-action">
-                    <button class="btn btn-primary">Get Quote</button>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="details_2" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
-                <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                </form>
-                <h3 class="text-lg font-bold">UI/UX Design Service</h3>
-                <p class="py-4">Professional design services for your projects:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>User Interface Design</li>
-                    <li>User Experience Planning</li>
-                    <li>Wireframing & Prototyping</li>
-                    <li>Responsive Design</li>
-                    <li>Brand Identity Design</li>
-                </ul>
-                <div class="modal-action">
-                    <button class="btn btn-primary">Get Quote</button>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="details_3" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
-                <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                </form>
-                <h3 class="text-lg font-bold">Mobile App Development</h3>
-                <p class="py-4">Complete mobile application development:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Android Development (Java, Kotlin)</li>
-                    <li>iOS Development (Swift)</li>
-                    <li>Cross-platform (React Native, Flutter)</li>
-                    <li>App Store Deployment</li>
-                    <li>Backend Integration</li>
-                </ul>
-                <div class="modal-action">
-                    <button class="btn btn-primary">Get Quote</button>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="details_4" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
-                <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                </form>
-                <h3 class="text-lg font-bold">Ready-to-Sell Products</h3>
-                <p class="py-4">Pre-built products and templates:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Website Templates</li>
-                    <li>Mobile App Templates</li>
-                    <li>Admin Dashboard Templates</li>
-                    <li>E-commerce Solutions</li>
-                    <li>Customizable Code Bases</li>
-                </ul>
-                <div class="modal-action">
-                    <button class="btn btn-primary">Browse Products</button>
+                <div id="serviceModalContent">
+                    <!-- Content will be dynamically loaded here -->
                 </div>
             </div>
         </dialog>
 
         <!-- Order Modal -->
-        <dialog id="details_5" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
+        <dialog id="orderModal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box max-w-2xl">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
@@ -645,118 +690,144 @@
                         </div>
 
                         <div id="selectedProductInfo" class="hidden p-4 bg-slate-50 rounded-lg">
-                            <div class="flex items-center gap-4">
-                                <img id="selectedProductImage" src="" alt="" class="w-16 h-16 object-cover rounded">
+                            <div class="flex justify-between items-center">
                                 <div>
                                     <h4 id="selectedProductName" class="font-semibold"></h4>
-                                    <p id="selectedProductDescription" class="text-sm text-slate-600"></p>
-                                    <p id="selectedProductPrice" class="text-lg font-bold text-indigo-600"></p>
+                                    <p id="selectedProductPrice" class="text-slate-600 text-sm"></p>
                                 </div>
+                                <div id="selectedProductImage" class="w-16 h-16 rounded-md overflow-hidden"></div>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
-                                <input type="text" id="orderName" name="name"
+                                <input type="text" name="name"
                                     class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
                                     placeholder="Enter your name" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                                <input type="tel" id="orderPhone" name="phone"
+                                <input type="tel" name="phone"
                                     class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
-                                    placeholder="Your phone number" required>
+                                    placeholder="Enter your phone" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                                <input type="email" name="email"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                    placeholder="Enter your email" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Urgency Level</label>
+                                <select name="urgency"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
+                                    <option value="normal">Normal (10-15 days)</option>
+                                    <option value="urgent">Urgent (3-5 days)</option>
+                                    <option value="very-urgent">Very Urgent (1-2 days)</option>
+                                </select>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Additional Requirements</label>
-                            <textarea id="orderRequirements" name="projectDetails"
-                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 resize-none"
-                                rows="3" placeholder="Any special requirements..."></textarea>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Project Details</label>
+                            <textarea name="details" rows="4"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                placeholder="Describe your project requirements..." required></textarea>
                         </div>
 
                         <!-- ✅ Google reCAPTCHA -->
                         <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"></div>
 
-                        <div class="flex justify-between items-center pt-4">
-                            <div>
-                                <span class="text-sm text-slate-600">Total:</span>
-                                <span id="orderTotal" class="text-xl font-bold text-indigo-600 ml-2">৳0</span>
-                            </div>
+                        <div id="status"></div>
+
+                        <div class="flex justify-end mt-6">
                             <button type="submit"
-                                class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
-                                Confirm Order
+                                class="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                                <i class="fas fa-shopping-cart"></i> Place Order
                             </button>
                         </div>
-                        <p id="status"></p>
                     </div>
                 </form>
             </div>
         </dialog>
+
+        <!-- WhatsApp Floating Button -->
+        <div class="fixed bottom-6 right-6 z-50">
+            <button id="whatsappFloating"
+                class="w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all flex items-center justify-center text-xl">
+                <i class="fa-brands fa-whatsapp"></i>
+            </button>
+        </div>
     </main>
 
-    <footer class="bg-slate-800 text-white py-8">
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
+                <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
                         <img src="assets/Getly_logo.png" alt="Site Logo" class="w-10 h-10">
-                        <div class="text-lg font-bold gradient-text">Getly Project Shop</div>
+                        <div>
+                            <div class="text-lg font-bold">Getly Project Shop</div>
+                            <div class="text-sm text-slate-300">Service & Product Marketplace</div>
+                        </div>
                     </div>
-                    <p class="text-slate-300 text-sm">Expert services and products for your CSE projects</p>
-                </div>
-                <div>
-                    <h5 class="font-semibold mb-4">Links</h5>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#shop" class="hover:text-white transition-colors">Shop</a></li>
-                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold mb-4">Services</h5>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">UI/UX Design</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Mobile Apps</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Ready Products</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold mb-4">Social Media</h5>
-                    <div class="flex gap-3">
+                    <p class="text-slate-300 mb-4">Providing quality project assistance and development services for
+                        students and professionals.</p>
+                    <div class="flex gap-4">
                         <a href="https://www.facebook.com/getly.top" target="_blank"
-                            class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-indigo-600 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
+                            class="w-10 h-10 rounded-full bg-slate-700 hover:bg-indigo-600 transition-colors flex items-center justify-center social-icon facebook">
+                           <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-400 transition-colors">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://wa.me/8801732854793" target="_blank"
+                            class="w-10 h-10 rounded-full bg-slate-700 hover:bg-green-600 transition-colors flex items-center justify-center social-icon whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-pink-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
+                        <a href="mailto:getlytop@gmail.com"
+                            class="w-10 h-10 rounded-full bg-slate-700 hover:bg-red-600 transition-colors flex items-center justify-center social-icon email">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors footer-link">Services</a>
+                        </li>
+                        <li><a href="#shop" class="text-slate-300 hover:text-white transition-colors footer-link">Shop</a></li>
+                        <li><a href="#about" class="text-slate-300 hover:text-white transition-colors footer-link">About Us</a></li>
+                        <li><a href="#contact" class="text-slate-300 hover:text-white transition-colors footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-sm"></i>
+                            <span>+8801732-854793</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-sm"></i>
+                            <span>getlytop@gmail.com</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-sm mt-1"></i>
+                            <span>Dhaka, Bangladesh</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div
-                class="border-t border-slate-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-                <div>© 2025 Getly Project Shop. All rights reserved.</div>
-                <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms</a>
-                </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400 text-sm">
+                <p>© 2023 Getly Project Shop. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <!-- ✅ reCAPTCHA script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
