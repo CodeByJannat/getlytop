@@ -339,3 +339,7 @@ iframe[src*="recaptcha"] {
     z-index: 999999 !important;
     position: relative;
 }
+
+html, body {
+   overflow: visible !important;
+}
