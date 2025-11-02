@@ -325,16 +325,17 @@
 
 /* ✅ reCAPTCHA widget top */
 /* Place Recaptcha above modal */
-.captcha-top-layer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 200000 !important;
-}
-
-/* Ensure modal doesn’t go above Recaptcha */
 .modal,
 .modal-box,
 .modal-backdrop {
-    z-index: 9999 !important;
+    z-index: 900 !important;
+}
+
+/* ✅ Recaptcha popup always top */
+.grecaptcha-badge,
+.g-recaptcha iframe,
+.grecaptcha-logo,
+iframe[src*="recaptcha"] {
+    z-index: 999999 !important;
+    position: relative;
 }
