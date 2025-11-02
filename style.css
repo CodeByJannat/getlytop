@@ -1,10 +1,10 @@
 /* Enhanced Gradient Text */
 .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #4f46e5, #ec4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    -text-fill-color: transparent;
     position: relative;
     display: inline-block;
 }
@@ -356,5 +356,3 @@
 .btn-hover-effect:hover::before {
     left: 100%;
 }
-
-
