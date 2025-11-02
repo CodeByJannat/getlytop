@@ -324,26 +324,17 @@
 }
 
 /* ✅ reCAPTCHA widget top */
-.g-recaptcha {
-  position: relative !important;
-  z-index: 999999 !important;
+/* Place Recaptcha above modal */
+.captcha-top-layer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200000 !important;
 }
 
-/* ✅ reCAPTCHA challenge popup force top */
-.g-recaptcha iframe, .grecaptcha-badge, .rc-anchor, .rc-anchor-helper, 
-.rc-anchor-invisible-text, .rc-anchor-normal-footer, 
-#rc-imageselect, .rc-popup {
-  position: relative !important;
-  z-index: 2147483647 !important; /* Highest possible */
-}
-
-/* ✅ DaisyUI Modal layering adjust */
-.modal-box {
-  z-index: 99999 !important;
-}
-.modal {
-  z-index: 99998 !important;
-}
+/* Ensure modal doesn’t go above Recaptcha */
+.modal,
+.modal-box,
 .modal-backdrop {
-  z-index: 99997 !important;
+    z-index: 9999 !important;
 }
