@@ -701,3 +701,14 @@ checkScroll();
 
 // Check on scroll
 window.addEventListener('scroll', checkScroll);
+
+
+//modal scroll off
+const orderModal = document.getElementById("orderModal");
+
+orderModal.addEventListener("close", () => {
+    document.body.classList.remove("overflow-hidden");
+});
+orderModal.addEventListener("show", () => {
+    document.body.classList.add("overflow-hidden");
+});
