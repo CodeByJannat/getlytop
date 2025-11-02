@@ -322,11 +322,3 @@
 .btn-hover-effect:hover::before {
     left: 100%;
 }
-
-/* ✅ reCAPTCHA widget top */
-/* Place Recaptcha above modal */
-.modal,
-.modal-box,
-.modal-backdrop {
-    z-index: 900 !important;
-}
