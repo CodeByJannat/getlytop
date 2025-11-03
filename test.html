@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Modal with reCAPTCHA</title>
+  <!-- Include Bootstrap CSS for styling (optional) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    .modal-dialog {
+      max-width: 600px;
+    }
+    .modal-content {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contact Button -->
+  <button class="btn btn-primary" id="contactBtn">Contact</button>
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="contactModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Contact Us</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Contact Form -->
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+              <!-- reCAPTCHA Widget -->
+              <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn" disabled>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional, for modal functionality) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Open modal on button click
+    document.getElementById('contactBtn').addEventListener('click', function() {
+      $('#contactModal').modal('show');
+    });
+
+    // Enable Submit button only if reCAPTCHA is completed
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Normally you would send the form data to your server here
+      alert("Form Submitted Successfully!");
+      $('#contactModal').modal('hide');
+    });
+
+    // Check if reCAPTCHA is completed
+    function checkRecaptcha() {
+      var recaptchaResponse = grecaptcha.getResponse();
+      if (recaptchaResponse.length > 0) {
+        document.getElementById('submitBtn').disabled = false;
+      } else {
+        document.getElementById('submitBtn').disabled = true;
+      }
+    }
+
+    // Listen to reCAPTCHA for challenge completion
+    grecaptcha.render(document.querySelector('.g-recaptcha'), {
+      'callback': checkRecaptcha
+    });
+  </script>
+</body>
+</html>
