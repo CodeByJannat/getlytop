@@ -41,7 +41,7 @@ const products = [
         name: "Food Delivery App UI",
         price: 3500,
         category: "mobile",
-        image: "https://unsplash.com/photos/brown-paper-bag-on-gray-concrete-floor-UuzUfw4qepk",
+        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         description: "Modern UI design for food delivery application",
         features: ["User-friendly Interface", "Restaurant Listings", "Order Tracking", "Payment Integration"]
     },
@@ -254,14 +254,14 @@ function setupEventListeners() {
     // Close modals when clicking outside
     document.addEventListener('click', function(event) {
         const serviceModal = document.getElementById('serviceModal');
-        const orderModal = document.getElementById('orderModal');
+        const customModal = document.getElementById('customModal');
         
         if (serviceModal && event.target === serviceModal) {
             serviceModal.close();
         }
         
-        if (orderModal && event.target === orderModal) {
-            orderModal.close();
+        if (customModal && event.target === customModal) {
+            closeModal();
         }
     });
 }
@@ -277,12 +277,12 @@ function initializeModals() {
         });
     }
     
-    // Order modal
-    const orderModal = document.getElementById('orderModal');
-    if (orderModal) {
-        orderModal.addEventListener('click', function(event) {
-            if (event.target === orderModal) {
-                orderModal.close();
+    // Custom modal (order modal)
+    const customModal = document.getElementById('customModal');
+    if (customModal) {
+        customModal.addEventListener('click', function(event) {
+            if (event.target === customModal) {
+                closeModal();
             }
         });
         
@@ -360,11 +360,13 @@ async function handleOrderFormSubmit(e) {
     if (!recaptchaResponse) {
         status.innerText = "❌ Please complete the reCAPTCHA verification";
         status.style.color = "#ef4444";
+        status.classList.remove('hidden');
         return;
     }
 
     status.innerText = "Sending...";
     status.style.color = "#334155";
+    status.classList.remove('hidden');
 
     // Show loading state
     submitBtn.innerHTML = '<div class="loading-spinner mr-2"></div> Processing...';
@@ -387,8 +389,9 @@ async function handleOrderFormSubmit(e) {
             
             // Show success message and close modal
             setTimeout(() => {
-                document.getElementById('orderModal').close();
+                closeModal();
                 status.innerText = "";
+                status.classList.add('hidden');
                 showToast('Order placed successfully! We will contact you shortly.');
             }, 2000);
         } else {
@@ -457,13 +460,27 @@ function closeServiceModal() {
     if (modal) modal.close();
 }
 
+function openModal() {
+    const modal = document.getElementById('customModal');
+    modal.classList.remove('hidden');
+    document.getElementById('status').classList.add('hidden'); // reset error
+}
+
+function closeModal() {
+    const modal = document.getElementById('customModal');
+    modal.classList.add('hidden');
+    // Reset reCAPTCHA when closing modal
+    if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.reset();
+    }
+}
+
 function openOrderModal() {
-    const modal = document.getElementById('orderModal');
-    if (modal) modal.showModal();
+    openModal();
 }
 
 function openOrderModalWithProduct(productId) {
-    const modal = document.getElementById('orderModal');
+    const modal = document.getElementById('customModal');
     const itemSelect = document.getElementById('itemSelect');
     
     if (modal && itemSelect) {
@@ -473,18 +490,18 @@ function openOrderModalWithProduct(productId) {
             updateSelectedProductInfo(product.name);
         }
         
-        modal.showModal();
+        openModal();
     }
 }
 
 function openOrderModalWithService(serviceName) {
-    const modal = document.getElementById('orderModal');
+    const modal = document.getElementById('customModal');
     const itemSelect = document.getElementById('itemSelect');
     
     if (modal && itemSelect) {
         itemSelect.value = serviceName;
         updateSelectedProductInfo(serviceName);
-        modal.showModal();
+        openModal();
     }
     
     // Close service modal
@@ -636,7 +653,7 @@ function handleContactFormSubmit(event) {
 function showToast(message) {
     // Create toast element
     const toast = document.createElement('div');
-    toast.className = 'toast';
+    toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
     toast.textContent = message;
     
     // Add to page
@@ -644,12 +661,14 @@ function showToast(message) {
     
     // Show toast
     setTimeout(() => {
-        toast.classList.add('show');
+        toast.classList.remove('translate-x-full');
+        toast.classList.add('translate-x-0');
     }, 100);
     
     // Hide and remove after delay
     setTimeout(() => {
-        toast.classList.remove('show');
+        toast.classList.remove('translate-x-0');
+        toast.classList.add('translate-x-full');
         setTimeout(() => {
             document.body.removeChild(toast);
         }, 300);
@@ -701,3 +720,48 @@ checkScroll();
 
 // Check on scroll
 window.addEventListener('scroll', checkScroll);
+
+// Close modal with ESC key
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Ensure reCAPTCHA is properly rendered when modal opens
+function ensureRecaptchaRendering() {
+    // This function ensures reCAPTCHA is properly rendered
+    if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+        // Find the reCAPTCHA widget and re-render if needed
+        const recaptchaElement = document.querySelector('.g-recaptcha');
+        if (recaptchaElement && !recaptchaElement.hasAttribute('data-callback')) {
+            grecaptcha.render(recaptchaElement, {
+                sitekey: '6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz'
+            });
+        }
+    }
+}
+
+// Call this when modal opens
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to ensure reCAPTCHA renders properly when modal opens
+    const modal = document.getElementById('customModal');
+    if (modal) {
+        // Use MutationObserver to detect when modal becomes visible
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    if (!modal.classList.contains('hidden')) {
+                        // Modal is now visible, ensure reCAPTCHA is rendered
+                        setTimeout(ensureRecaptchaRendering, 100);
+                    }
+                }
+            });
+        });
+        
+        observer.observe(modal, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
+});
