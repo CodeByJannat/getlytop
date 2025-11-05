@@ -2,9 +2,69 @@
 <html lang="en">
 
 <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getly Project Shop - Service & Product Marketplace</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Primary Meta Tags -->
+    <title>Getly Project Shop - CSE প্রজেক্ট, অ্যাসাইনমেন্ট ও ডকুমেন্টেশন সার্ভিস</title>
+    <meta name="description" content="Getly থেকে বিশ্ববিদ্যালয়ের CSE প্রজেক্ট, অ্যাসাইনমেন্ট, ডকুমেন্টেশন, নোট ও প্র্যাকটিক্যাল সল্যুশন পান। ওয়েব ডেভেলপমেন্ট, মোবাইল অ্যাপ, UI/UX ডিজাইন সার্ভিস।">
+    <meta name="keywords" content="cse project, assignment solution, university project bangladesh, web development, mobile app, java project, documentation, study materials, programming project">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://getly.top">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getly.top">
+    <meta property="og:title" content="Getly Project Shop - CSE প্রজেক্ট ও অ্যাসাইনমেন্ট সল্যুশন">
+    <meta property="og:description" content="Getly থেকে বিশ্ববিদ্যালয়ের CSE প্রজেক্ট, অ্যাসাইনমেন্ট, ডকুমেন্টেশন ও স্টাডি ম্যাটেরিয়ালস পান। প্রফেশনাল ওয়েব ডেভেলপমেন্ট সার্ভিস।">
+    <meta property="og:image" content="https://getly.top/assets/Getly_logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Getly Project Shop - CSE প্রজেক্ট সল্যুশন">
+    <meta property="og:site_name" content="Getly Project Shop">
+    <meta property="og:locale" content="bn_BD">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://getly.top">
+    <meta name="twitter:title" content="Getly Project Shop - CSE প্রজেক্ট ও অ্যাসাইনমেন্ট সল্যুশন">
+    <meta name="twitter:description" content="বিশ্ববিদ্যালয়ের CSE প্রজেক্ট, অ্যাসাইনমেন্ট, ডকুমেন্টেশন ও স্টাডি ম্যাটেরিয়ালস। প্রফেশনাল প্রোগ্রামিং সার্ভিস।">
+    <meta name="twitter:image" content="https://getly.top/assets/Getly_logo.png">
+    <meta name="twitter:creator" content="@getlyofficial">
+
+    <!-- Structured Data (JSON-LD) - Recommended -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Getly Project Shop",
+      "url": "https://getly.top",
+      "logo": "https://getly.top/assets/Getly_logo.png",
+      "description": "বিশ্ববিদ্যালয়ের CSE শিক্ষার্থীদের জন্য প্রজেক্ট, অ্যাসাইনমেন্ট ও ডকুমেন্টেশন সার্ভিস।",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "getlytop@gmail.com"
+      }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/Getly_logo.png" type="image/x-icon">
+    <link rel="icon" href="/assets/Getly_logo.png" type="image/x-icon">
+
+    <!-- HTML Lang -->
+    <meta name="language" content="Bangla, English">
+
+    <!-- Author & Publisher -->
+    <meta name="author" content="Getly Team">
+    <meta name="publisher" content="Getly Project Shop">
+
+    <!-- Preload Critical Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,8 +75,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- ✅ reCAPTCHA script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- ✅ reCAPTCHA script (Optional - will be hidden if domain is invalid) -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer onerror="handleRecaptchaError()"></script>
+    <script>
+        // Handle reCAPTCHA loading errors
+        function handleRecaptchaError() {
+            const recaptchaContainer = document.getElementById('recaptchaContainer');
+            if (recaptchaContainer) {
+                recaptchaContainer.classList.add('hidden');
+            }
+        }
+
+        // Check for reCAPTCHA domain errors after page load
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                // Check if reCAPTCHA loaded successfully
+                if (typeof grecaptcha === 'undefined') {
+                    const recaptchaContainer = document.getElementById('recaptchaContainer');
+                    if (recaptchaContainer) {
+                        recaptchaContainer.classList.add('hidden');
+                    }
+                }
+            }, 2000);
+        });
+    </script>
 </head>
 
 <body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
@@ -24,9 +106,17 @@
     <header class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#" class="flex items-center gap-3">
-                    <img src="assets/Getly_logo.png" alt="Site Logo" class="w-10 h-10">
-                    <div class="hidden sm:block">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity blur-sm">
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
+                            <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    <div>
                         <div class="text-lg font-bold gradient-text">Getly Project Shop</div>
                         <div class="text-xs text-slate-500">Service & Product Marketplace</div>
                     </div>
@@ -34,10 +124,11 @@
                 <nav class="hidden md:flex items-center gap-6">
                     <a href="#services" class="hover:text-indigo-600 font-medium transition-colors">Services</a>
                     <a href="#shop" class="hover:text-indigo-600 font-medium transition-colors">Shop</a>
+                    <a href="#team" class="hover:text-indigo-600 font-medium transition-colors">Our Team</a>
                     <a href="#about" class="hover:text-indigo-600 font-medium transition-colors">About</a>
                     <a href="#contact" class="hover:text-indigo-600 font-medium transition-colors">Contact</a>
                 </nav>
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 max-md:hidden">
                     <div class="relative">
                         <button id="whatsappBtn"
                             class="px-4 py-2 rounded-md bg-green-600 text-white text-sm shadow hover:bg-green-700 transition-colors flex items-center gap-2">
@@ -50,6 +141,11 @@
                         <i class="fa-brands fa-first-order" style="color: #74C0FC;"></i>
                         Quick Order
                     </button>
+                    <button id="reviewsBtn"
+                        class="px-4 py-2 rounded-md border border-purple-600 text-purple-600 text-sm hover:bg-purple-50 transition-colors">
+                        <i class="fas fa-star" style="color: #a855f7;"></i>
+                        Reviews
+                    </button>
                 </div>
             </div>
         </div>
@@ -58,73 +154,209 @@
             <div class="px-4 py-3 flex flex-col gap-2">
                 <a href="#services" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Services</a>
                 <a href="#shop" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Shop</a>
+                <a href="#team" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Our Team</a>
                 <a href="#about" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">About</a>
                 <a href="#contact" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Contact</a>
+
+                <!-- WhatsApp Button -->
+                <button id="mobileWhatsappBtn"
+                    class="flex justify-start py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">
+                    WhatsApp Us
+                </button>
+
+                <!-- Quick Order Button -->
+                <button id="mobileQuickOrderBtn"
+                    class="flex justify-start py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">
+                    Quick Order
+                </button>
+
+                <!-- Reviews Button -->
+                <button id="mobileReviewsBtn"
+                    class="flex justify-start py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">
+                    Reviews
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-2">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
+        <!-- Hero Section with Enhanced Animations -->
+        <section class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-20 left-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+                </div>
+                <div
+                    class="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="fade-in-up">
                     <div
-                        class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
-                        <i class="fas fa-rocket mr-1"></i> CSE Project Expert Team
+                        class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800 text-sm font-medium mb-6 animate-pulse-slow">
+                        <i class="fas fa-rocket mr-2"></i> CSE Project Expert Team
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">🎓 "CSE প্রজেক্ট এখন আরও সহজ — Getly
-                        তে!"<span class="gradient-text">We're Here</span></h1>
-                    <p class="mt-4 text-slate-600 text-lg">বিশ্ববিদ্যালয়ের সিএসই প্রজেক্ট নিয়ে ঝামেলা? Getly তোমার পাশে
-                        — আমরা দেই Complete Project Assistance, Design থেকে Documentation পর্যন্ত।</p>
-                    <div class="mt-8 flex gap-3 flex-wrap">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                        <span class="block text-slate-800">🎓 "CSE প্রজেক্ট</span>
+                        <span class="block text-slate-800">এখন আরও সহজ —</span>
+                        <span class="block gradient-text animate-gradient">Getly তে!"</span>
+                    </h1>
+                    <div class="mt-6 space-y-4">
+                        <p class="text-slate-700 text-xl font-semibold leading-relaxed">
+                            CSE প্রজেক্ট নিয়ে দুশ্চিন্তা নয়, Getly আছে আপনার পাশে।
+                        </p>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            আমরা দিই সম্পূর্ণ প্রজেক্ট সল্যুশন — Design, Development থেকে Documentation পর্যন্ত, যাতে
+                            আপনার প্রজেক্ট হয় নিখুঁত, সময়মতো প্রস্তুত, আর একদম প্রফেশনাল মানের।
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200">
+                            <!-- বিশ্ববিদ্যালয় মানের প্রজেক্ট -->
+                            <div
+                                class="group relative p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-2xl">🎓</span>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="text-sm font-bold text-indigo-900 group-hover:text-indigo-700 transition-colors">
+                                            বিশ্ববিদ্যালয় মানের প্রজেক্ট
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Hover glow effect -->
+                                <div
+                                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-400 to-indigo-500 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300">
+                                </div>
+                            </div>
+
+                            <!-- এক্সপার্ট গাইডলাইন -->
+                            <div
+                                class="group relative p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-2xl">💡</span>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="text-sm font-bold text-purple-900 group-hover:text-purple-700 transition-colors">
+                                            এক্সপার্ট গাইডলাইন
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Hover glow effect -->
+                                <div
+                                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-400 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300">
+                                </div>
+                            </div>
+
+                            <!-- Ready to Submit -->
+                            <div
+                                class="group relative p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 hover:border-green-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-2xl">⚙️</span>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="text-sm font-bold text-green-900 group-hover:text-green-700 transition-colors">
+                                            Ready to Submit
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Hover glow effect -->
+                                <div
+                                    class="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-400 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 flex gap-4 flex-wrap">
                         <a href="#services"
-                            class="px-6 py-3 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                            class="group px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                             <i class="fas fa-laptop-code"></i> আমাদের সার্ভিস
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </a>
                         <a href="#shop"
-                            class="px-6 py-3 rounded-md border hover:bg-slate-50 transition-colors flex items-center gap-2">
+                            class="group px-8 py-4 rounded-xl border-2 border-indigo-600 text-indigo-600 font-semibold hover:bg-indigo-50 transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                             <i class="fas fa-shopping-bag"></i> প্রজেক্ট অর্ডার করো
                         </a>
                     </div>
 
-                    <div class="mt-10 grid grid-cols-3 gap-4 text-sm">
-                        <div class="p-4 bg-white rounded-lg shadow-sm text-center service-card">
+                    <div class="mt-12 grid grid-cols-3 gap-4 text-sm">
+                        <div onclick="openFeatureModal('guarantee')"
+                            class="p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md text-center service-card hover:shadow-xl transition-all duration-300 border border-slate-100 cursor-pointer group">
                             <div
-                                class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-2">
-                                <i class="fas fa-shield-alt"></i>
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-green-100 to-emerald-100 text-green-600 flex items-center justify-center mx-auto mb-3 transform group-hover:scale-110 transition-transform">
+                                <i class="fas fa-shield-alt text-lg"></i>
                             </div>
-                            <div class="font-semibold">Guarantee</div>
-                            <div class="text-slate-500">3 Months Support</div>
+                            <div class="font-bold text-slate-800">Guarantee</div>
+                            <div class="text-slate-500 text-xs mt-1">3 Months Support</div>
+                            <div
+                                class="mt-2 text-indigo-600 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-info-circle mr-1"></i>Click for details
+                            </div>
                         </div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm text-center service-card">
+                        <div onclick="openFeatureModal('customization')"
+                            class="p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md text-center service-card hover:shadow-xl transition-all duration-300 border border-slate-100 cursor-pointer group">
                             <div
-                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2">
-                                <i class="fas fa-palette"></i>
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600 flex items-center justify-center mx-auto mb-3 transform group-hover:scale-110 transition-transform">
+                                <i class="fas fa-palette text-lg"></i>
                             </div>
-                            <div class="font-semibold">Customization</div>
-                            <div class="text-slate-500">Tailored to Your Needs</div>
+                            <div class="font-bold text-slate-800">Customization</div>
+                            <div class="text-slate-500 text-xs mt-1">Tailored to Your Needs</div>
+                            <div
+                                class="mt-2 text-indigo-600 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-info-circle mr-1"></i>Click for details
+                            </div>
                         </div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm text-center service-card">
+                        <div onclick="openFeatureModal('fast-delivery')"
+                            class="p-5 bg-white/80 backdrop-blur-sm rounded-xl shadow-md text-center service-card hover:shadow-xl transition-all duration-300 border border-slate-100 cursor-pointer group">
                             <div
-                                class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-2">
-                                <i class="fas fa-shipping-fast"></i>
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 text-purple-600 flex items-center justify-center mx-auto mb-3 transform group-hover:scale-110 transition-transform">
+                                <i class="fas fa-shipping-fast text-lg"></i>
                             </div>
-                            <div class="font-semibold">Fast Delivery</div>
-                            <div class="text-slate-500">On-Time Completion</div>
+                            <div class="font-bold text-slate-800">Fast Delivery</div>
+                            <div class="text-slate-500 text-xs mt-1">On-Time Completion</div>
+                            <div
+                                class="mt-2 text-indigo-600 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-info-circle mr-1"></i>Click for details
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="fade-in">
+                <div class="fade-in-right">
                     <div class="relative">
-                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl transform rotate-3 opacity-20 blur-xl">
+                        </div>
+                        <div
+                            class="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                                 alt="preview" class="w-full h-auto object-cover">
                         </div>
-                        <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-slate-200 animate-float">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-4 h-4 rounded-full bg-green-500 animate-pulse shadow-lg shadow-green-500/50">
+                                </div>
+                                <span class="text-sm font-bold text-slate-800">Order Now</span>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-10 -right-10 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-200 animate-float-delayed">
                             <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                                <span class="text-sm font-medium">Order Now</span>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-xs font-semibold">4.9/5 Rating</span>
                             </div>
                         </div>
                     </div>
@@ -133,75 +365,193 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-16 bg-gradient-to-b from-slate-50 to-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold">Our Services</h2>
-                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">We build any type of project you need — web,
-                        mobile, graphics, from idea to delivery.</p>
+        <section id="services"
+            class="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div class="absolute top-20 right-20 w-96 h-96 bg-indigo-100 rounded-full filter blur-3xl opacity-10">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div
-                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                <div class="absolute bottom-20 left-20 w-96 h-96 bg-pink-100 rounded-full filter blur-3xl opacity-10">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold mb-6">
+                        <span class="text-slate-800">Our</span> <span class="gradient-text">Services</span>
+                    </h2>
+                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+                        We build any type of project you need — from web applications and mobile apps to graphics design
+                        and UI/UX solutions. Our comprehensive services cover everything from initial concept and design
+                        to complete development and delivery, ensuring your project is ready for presentation and
+                        submission.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group p-8 bg-gradient-to-br from-white to-indigo-50/30 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 service-card border-2 border-indigo-100 transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden cursor-pointer"
+                        onclick="openServiceModal('web-development')">
+                        <!-- Animated background gradient -->
                         <div
-                            class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-code text-xl"></i>
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <div class="text-indigo-600 font-semibold text-lg">Web Development</div>
-                        <p class="mt-3 text-slate-600">JSP, Java, Oracle, HTML/CSS — from university/bureau projects to
-                            commercial websites.</p>
-                        <div class="mt-4 flex gap-2">
+                        <!-- Decorative corner element -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-indigo-500/50">
+                                    <i class="fas fa-code text-3xl"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-bold text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-fire text-orange-500 mr-1"></i>Popular
+                                </div>
+                            </div>
+                            <h3
+                                class="text-indigo-700 font-extrabold text-2xl mb-3 group-hover:text-indigo-900 transition-colors">
+                                Web Development</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm">JSP, Java, Oracle, HTML/CSS —
+                                বিশ্ববিদ্যালয় থেকে কমার্শিয়াল ওয়েবসাইট পর্যন্ত সব ধরনের প্রজেক্ট।</p>
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="flex -space-x-2">
+                                    <div class="w-6 h-6 rounded-full bg-green-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white"></div>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">100+ Projects</span>
+                            </div>
                             <button
-                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="openServiceModal('web-development')">Details →
+                                class="w-full group/btn px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                                View Details
+                                <i class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div
-                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                    <div class="group p-8 bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 service-card border-2 border-pink-100 transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden cursor-pointer"
+                        onclick="openServiceModal('ui-design')">
+                        <!-- Animated background gradient -->
                         <div
-                            class="w-12 h-12 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-palette text-xl"></i>
+                            class="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-rose-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <div class="text-indigo-600 font-semibold text-lg">UI/UX & Design</div>
-                        <p class="mt-3 text-slate-600">Professional layouts, mobile-first design, and branding.</p>
-                        <div class="mt-4 flex gap-2">
+                        <!-- Decorative corner element -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-20 h-20 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-pink-500/50">
+                                    <i class="fas fa-palette text-3xl"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-bold text-pink-600 bg-pink-100 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-star text-yellow-500 mr-1"></i>Trending
+                                </div>
+                            </div>
+                            <h3
+                                class="text-pink-700 font-extrabold text-2xl mb-3 group-hover:text-pink-900 transition-colors">
+                                UI/UX & Design</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm">Professional layouts, mobile-first
+                                design, এবং সম্পূর্ণ branding solution আপনার প্রজেক্টের জন্য।</p>
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="flex -space-x-2">
+                                    <div class="w-6 h-6 rounded-full bg-pink-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-rose-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-red-500 border-2 border-white"></div>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">80+ Designs</span>
+                            </div>
                             <button
-                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="openServiceModal('ui-design')">Details →
+                                class="w-full group/btn px-4 py-3 bg-gradient-to-r from-pink-600 to-rose-600 text-white font-bold rounded-xl hover:from-pink-700 hover:to-rose-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                                View Details
+                                <i class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div
-                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                    <div class="group p-8 bg-gradient-to-br from-white to-green-50/30 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 service-card border-2 border-green-100 transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden cursor-pointer"
+                        onclick="openServiceModal('mobile-apps')">
+                        <!-- Animated background gradient -->
                         <div
-                            class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-mobile-alt text-xl"></i>
+                            class="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <div class="text-indigo-600 font-semibold text-lg">Mobile Apps</div>
-                        <p class="mt-3 text-slate-600">Android and iOS application development with UI/UX design.</p>
-                        <div class="mt-4 flex gap-2">
+                        <!-- Decorative corner element -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 text-white flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-green-500/50">
+                                    <i class="fas fa-mobile-alt text-3xl"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-bold text-green-600 bg-green-100 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-rocket text-blue-500 mr-1"></i>Fast
+                                </div>
+                            </div>
+                            <h3
+                                class="text-green-700 font-extrabold text-2xl mb-3 group-hover:text-green-900 transition-colors">
+                                Mobile Apps</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm">Android এবং iOS এর জন্য native এবং
+                                cross-platform app development সহ UI/UX design।</p>
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="flex -space-x-2">
+                                    <div class="w-6 h-6 rounded-full bg-green-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-teal-500 border-2 border-white"></div>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">50+ Apps</span>
+                            </div>
                             <button
-                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="openServiceModal('mobile-apps')">Details →
+                                class="w-full group/btn px-4 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold rounded-xl hover:from-green-700 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                                View Details
+                                <i class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div
-                        class="p-6 bg-white rounded-xl shadow hover:shadow-md transition-all service-card border border-slate-100">
+                    <div class="group p-8 bg-gradient-to-br from-white to-purple-50/30 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 service-card border-2 border-purple-100 transform hover:-translate-y-3 hover:scale-105 relative overflow-hidden cursor-pointer"
+                        onclick="openServiceModal('ready-products')">
+                        <!-- Animated background gradient -->
                         <div
-                            class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-box text-xl"></i>
+                            class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-violet-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <div class="text-indigo-600 font-semibold text-lg">Ready-to-Sell Products</div>
-                        <p class="mt-3 text-slate-600">Templates, themes, and small tools you can sell directly.</p>
-                        <div class="mt-4 flex gap-2">
+                        <!-- Decorative corner element -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 text-white flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-purple-500/50">
+                                    <i class="fas fa-box text-3xl"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-bold text-purple-600 bg-purple-100 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-bolt text-yellow-500 mr-1"></i>Instant
+                                </div>
+                            </div>
+                            <h3
+                                class="text-purple-700 font-extrabold text-2xl mb-3 group-hover:text-purple-900 transition-colors">
+                                Ready-to-Sell Products</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm">Pre-built templates, themes, এবং
+                                ready-made tools যা আপনি সরাসরি কাস্টমাইজ করে ব্যবহার করতে পারবেন।</p>
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="flex -space-x-2">
+                                    <div class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-violet-500 border-2 border-white"></div>
+                                    <div class="w-6 h-6 rounded-full bg-indigo-500 border-2 border-white"></div>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">30+ Templates</span>
+                            </div>
                             <button
-                                class="btn text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
-                                onclick="openServiceModal('ready-products')">Details →
+                                class="w-full group/btn px-4 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-bold rounded-xl hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                                View Details
+                                <i class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
                             </button>
                         </div>
                     </div>
@@ -209,19 +559,194 @@
             </div>
         </section>
 
+        <!-- Pricing Section -->
+        <section id="pricing"
+            class="py-24 bg-gradient-to-b from-white via-indigo-50/30 to-white relative overflow-hidden">
+            <!-- Decorative Background Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-20 left-10 w-96 h-96 bg-indigo-200 rounded-full filter blur-3xl opacity-20 animate-blob">
+                </div>
+                <div
+                    class="absolute bottom-20 right-10 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-200 rounded-full filter blur-3xl opacity-10 animate-blob animation-delay-4000">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Header Section -->
+                <div class="text-center mb-16 fade-in-up">
+                    <div
+                        class="inline-block px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 text-indigo-800 text-sm font-semibold mb-6 shadow-sm">
+                        <i class="fas fa-graduation-cap mr-2 text-purple-600"></i> CSE Student Friendly Pricing
+                    </div>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+                        <span class="gradient-text">Pricing</span> <span class="text-slate-800">that grows with
+                            you</span>
+                    </h2>
+                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed">
+                        আমরা CSE ছাত্রদের জন্য বিশেষভাবে তৈরি করা affordable pricing plan দিই। আপনার প্রজেক্টের ধরন
+                        অনুযায়ী সঠিক প্যাকেজ বেছে নিন — Mini Project থেকে Major Project পর্যন্ত, সব কিছুর জন্য ready
+                        solution পাবেন।
+                    </p>
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div
+                            class="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="text-4xl mb-3">✅</div>
+                            <h3 class="font-bold text-green-800 mb-2 text-lg">100% Original</h3>
+                            <p class="text-sm text-green-700">সম্পূর্ণ ইউনিক কোড, প্লেজিয়ারিজম ফ্রি</p>
+                        </div>
+                        <div
+                            class="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border-2 border-blue-200 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="text-4xl mb-3">⚡</div>
+                            <h3 class="font-bold text-blue-800 mb-2 text-lg">Fast Delivery</h3>
+                            <p class="text-sm text-blue-700">সময়মতো ডেলিভারি গ্যারান্টি</p>
+                        </div>
+                        <div
+                            class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-200 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="text-4xl mb-3">🎓</div>
+                            <h3 class="font-bold text-purple-800 mb-2 text-lg">Viva Ready</h3>
+                            <p class="text-sm text-purple-700">Viva পরীক্ষার জন্য সম্পূর্ণ প্রস্তুতি</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-12">
+                    <!-- Mini Project Plan -->
+                    <div class="pricing-card group">
+                        <div class="pricing-card-inner">
+                            <div class="pricing-badge">Mini Project</div>
+                            <div class="pricing-icon-wrapper">
+                                <div class="pricing-icon bg-gradient-to-br from-blue-500 to-cyan-500">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-amount">৳2,999</span>
+                                <span class="price-period">/প্রজেক্ট</span>
+                            </div>
+                            <p class="pricing-description">ছোটখাটো Mini Project-এর জন্য পারফেক্ট — সময়মতো ডেলিভারি
+                                গ্যারান্টি</p>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Complete UI/UX Design</li>
+                                <li><i class="fas fa-check-circle"></i> Full Source Code (JSP/Java)</li>
+                                <li><i class="fas fa-check-circle"></i> Project Documentation</li>
+                                <li><i class="fas fa-check-circle"></i> Database Setup (Oracle/MySQL)</li>
+                                <li><i class="fas fa-check-circle"></i> 1-2 Free Revisions</li>
+                                <li><i class="fas fa-check-circle"></i> Viva Preparation Support</li>
+                                <li><i class="fas fa-check-circle"></i> 3-5 Days Delivery</li>
+                            </ul>
+
+                            <button onclick="openOrderModal()" class="pricing-button pricing-button-primary">
+                                <span>অর্ডার করুন</span>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Major Project Plan (Popular) -->
+                    <div class="pricing-card pricing-card-featured group">
+                        <div class="popular-badge">
+                            <i class="fas fa-star"></i> সবচেয়ে জনপ্রিয়
+                        </div>
+                        <div class="pricing-card-inner">
+                            <div class="pricing-badge">Major Project</div>
+                            <div class="pricing-icon-wrapper">
+                                <div class="pricing-icon bg-gradient-to-br from-indigo-500 to-purple-500">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-amount">৳5,999</span>
+                                <span class="price-period">/প্রজেক্ট</span>
+                            </div>
+                            <p class="pricing-description">Final Year Major Project-এর জন্য সম্পূর্ণ সল্যুশন — সব কিছু
+                                included!</p>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Premium UI/UX Design</li>
+                                <li><i class="fas fa-check-circle"></i> Complete Backend Development</li>
+                                <li><i class="fas fa-check-circle"></i> Detailed Documentation & Report</li>
+                                <li><i class="fas fa-check-circle"></i> 2-3 Free Revisions</li>
+                                <li><i class="fas fa-check-circle"></i> Priority WhatsApp Support</li>
+                                <li><i class="fas fa-check-circle"></i> Complete Source Code</li>
+                                <li><i class="fas fa-check-circle"></i> Database Design & Setup</li>
+                                <li><i class="fas fa-check-circle"></i> Viva Preparation Guide</li>
+                                <li><i class="fas fa-check-circle"></i> 7-15 Days Delivery</li>
+                            </ul>
+
+                            <button onclick="openOrderModal()" class="pricing-button pricing-button-featured">
+                                <span>এখনই অর্ডার করুন</span>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Premium Project Plan -->
+                    <div class="pricing-card group">
+                        <div class="pricing-card-inner">
+                            <div class="pricing-badge">Premium Project</div>
+                            <div class="pricing-icon-wrapper">
+                                <div class="pricing-icon bg-gradient-to-br from-pink-500 to-rose-500">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-amount">৳12,999</span>
+                                <span class="price-period">/প্রজেক্ট</span>
+                            </div>
+                            <p class="pricing-description">এডভান্সড প্রজেক্টের জন্য — সব feature সহ সম্পূর্ণ solution
+                            </p>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Custom Premium UI/UX Design</li>
+                                <li><i class="fas fa-check-circle"></i> Full-Stack Development</li>
+                                <li><i class="fas fa-check-circle"></i> Complete Documentation & Thesis</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Revisions</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7 Priority WhatsApp Support</li>
+                                <li><i class="fas fa-check-circle"></i> Complete Source Code & Database</li>
+                                <li><i class="fas fa-check-circle"></i> Deployment & Installation Help</li>
+                                <li><i class="fas fa-check-circle"></i> Advanced Features & APIs</li>
+                                <li><i class="fas fa-check-circle"></i> Complete Viva Preparation</li>
+                            </ul>
+
+                            <button onclick="openOrderModal()" class="pricing-button pricing-button-primary">
+                                <span>অর্ডার করুন</span>
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Shop Section -->
-        <section id="shop" class="py-16 bg-white">
+        <section id="shop" class="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
-                    <h2 class="text-3xl font-bold mb-4 md:mb-0">Popular Products</h2>
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
+                    <div>
+                        <div
+                            class="inline-block px-4 py-2 rounded-full bg-indigo-100 text-indigo-600 text-sm font-semibold mb-4">
+                            <i class="fas fa-store mr-2"></i> Browse Our Products
+                        </div>
+                        <h2 class="text-4xl sm:text-5xl font-extrabold mb-2">
+                            <span class="text-slate-800">Popular</span> <span class="gradient-text">Products</span>
+                        </h2>
+                    </div>
                     <div class="flex items-center gap-3">
-                        <label class="text-sm text-slate-500">Sort</label>
+                        <label class="text-sm font-semibold text-slate-600">
+                            <i class="fas fa-filter mr-2 text-indigo-600"></i>Filter by:
+                        </label>
                         <select id="sortSelect"
-                            class="border rounded px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
-                            <option value="newest">Newest</option>
-                            <option value="bestselling">Best Selling</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
+                            class="border-2 border-indigo-200 rounded-xl px-4 py-2.5 text-sm font-semibold bg-white text-slate-700 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all shadow-sm hover:shadow-md cursor-pointer">
+                            <option value="newest">🆕 Newest Projects</option>
+                            <option value="bestselling">🔥 Best Selling</option>
+                            <option value="popular">⭐ Most Popular</option>
                         </select>
                     </div>
                 </div>
@@ -232,218 +757,255 @@
             </div>
         </section>
 
-        <!-- Pricing Section -->
-        <section class="py-20 bg-white">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mt-2">Pricing that grows with you</h2>
-                <p class="text-gray-500 mt-4">
-                    Choose an affordable plan that's packed with the best features for engaging your audience,
-                    creating customer loyalty, and driving sales.
-                </p>
-            </div>
-
-            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
-                <!-- Freelancer Card -->
-                <div class="border rounded-3xl p-8 shadow-sm hover:shadow-xl transition">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Freelancer</h3>
-                    <p class="text-gray-500 mb-6">The essentials to provide your best work for clients.</p>
-
-                    <p class="text-4xl font-bold text-gray-900 mb-6">$19<span
-                            class="text-lg font-medium text-gray-600">/month</span></p>
-
-                    <ul class="space-y-3 mb-8 text-gray-600">
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 5 products
-                        </li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Up to 1,000
-                            subscribers</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Basic
-                            analytics</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 48-hour
-                            support response time</li>
-                    </ul>
-
-                    <button
-                        class="w-full border border-indigo-500 text-indigo-600 py-3 rounded-xl font-medium hover:bg-indigo-500 hover:text-white transition">
-                        Buy plan
-                    </button>
-                </div>
-
-                <!-- Startup Card (Highlighted) -->
-                <div class="border-2 border-indigo-600 rounded-3xl p-8 shadow-xl bg-white relative">
-                    <span
-                        class="absolute top-4 right-4 bg-indigo-100 text-indigo-600 text-xs font-medium px-3 py-1 rounded-lg">
-                        Most popular
-                    </span>
-
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Startup</h3>
-                    <p class="text-gray-500 mb-6">A plan that scales with your rapidly growing business.</p>
-
-                    <p class="text-4xl font-bold text-gray-900 mb-6">$49<span
-                            class="text-lg font-medium text-gray-600">/month</span></p>
-
-                    <ul class="space-y-3 mb-8 text-gray-600">
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 25 products
-                        </li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Up to 10,000
-                            subscribers</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Advanced
-                            analytics</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 24-hour
-                            support response time</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Marketing
-                            automations</li>
-                    </ul>
-
-                    <button
-                        class="w-full bg-indigo-600 text-white py-3 rounded-xl font-medium hover:bg-indigo-700 transition">
-                        Buy plan
-                    </button>
-                </div>
-
-                <!-- Enterprise Card -->
-                <div class="border rounded-3xl p-8 shadow-sm hover:shadow-xl transition">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise</h3>
-                    <p class="text-gray-500 mb-6">Dedicated support and infrastructure for your company.</p>
-
-                    <p class="text-4xl font-bold text-gray-900 mb-6">$99<span
-                            class="text-lg font-medium text-gray-600">/month</span></p>
-
-                    <ul class="space-y-3 mb-8 text-gray-600">
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Unlimited
-                            products</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Unlimited
-                            subscribers</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Advanced
-                            analytics</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> 1-hour
-                            dedicated support response time</li>
-                        <li class="flex items-center gap-2"><span class="text-indigo-600 text-lg">✔</span> Marketing
-                            automations</li>
-                    </ul>
-
-                    <button
-                        class="w-full border border-indigo-500 text-indigo-600 py-3 rounded-xl font-medium hover:bg-indigo-500 hover:text-white transition">
-                        Buy plan
-                    </button>
-                </div>
-            </div>
-        </section>
-
-
         <!--  About Section -->
         <section id="about" class="py-20 bg-gradient-to-b from-white to-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <!-- Our Story -->
-                <div class="text-center mb-16">
-                    <h2
-                        class="text-4xl font-extrabold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-indigo-600">
-                        Our Story
+                <!-- Our Journey Begins -->
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 relative pb-6">
+                        <span class="text-slate-800">Our Journey</span> <span class="gradient-text">Begins</span>
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-indigo-600 rounded-full">
+                        </div>
                     </h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
-                        Getly Project Shop began with a simple mission — to make CSE projects accessible and stress-free
-                        for students across Bangladesh.
+                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+                        Getly Project Shop began with a simple yet powerful mission — to transform the CSE project
+                        experience
+                        for students across Bangladesh. We believe every student deserves access to professional,
+                        high-quality project solutions that help them excel academically.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-                    <div class="fade-in">
+                    <div class="fade-in relative">
                         <div
-                            class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl transform rotate-3 opacity-20 blur-xl">
+                        </div>
+                        <div
+                            class="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-indigo-500/50 transition-all duration-500 transform hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1171&q=80"
                                 alt="Getly Team" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <div class="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-slate-800">Founded in 2024</div>
+                                            <div class="text-sm text-slate-600">Building the future of CSE projects
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <h3
-                            class="text-2xl font-bold text-slate-800 mb-4 relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-indigo-600">
-                            Our Journey
+                    <div class="fade-in-right">
+                        <div
+                            class="inline-block px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-6">
+                            <i class="fas fa-road mr-2"></i> Our Journey
+                        </div>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-6">
+                            <span class="gradient-text">From Vision</span> <span class="text-slate-800">to
+                                Reality</span>
                         </h3>
-                        <p class="text-slate-600 mb-4 leading-relaxed">
-                            Founded in 2020, Getly Project Shop started as a small initiative to help fellow CSE
-                            students with their academic projects. We understood the challenges students face — tight
-                            deadlines, complex requirements, and limited resources.
-                        </p>
-                        <p class="text-slate-600 mb-4 leading-relaxed">
-                            What began as a peer-to-peer assistance program has grown into a comprehensive project
-                            development service, helping hundreds of students successfully complete their academic
-                            requirements while learning valuable skills along the way.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            Our team of dedicated developers, designers, and project managers work together to ensure
-                            every project meets academic standards while providing students with the understanding they
-                            need to defend their work.
-                        </p>
+
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-start gap-4 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border-l-4 border-indigo-500">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-lightbulb text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-2">The Beginning (2024)</h4>
+                                    <p class="text-slate-600 leading-relaxed">
+                                        Founded in 2024, Getly Project Shop emerged from a shared vision among
+                                        passionate CSE graduates
+                                        who understood the real struggles students face. We recognized the gap between
+                                        academic
+                                        requirements and available resources, and decided to bridge it.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start gap-4 p-4 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl border-l-4 border-pink-500">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-users text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-2">Our Growth</h4>
+                                    <p class="text-slate-600 leading-relaxed">
+                                        What started as a peer-to-peer assistance initiative quickly evolved into a
+                                        comprehensive
+                                        project development platform. Today, we've helped hundreds of students achieve
+                                        academic
+                                        excellence while building their confidence and understanding.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start gap-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-l-4 border-green-500">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-star text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-2">Our Commitment</h4>
+                                    <p class="text-slate-600 leading-relaxed">
+                                        Our expert team of developers, designers, and project managers work
+                                        collaboratively to ensure
+                                        every project meets the highest academic standards. We don't just deliver
+                                        projects —
+                                        we provide complete solutions with documentation, support, and guidance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mt-8 p-6 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl text-white shadow-xl">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                    <i class="fas fa-trophy text-3xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold mb-1">100% Quality Guaranteed</div>
+                                    <div class="text-indigo-100">Every project is crafted with precision and care</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Our Philosophy -->
                 <div class="text-center mb-16">
-                    <h2
-                        class="text-3xl font-bold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-indigo-600">
-                        Our Philosophy
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 relative pb-4">
+                        <span class="text-slate-800">Our</span> <span class="gradient-text">Philosophy</span>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-indigo-600 rounded-full">
+                        </div>
                     </h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
-                        We believe in empowering students with quality project assistance that enhances their learning
-                        experience.
+                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+                        At Getly Project Shop, we believe in empowering students with quality project assistance that
+                        transforms their learning experience. Our core values guide everything we do, ensuring every
+                        student receives the support they need to excel academically and professionally.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                     <div
-                        class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                        class="group relative p-8 bg-gradient-to-br from-white to-indigo-50/50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-indigo-200 hover:border-indigo-500 transform hover:-translate-y-2 overflow-hidden">
                         <div
-                            class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-graduation-cap text-xl"></i>
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-200/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="font-semibold text-lg text-slate-800 mb-2">Educational Focus</h3>
-                        <p class="text-slate-600">We don't just deliver projects — we ensure students understand the
-                            concepts behind them, preparing them for viva and future endeavors.</p>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                <i class="fas fa-graduation-cap text-2xl"></i>
+                            </div>
+                            <h3
+                                class="font-bold text-2xl text-slate-800 mb-4 group-hover:text-indigo-700 transition-colors">
+                                Educational Excellence</h3>
+                            <p class="text-slate-600 leading-relaxed text-base">
+                                We don't just deliver projects — we ensure students truly understand the concepts,
+                                methodologies, and technologies behind them. Our comprehensive approach includes
+                                detailed
+                                documentation, code explanations, and guidance that prepares students for viva
+                                examinations
+                                and future professional endeavors.
+                            </p>
+                        </div>
                     </div>
                     <div
-                        class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                        class="group relative p-8 bg-gradient-to-br from-white to-green-50/50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-500 transform hover:-translate-y-2 overflow-hidden">
                         <div
-                            class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-handshake text-xl"></i>
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="font-semibold text-lg text-slate-800 mb-2">Ethical Approach</h3>
-                        <p class="text-slate-600">We maintain academic integrity while providing the support students
-                            need to succeed in their coursework.</p>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                <i class="fas fa-handshake text-2xl"></i>
+                            </div>
+                            <h3
+                                class="font-bold text-2xl text-slate-800 mb-4 group-hover:text-green-700 transition-colors">
+                                Ethical & Transparent</h3>
+                            <p class="text-slate-600 leading-relaxed text-base">
+                                We maintain the highest standards of academic integrity while providing the essential
+                                support students need to succeed. Our transparent communication, honest practices, and
+                                commitment to originality ensure that every project helps students learn and grow
+                                ethically.
+                            </p>
+                        </div>
                     </div>
                     <div
-                        class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                        class="group relative p-8 bg-gradient-to-br from-white to-blue-50/50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-blue-200 hover:border-blue-500 transform hover:-translate-y-2 overflow-hidden">
                         <div
-                            class="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-users text-xl"></i>
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="font-semibold text-lg text-slate-800 mb-2">Collaborative Process</h3>
-                        <p class="text-slate-600">We work closely with students throughout the project lifecycle,
-                            incorporating their feedback and requirements.</p>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                <i class="fas fa-users text-2xl"></i>
+                            </div>
+                            <h3
+                                class="font-bold text-2xl text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">
+                                Collaborative Partnership</h3>
+                            <p class="text-slate-600 leading-relaxed text-base">
+                                We work closely with students throughout the entire project lifecycle, actively
+                                incorporating
+                                their feedback, requirements, and ideas. From initial consultation to final delivery, we
+                                maintain open communication and ensure every project reflects the student's vision and
+                                needs.
+                            </p>
+                        </div>
                     </div>
                     <div
-                        class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                        class="group relative p-8 bg-gradient-to-br from-white to-purple-50/50 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-purple-200 hover:border-purple-500 transform hover:-translate-y-2 overflow-hidden">
                         <div
-                            class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
-                            <i class="fas fa-rocket text-xl"></i>
+                            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="font-semibold text-lg text-slate-800 mb-2">Innovation Driven</h3>
-                        <p class="text-slate-600">We stay updated with the latest technologies and academic trends to
-                            deliver relevant, cutting-edge solutions.</p>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                <i class="fas fa-rocket text-2xl"></i>
+                            </div>
+                            <h3
+                                class="font-bold text-2xl text-slate-800 mb-4 group-hover:text-purple-700 transition-colors">
+                                Innovation & Excellence</h3>
+                            <p class="text-slate-600 leading-relaxed text-base">
+                                We stay constantly updated with the latest technologies, frameworks, and academic trends
+                                to
+                                deliver relevant, cutting-edge solutions. Our team continuously learns and adapts,
+                                ensuring
+                                every project incorporates modern best practices and industry standards.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Our Team -->
-                <div class="text-center mb-16">
-                    <h2
-                        class="text-3xl font-bold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-indigo-600">
-                        Our Team
+                <div id="team" class="text-center mb-16 scroll-mt-20">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 relative pb-4">
+                        <span class="text-slate-800">Our</span> <span class="gradient-text">Team</span>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-indigo-600 rounded-full">
+                        </div>
                     </h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
-                        Meet the passionate developers and designers behind Getly Project Shop
+                    <p class="text-slate-600 mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
+                        The professional developers and creative designers at Getly Project Shop, who make your project
+                        flawless and presentation-ready. Our dedicated team combines technical expertise with creative
+                        innovation to deliver exceptional results that exceed expectations.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     <!-- Team Member -->
                     <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
                         <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-indigo-500">
@@ -455,18 +1017,6 @@
                             solutions and efficient team operations</p>
                         <a href="mailto:sohanbhuyan7@gmail.com"
                             class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">sohanbhuyan7@gmail.com</a>
-                    </div>
-
-                    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
-                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-indigo-500">
-                            <img src="assets/rm.jpg" alt="Team Member" class="w-full h-full object-cover ">
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800">Boishakhi Akter Rimi</h3>
-                        <p class="text-indigo-600 font-medium mb-2">Project Coordinator</p>
-                        <p class="text-slate-500 text-sm">Ensures smooth communication, timely delivery, and team
-                            alignment across all project phases</p>
-                        <a href="mailto:boishakhirimi123@gmail.com"
-                            class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">boishakhirimi123@gmail.com</a>
                     </div>
 
                     <div class="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 text-center transition-all">
@@ -490,68 +1040,98 @@
                         <p class="text-slate-500 text-sm">Backend and database expert driving marketing strategy and
                             financial planning with precision.</p>
                         <a href="mailto:shafiul3718@gmail.com"
-                            class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">shafiul3718@gmail.com</a>
+                            class="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">islamshafiul741@gmail.com</a>
                     </div>
                 </div>
 
                 <!-- Our Commitment -->
-                <div class="text-center mb-12">
-                    <h2
-                        class="text-3xl font-bold text-slate-800 mb-4 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-indigo-600">
-                        Our Commitment
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 relative pb-6">
+                        <span class="text-slate-800">Our</span> <span class="gradient-text">Commitment</span>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-indigo-600 rounded-full">
+                        </div>
                     </h2>
+                    <p class="text-slate-600 mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
+                        At Getly Project Shop, we are committed to delivering excellence in every project.
+                        Our dedication to quality, professionalism, and student success drives everything we do.
+                    </p>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-md p-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-slate-700">Providing high-quality, well-documented code</span>
-                            </li>
-                            <li class="flex items-start">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-slate-700">Ensuring timely delivery of all projects</span>
-                            </li>
-                            <li class="flex items-start">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-slate-700">Maintaining clear communication throughout the
-                                    process</span>
-                            </li>
-                        </ul>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-slate-700">Offering post-delivery support and revisions</span>
-                            </li>
-                            <li class="flex items-start">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-slate-700">Respecting academic integrity and guidelines</span>
-                            </li>
-                            <li class="flex items-start">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-slate-700">Keeping student requirements and learning at the
-                                    forefront</span>
-                            </li>
-                        </ul>
+                <div
+                    class="bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 rounded-3xl shadow-xl p-8 md:p-12 border-2 border-indigo-100">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <div
+                            class="group flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-indigo-100 hover:border-indigo-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-code text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-800 mb-2">High-Quality Code</h3>
+                                <p class="text-slate-600 leading-relaxed">Providing well-documented, clean, and
+                                    maintainable code that meets industry standards and academic requirements.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-green-100 hover:border-green-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-800 mb-2">Timely Delivery</h3>
+                                <p class="text-slate-600 leading-relaxed">Ensuring all projects are delivered on time,
+                                    every time, respecting your deadlines and academic schedules.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-blue-100 hover:border-blue-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-comments text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-800 mb-2">Clear Communication</h3>
+                                <p class="text-slate-600 leading-relaxed">Maintaining transparent and consistent
+                                    communication throughout the entire project lifecycle.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-purple-100 hover:border-purple-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-headset text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-800 mb-2">Post-Delivery Support</h3>
+                                <p class="text-slate-600 leading-relaxed">Offering comprehensive support, revisions, and
+                                    guidance even after project delivery to ensure your success.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-pink-100 hover:border-pink-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-shield-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-800 mb-2">Academic Integrity</h3>
+                                <p class="text-slate-600 leading-relaxed">Respecting and maintaining the highest
+                                    standards of academic integrity and ethical guidelines in all our work.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-yellow-100 hover:border-yellow-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-star text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-800 mb-2">Client Satisfaction</h3>
+                                <p class="text-slate-600 leading-relaxed">Ensuring complete client satisfaction and
+                                    success through dedicated service and exceptional project delivery.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -559,90 +1139,157 @@
 
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-slate-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold">Contact Us</h2>
-                    <p class="text-slate-500 mt-4">Discuss your project with us now</p>
+        <section id="contact"
+            class="py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div class="absolute top-20 right-20 w-96 h-96 bg-indigo-100 rounded-full filter blur-3xl opacity-20">
+                </div>
+                <div class="absolute bottom-20 left-20 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-20">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <div
+                        class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800 text-sm font-semibold mb-6 shadow-sm">
+                        <i class="fas fa-envelope mr-2 text-pink-500"></i> Get in Touch
+                    </div>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold mb-6">
+                        <span class="text-slate-800">Contact</span> <span class="gradient-text">Us</span>
+                    </h2>
+                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
+                        Discuss your project with us now. We're here to help bring your ideas to life.
+                        Reach out through any of our channels or fill out the form below, and we'll get back to you as
+                        soon as possible.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="bg-indigo-600 text-white p-8 rounded-xl shadow-lg">
-                        <h4 class="text-2xl font-bold mb-4">Contact Information</h4>
-                        <p class="mb-6">You can message us directly on our Facebook page or fill out the form below.</p>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </div>
-                                <div>
-                                    <div class="font-medium">Facebook Page</div>
-
-                                    <a href="https://www.facebook.com/getly.top" target="_blank"
-                                        class="text-indigo-100 hover:text-white underline">facebook.com/getly.top</a>
-                                </div>
+                    <!-- Contact Information Card -->
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl transform rotate-1 opacity-10">
+                        </div>
+                        <div
+                            class="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 text-white p-8 md:p-10 rounded-3xl shadow-2xl">
+                            <div class="mb-8">
+                                <h4 class="text-3xl font-bold mb-3">Contact Information</h4>
+                                <p class="text-indigo-100 leading-relaxed">
+                                    You can message us directly on our Facebook page or fill out the contact form.
+                                    We're always ready to assist you with your project needs.
+                                </p>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
-                                    <i class="fas fa-envelope"></i>
+                            <div class="space-y-6">
+                                <div
+                                    class="group flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                                        <i class="fa-brands fa-facebook text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-lg mb-1">Facebook Page</div>
+                                        <a href="https://www.facebook.com/getly.top" target="_blank"
+                                            class="text-indigo-100 hover:text-white transition-colors flex items-center gap-2">
+                                            <span>facebook.com/getly.top</span>
+                                            <i class="fas fa-external-link-alt text-sm"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="font-medium">Email</div>
-                                    <a href="mailto:getlytop@gmail.com"
-                                        class="text-indigo-100 hover:text-white">getlytop@gmail.com</a>
+                                <div
+                                    class="group flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                                        <i class="fas fa-envelope text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-lg mb-1">Email Address</div>
+                                        <a href="mailto:getlytop@gmail.com"
+                                            class="text-indigo-100 hover:text-white transition-colors flex items-center gap-2">
+                                            <span>getlytop@gmail.com</span>
+                                            <i class="fas fa-envelope-open text-sm"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <div class="font-medium">Phone</div>
-                                    <a href="tel:+8801732854793"
-                                        class="text-indigo-100 hover:text-white">+8801732-854793</a> <br>
-                                    <a href="tel:+8801521789039"
-                                        class="text-indigo-100 hover:text-white">+8801521-789039</a>
+                                <div
+                                    class="group flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                                        <i class="fas fa-phone text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-lg mb-2">Phone Numbers</div>
+                                        <div class="space-y-1">
+                                            <a href="tel:+8801732854793"
+                                                class="block text-indigo-100 hover:text-white transition-colors">
+                                                +880 1732-854793
+                                            </a>
+                                            <a href="tel:+8801521789039"
+                                                class="block text-indigo-100 hover:text-white transition-colors">
+                                                +880 1521-789039
+                                            </a>
+                                            <a href="tel:+8801723"
+                                                class="block text-indigo-100 hover:text-white transition-colors">
+                                                +880 1723-054839
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <form id="contactForm" class="bg-white p-8 rounded-xl shadow-lg">
+
+                    <!-- Contact Form -->
+                    <form id="contactForm"
+                        class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border-2 border-slate-100">
+                        <h4 class="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h4>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                    <i class="fas fa-user mr-2 text-indigo-600"></i>Name
+                                </label>
                                 <input id="nameInput"
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
-                                    placeholder="Your name" required />
+                                    class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none"
+                                    placeholder="Your full name" required />
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                    <i class="fas fa-phone mr-2 text-indigo-600"></i>Phone
+                                </label>
                                 <input id="contactInput"
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
+                                    class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none"
                                     placeholder="Your phone number" required />
                             </div>
                         </div>
                         <div class="mt-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                            <input id="emailInput"
-                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                <i class="fas fa-envelope mr-2 text-indigo-600"></i>Email
+                            </label>
+                            <input id="emailInput" type="email"
+                                class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none"
                                 placeholder="example@gmail.com" required />
                         </div>
                         <div class="mt-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                <i class="fas fa-tag mr-2 text-indigo-600"></i>Subject
+                            </label>
                             <input id="subjectInput"
-                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors"
-                                placeholder="Your project type" required />
+                                class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all outline-none"
+                                placeholder="Project type or subject" required />
                         </div>
                         <div class="mt-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                <i class="fas fa-comment-alt mr-2 text-indigo-600"></i>Message
+                            </label>
                             <textarea id="messageInput"
-                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-colors resize-none"
-                                rows="4" placeholder="What you need..." required></textarea>
+                                class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all resize-none outline-none"
+                                rows="5" placeholder="Tell us about your project requirements..." required></textarea>
                         </div>
-                        <div class="mt-6 flex justify-end">
+                        <div class="mt-6">
                             <button type="submit" id="submitBtn"
-                                class="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2">
-                                <i class="fas fa-paper-plane"></i> Send Message
+                                class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
                             </button>
                         </div>
                     </form>
@@ -651,52 +1298,409 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="accordion" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Frequently Asked Questions</h2>
-                <p class="text-slate-500 mt-4">Find answers to common questions about our services</p>
+        <section id="accordion"
+            class="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div class="absolute top-20 right-20 w-96 h-96 bg-indigo-100 rounded-full filter blur-3xl opacity-10">
+                </div>
+                <div class="absolute bottom-20 left-20 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-10">
+                </div>
             </div>
 
-            <div class="space-y-4">
-                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-                    <input type="radio" name="my-accordion-2" checked="checked" />
-                    <div class="collapse-title font-semibold">আমি কি পুরো প্রজেক্টটা আপনাদেরকে লিখিয়ে দিতে পারি?</div>
-                    <div class="collapse-content text-sm">Getly প্রজেক্ট-সহায়তা প্রদান করে — আমরা কোড, ডিজাইন এবং
-                        ডকুমেন্টেশন তৈরি করে দিই। তবে আমরা সবসময় উপস্থাপন করি এটি "Assistance / Implementation Support"
-                        হিসেবে; শিক্ষার্থীদের শেখার ও বুঝার সুযোগ রেখে করি। আপনি চাইলে আমরা কাজের প্রতিটি ধাপ ব্যাখ্যা
-                        করবো যাতে আপনি viva-তে নিজে উত্তর দিতে পারেন।</div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold mb-6">
+                        <span class="text-slate-800">Frequently Asked</span> <span
+                            class="gradient-text">Questions</span>
+                    </h2>
+                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Find answers to common questions about our services. Can't find what you're looking for?
+                        Don't hesitate to contact us directly.
+                    </p>
                 </div>
-                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-                    <input type="radio" name="my-accordion-2" />
-                    <div class="collapse-title font-semibold">ডেলিভারি সময় কীভাবে কাজ করে? কত দিনে কাজ শেষ হবে</div>
-                    <div class="collapse-content text-sm">সময়সীমা সার্ভিসের ওপর নির্ভর করে — Mini Project সাধারণত ৩–৫
-                        দিন, Major Project ৭–১৫ দিন। অর্ডার কনফার্মেশনের সময় আমরা একটি নির্দিষ্ট ডেলিভারি ডেট সেট করব
-                        এবং সেই অনুযায়ী কাজ সম্পন্ন করব। জরুরি ডেলিভারির ক্ষেত্রে অতিরিক্ত চার্জ লাগতে পারে।</div>
-                </div>
-                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-                    <input type="radio" name="my-accordion-2" />
-                    <div class="collapse-title font-semibold">পেমেন্ট কীভাবে করবেন? রিফান্ড পলিসি কেমন?</div>
-                    <div class="collapse-content text-sm">পেমেন্ট অনলাইন (bKash/Bank/SSLCommerz ইত্যাদি) বা
-                        প্রাক-পেমেন্ট হিসেবে নেয়া হয়। কাজ শুরু হওয়ার আগে আংশিক/পূর্ণ পেমেন্ট নেওয়া হতে পারে—এটি অর্ডার
-                        টাইপ অনুযায়ী উল্লেখ করা থাকবে। যদি আমরা ঠিক সময়ে কাজ শুরু না করি বা কাজ শুরু না হয় তবে
-                        সম্পূর্ণ রিফান্ড দেওয়া হবে। কাজ শুরু হওয়ার বা ডেলিভারি হওয়ার পর সাধারণত রিফান্ড প্রযোজ্য নয় —
-                        বিস্তারিত পলিসি Terms পেজে পাওয়া যাবে।
+
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item active">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <div class="faq-icon-wrapper">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="faq-question">আমি কি পুরো প্রজেক্টটা আপনাদেরকে লিখিয়ে দিতে পারি?</div>
+                            <div class="faq-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>হ্যাঁ, আপনি সম্পূর্ণ প্রজেক্ট আমাদের মাধ্যমে তৈরি করতে পারেন। <strong>Getly Project
+                                        Shop</strong> একটি পেশাদার প্রজেক্ট সহায়তা প্রদানকারী প্রতিষ্ঠান হিসেবে
+                                    <strong>সম্পূর্ণ প্রজেক্ট সল্যুশন</strong> প্রদান করে থাকে।
+                                </p>
+
+                                <p style="margin-top: 1.25rem;"><strong>আমাদের সেবাসমূহ:</strong></p>
+                                <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">✓</span>
+                                        <strong>কোড ডেভেলপমেন্ট:</strong> সম্পূর্ণ ফাংশনাল কোড তৈরি করা
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">✓</span>
+                                        <strong>UI/UX ডিজাইন:</strong> আধুনিক এবং ব্যবহারকারী-বান্ধব ইন্টারফেস
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">✓</span>
+                                        <strong>ডকুমেন্টেশন:</strong> বিস্তারিত প্রজেক্ট ডকুমেন্টেশন এবং রিপোর্ট
+                                    </li>
+                                </ul>
+
+                                <p style="margin-top: 1.25rem;">আমরা আমাদের কাজকে <strong>"Implementation
+                                        Support"</strong> হিসেবে উপস্থাপন করি, যাতে এটি শিক্ষাগত উদ্দেশ্যে সহায়ক হিসেবে
+                                    কাজ করে। আপনি চাইলে আমরা <strong>প্রতিটি ধাপের বিস্তারিত ব্যাখ্যা</strong> প্রদান
+                                    করবো, যাতে আপনি viva পরীক্ষায় নিজে উত্তর দিতে পারেন এবং প্রজেক্ট সম্পর্কে সম্পূর্ণ
+                                    ধারণা রাখতে পারেন।</p>
+
+                                <p
+                                    style="margin-top: 1rem; padding: 1.25rem; background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%); border-radius: 12px; border-left: 4px solid #4f46e5;">
+                                    <strong style="color: #4f46e5;">💡 বিশেষ সুবিধা:</strong> প্রজেক্ট ডেলিভারির পরও
+                                    আমরা <strong>নির্দিষ্ট সময় পর্যন্ত সহায়তা</strong> প্রদান করি, যাতে আপনার যেকোনো
+                                    প্রশ্নের উত্তর পেতে পারেন।
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-                    <input type="radio" name="my-accordion-2" />
-                    <div class="collapse-title font-semibold">আমার প্রজেক্ট প্লেজিয়ারিজম বা ইউনিক না হলে কি হবে?</div>
-                    <div class="collapse-content text-sm">আমরা ইউনিক, নিজের লেখা কোড এবং আউটপুট দেওয়ার ওপর জোর দিই।
-                        অনুরোধ করলে কোড-বেস/রিপোজিটরি প্রদান করা হবে। যেকোনো প্লেজিয়ারিজম-সংক্রান্ত সমস্যা পেলে দ্রুত
-                        সমাধান করবো এবং প্রয়োজনীয় সংশোধন করবো।
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <div class="faq-icon-wrapper">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="faq-question">ডেলিভারি সময় কীভাবে কাজ করে? কত দিনে কাজ শেষ হবে</div>
+                            <div class="faq-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>আমাদের <strong>ডেলিভারি সময়সীমা</strong> প্রজেক্টের ধরন, জটিলতা এবং আপনার নির্দিষ্ট
+                                    প্রয়োজন অনুযায়ী নির্ধারিত হয়। আমরা প্রতিটি অর্ডারের জন্য <strong>সুনির্দিষ্ট
+                                        ডেলিভারি ডেট</strong> প্রদান করি এবং সেই সময়সীমার মধ্যে কাজ সম্পন্ন করি।</p>
+
+                                <p style="margin-top: 1.5rem;"><strong>স্ট্যান্ডার্ড ডেলিভারি সময়সীমা:</strong></p>
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;">
+                                    <div
+                                        style="padding: 1.25rem; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(79, 70, 229, 0.05) 100%); border-radius: 12px; border: 2px solid rgba(79, 70, 229, 0.2);">
+                                        <div
+                                            style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                            <span style="font-size: 1.5rem; color: #4f46e5;">⏱️</span>
+                                            <strong style="color: #1e293b; font-size: 1.1rem;">Mini Project</strong>
+                                        </div>
+                                        <p style="margin: 0; color: #475569; font-size: 1rem;"><strong
+                                                style="color: #4f46e5;">৩-৫ কার্যদিবস</strong></p>
+                                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #64748b;">সাধারণ
+                                            প্রজেক্ট, ছোট স্কেল</p>
+                                    </div>
+                                    <div
+                                        style="padding: 1.25rem; background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%); border-radius: 12px; border: 2px solid rgba(236, 72, 153, 0.2);">
+                                        <div
+                                            style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                            <span style="font-size: 1.5rem; color: #ec4899;">📅</span>
+                                            <strong style="color: #1e293b; font-size: 1.1rem;">Major Project</strong>
+                                        </div>
+                                        <p style="margin: 0; color: #475569; font-size: 1rem;"><strong
+                                                style="color: #ec4899;">৭-১৫ কার্যদিবস</strong></p>
+                                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #64748b;">জটিল প্রজেক্ট,
+                                            বড় স্কেল</p>
+                                    </div>
+                                </div>
+
+                                <p style="margin-top: 1.5rem;"><strong>কিভাবে কাজ করবে:</strong></p>
+                                <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">✓</span>
+                                        অর্ডার কনফার্মেশনের পর <strong>আমরা একটি নির্দিষ্ট ডেলিভারি ডেট সেট করব</strong>
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">✓</span>
+                                        <strong>নিয়মিত আপডেট</strong> প্রদান করবো কাজের অগ্রগতি সম্পর্কে
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">✓</span>
+                                        নির্ধারিত সময়সীমার মধ্যে <strong>সম্পূর্ণ কাজ সম্পন্ন</strong> করা হবে
+                                    </li>
+                                </ul>
+
+                                <p
+                                    style="margin-top: 1.25rem; padding: 1.25rem; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%); border-radius: 12px; border-left: 4px solid #f59e0b;">
+                                    <strong style="color: #f59e0b;">⚡ জরুরি ডেলিভারি:</strong> আপনার যদি <strong>দ্রুত
+                                        সময়ের মধ্যে</strong> প্রজেক্ট প্রয়োজন হয়, তাহলে <strong>Express
+                                        Delivery</strong> সেবা গ্রহণ করতে পারেন। এ ক্ষেত্রে <em>অতিরিক্ত চার্জ</em>
+                                    প্রযোজ্য হবে, যা অর্ডারের সময় আলোচনা করা হবে।
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-                    <input type="radio" name="my-accordion-2" />
-                    <div class="collapse-title font-semibold">প্রজেক্ট দেওয়া হলে কতবার রিভিশন করা যাবে?</div>
-                    <div class="collapse-content text-sm">প্রতিটি প্যাকেজে ১–২ বার মাইনর রিভিশন ফ্রি থাকে (প্যাকেজ
-                        অনুযায়ী ভিন্ন হতে পারে)। বড় বদল/নতুন ফিচার যোগ করার ক্ষেত্রে অতিরিক্ত চার্জ প্রযোজ্য হতে পারে।
-                        রিভিশন পলিসি অর্ডার কনফার্মেশনের সময় পরিষ্কার করে বলা হবে।
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <div class="faq-icon-wrapper">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="faq-question">পেমেন্ট কীভাবে করবেন? রিফান্ড পলিসি কেমন?</div>
+                            <div class="faq-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p><strong>পেমেন্ট পদ্ধতি - সহজ এবং নিরাপদ:</strong></p>
+                                <p>আমরা <strong>বিভিন্ন অনলাইন পেমেন্ট মাধ্যম</strong> গ্রহণ করি, যাতে আপনার সুবিধা হয়।
+                                    আমাদের গ্রহণযোগ্য পেমেন্ট পদ্ধতিসমূহ:</p>
+
+                                <div
+                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+                                    <div
+                                        style="padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 10px; border: 2px solid rgba(16, 185, 129, 0.2); text-align: center;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📱</div>
+                                        <strong style="color: #10b981;">bKash</strong>
+                                    </div>
+                                    <div
+                                        style="padding: 1rem; background: rgba(79, 70, 229, 0.1); border-radius: 10px; border: 2px solid rgba(79, 70, 229, 0.2); text-align: center;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏦</div>
+                                        <strong style="color: #4f46e5;">Bank Transfer</strong>
+                                    </div>
+                                    <div
+                                        style="padding: 1rem; background: rgba(236, 72, 153, 0.1); border-radius: 10px; border: 2px solid rgba(236, 72, 153, 0.2); text-align: center;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💳</div>
+                                        <strong style="color: #ec4899;">SSLCommerz</strong>
+                                    </div>
+                                </div>
+
+                                <p style="margin-top: 1.5rem;"><strong>পেমেন্ট স্কিডিউল:</strong></p>
+                                <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">💰</span>
+                                        <strong>আংশিক পেমেন্ট:</strong> কাজ শুরু করার আগে <em>৫০% অগ্রিম</em> এবং বাকি
+                                        <em>ডেলিভারির সময়</em>
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">💵</span>
+                                        <strong>পূর্ণ পেমেন্ট:</strong> ছোট প্রজেক্টের ক্ষেত্রে <em>একবারে সম্পূর্ণ
+                                            পেমেন্ট</em> গ্রহণ করা হয়
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #4f46e5; font-size: 1.2rem;">📋</span>
+                                        <strong>নির্দিষ্ট পদ্ধতি:</strong> অর্ডার কনফার্মেশনের সময় <strong>পেমেন্ট
+                                            পদ্ধতি স্পষ্ট করে বলা হবে</strong>
+                                    </li>
+                                </ul>
+
+                                <p
+                                    style="margin-top: 1.5rem; padding: 1.25rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%); border-radius: 12px; border-left: 4px solid #10b981;">
+                                    <strong style="color: #10b981;">✅ রিফান্ড গ্যারান্টি:</strong> যদি আমরা
+                                    <strong>নির্ধারিত সময়ে কাজ শুরু না করি</strong> অথবা <strong>কোনো কারণে কাজ শুরু না
+                                        হয়</strong>, তাহলে <strong style="color: #10b981;">আপনার সম্পূর্ণ অর্থ ফেরত
+                                        দেওয়া হবে</strong>। আমরা আপনার ট্রাস্ট এবং সন্তুষ্টিকে সর্বোচ্চ গুরুত্ব দিই।
+                                </p>
+
+                                <p
+                                    style="margin-top: 1rem; padding: 1rem; background: rgba(100, 116, 139, 0.1); border-radius: 10px; border-left: 3px solid #64748b;">
+                                    <strong>📄 বিস্তারিত তথ্য:</strong> রিফান্ড পলিসির <strong>সম্পূর্ণ
+                                        বিস্তারিত</strong> আমাদের Terms & Conditions পেজে পাওয়া যাবে। কোন প্রশ্ন থাকলে
+                                    আমাদের সাথে সরাসরি যোগাযোগ করতে পারেন।
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <div class="faq-icon-wrapper">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="faq-question">আমার প্রজেক্ট প্লেজিয়ারিজম বা ইউনিক না হলে কি হবে?</div>
+                            <div class="faq-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p><strong>Getly Project Shop</strong> এর <strong>সবচেয়ে গুরুত্বপূর্ণ নীতি</strong> হলো
+                                    <em style="color: #4f46e5; font-weight: 600;">১০০% ইউনিক এবং অরিজিনাল কোড</em>
+                                    প্রদান করা। আমরা <strong>প্লেজিয়ারিজম-মুক্ত</strong> কাজের জন্য প্রতিশ্রুতিবদ্ধ।
+                                </p>
+
+                                <p style="margin-top: 1.25rem;"><strong>আমাদের গ্যারান্টি:</strong></p>
+                                <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>সম্পূর্ণ ইউনিক কোড:</strong> প্রতিটি প্রজেক্ট <strong>আমাদের টিম দ্বারা
+                                            তৈরি</strong> হয়, কোন কপি করা হয় না
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>কোড রিপোজিটরি:</strong> অনুরোধ করলে <strong>সম্পূর্ণ কোড-বেস/সোর্স
+                                            কোড</strong> প্রদান করা হবে
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>ডকুমেন্টেশন:</strong> <strong>বিস্তারিত কমেন্টস এবং ডকুমেন্টেশন</strong>
+                                        সহ কোড প্রদান করা হয়
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>কোয়ালিটি চেক:</strong> প্রতিটি প্রজেক্ট <strong>প্লেজিয়ারিজম
+                                            চেক</strong> এর মাধ্যমে যাচাই করা হয়
+                                    </li>
+                                </ul>
+
+                                <p
+                                    style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.08) 100%); border-radius: 12px; border-left: 5px solid #10b981; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);">
+                                <div style="display: flex; align-items: start; gap: 1rem;">
+                                    <span style="font-size: 2rem;">🛡️</span>
+                                    <div>
+                                        <strong
+                                            style="color: #10b981; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">১০০%
+                                            গ্যারান্টি - ইউনিক কোড</strong>
+                                        <p style="margin: 0; color: #1e293b; line-height: 1.7;">যেকোনো
+                                            <strong>প্লেজিয়ারিজম-সংক্রান্ত সমস্যা</strong> দেখা দিলে আমরা
+                                            <strong>বিনামূল্যে দ্রুত সমাধান করবো</strong> এবং প্রয়োজনীয় সংশোধন করবো।
+                                            আপনার প্রজেক্ট <strong>সম্পূর্ণভাবে ইউনিক এবং অরিজিনাল</strong> হওয়ার
+                                            আমাদের সম্পূর্ণ গ্যারান্টি রয়েছে।
+                                        </p>
+                                    </div>
+                                </div>
+                                </p>
+
+                                <p
+                                    style="margin-top: 1.25rem; padding: 1rem; background: rgba(79, 70, 229, 0.08); border-radius: 10px;">
+                                    <strong style="color: #4f46e5;">💡 বিশেষ নোট:</strong> আপনি যদি <strong>কোডের যেকোনো
+                                        অংশ</strong> বুঝতে না পারেন বা <strong>ব্যাখ্যা প্রয়োজন</strong> হয়, আমরা
+                                    <strong>বিনামূল্যে সহায়তা</strong> প্রদান করবো যাতে আপনি সম্পূর্ণ প্রজেক্ট সম্পর্কে
+                                    পরিষ্কার ধারণা রাখতে পারেন।
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <div class="faq-icon-wrapper">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="faq-question">প্রজেক্ট দেওয়া হলে কতবার রিভিশন করা যাবে?</div>
+                            <div class="faq-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>আমরা বুঝতে পারি যে প্রজেক্ট ডেলিভারির পর <strong>ছোটখাটো পরিবর্তন বা সংশোধন</strong>
+                                    প্রয়োজন হতে পারে। সে জন্য আমরা <strong>ফ্রি রিভিশন সুবিধা</strong> প্রদান করি।</p>
+
+                                <p style="margin-top: 1.5rem;"><strong>ফ্রি রিভিশন পলিসি:</strong></p>
+                                <div style="display: grid; gap: 1rem; margin: 1.25rem 0;">
+                                    <div
+                                        style="padding: 1.25rem; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border-radius: 12px; border: 2px solid rgba(79, 70, 229, 0.2);">
+                                        <div
+                                            style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                            <span style="font-size: 1.5rem;">🆓</span>
+                                            <strong style="color: #4f46e5; font-size: 1.1rem;">ফ্রি রিভিশন</strong>
+                                        </div>
+                                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                                            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                                                <span style="position: absolute; left: 0; color: #4f46e5;">✓</span>
+                                                <strong>Mini Project:</strong> <em>১-২ বার</em> মাইনর রিভিশন
+                                            </li>
+                                            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                                                <span style="position: absolute; left: 0; color: #4f46e5;">✓</span>
+                                                <strong>Major Project:</strong> <em>২-৩ বার</em> মাইনর রিভিশন
+                                            </li>
+                                        </ul>
+                                        <p
+                                            style="margin-top: 0.75rem; margin-bottom: 0; font-size: 0.9rem; color: #64748b;">
+                                            * প্যাকেজ অনুযায়ী ভিন্ন হতে পারে</p>
+                                    </div>
+                                </div>
+
+                                <p style="margin-top: 1.5rem;"><strong>কি ধরনের পরিবর্তন ফ্রি:</strong></p>
+                                <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>ছোটখাটো বাগ ফিক্স:</strong> কোডিং এরর, টাইপিং মিস্টেক ইত্যাদি
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>ছোট UI পরিবর্তন:</strong> রঙ, ফন্ট, ছোটখাটো লেআউট পরিবর্তন
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #10b981; font-size: 1.2rem;">✓</span>
+                                        <strong>ডকুমেন্টেশন সংশোধন:</strong> রিপোর্ট বা ডকুমেন্টেশনে ছোট পরিবর্তন
+                                    </li>
+                                </ul>
+
+                                <p style="margin-top: 1.5rem;"><strong>অতিরিক্ত পরিবর্তন (চার্জ প্রযোজ্য):</strong></p>
+                                <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #f59e0b; font-size: 1.2rem;">⚠️</span>
+                                        <strong>নতুন ফিচার যোগ করা:</strong> সম্পূর্ণ নতুন ফাংশনালিটি যোগ করা
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #f59e0b; font-size: 1.2rem;">⚠️</span>
+                                        <strong>বড় ডিজাইন পরিবর্তন:</strong> সম্পূর্ণ UI/UX রিডিজাইন
+                                    </li>
+                                    <li style="padding: 0.75rem 0; padding-left: 2rem; position: relative;">
+                                        <span
+                                            style="position: absolute; left: 0; color: #f59e0b; font-size: 1.2rem;">⚠️</span>
+                                        <strong>কাঠামোগত পরিবর্তন:</strong> প্রজেক্টের মূল কাঠামো পরিবর্তন
+                                    </li>
+                                </ul>
+
+                                <p
+                                    style="margin-top: 1.5rem; padding: 1.25rem; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.08) 100%); border-radius: 12px; border-left: 5px solid #4f46e5;">
+                                    <strong
+                                        style="color: #4f46e5; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">📋
+                                        রিভিশন পলিসি:</strong>
+                                <p style="margin: 0; color: #1e293b; line-height: 1.7;">আমাদের <strong>রিভিশন
+                                        পলিসি</strong> অর্ডার কনফার্মেশনের সময় <strong>সম্পূর্ণভাবে পরিষ্কার করে বলা
+                                        হবে</strong>। আপনি কোন ধরনের পরিবর্তন চান, সেটা <strong>প্রাথমিক
+                                        আলোচনায়</strong> জানিয়ে দিলে আমরা <strong>সঠিক সময়সীমা এবং খরচ</strong>
+                                    নির্ধারণ করতে পারবো।</p>
+                                </p>
+
+                                <p
+                                    style="margin-top: 1rem; padding: 1rem; background: rgba(16, 185, 129, 0.08); border-radius: 10px; border-left: 3px solid #10b981;">
+                                    <strong style="color: #10b981;">💬 যোগাযোগ:</strong> রিভিশন সম্পর্কে <strong>যেকোনো
+                                        প্রশ্ন</strong> থাকলে আমাদের সাথে সরাসরি যোগাযোগ করতে পারেন। আমরা
+                                    <strong>দ্রুততম সময়ে</strong> আপনার প্রয়োজন অনুযায়ী সমাধান প্রদান করার চেষ্টা
+                                    করবো।
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -716,112 +1720,339 @@
 
         <!-- Order Modal -->
         <div id="customModal"
-            class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-            <!-- Modal Box -->
+            class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 animate-fadeIn">
+            <!-- Modal Box with Enhanced Design -->
             <div
-                class="bg-white rounded-xl shadow-xl w-full max-w-lg md:max-w-xl p-6 relative overflow-y-auto max-h-[90vh]">
+                class="relative w-full max-w-lg md:max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden overflow-y-auto max-h-[90vh] border-2 border-indigo-100">
+                <!-- Gradient Background Decoration -->
+                <div
+                    class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                </div>
 
-                <!-- Close Button -->
-                <button onclick="closeModal()"
-                    class="absolute top-3 right-3 text-slate-500 hover:text-red-500 text-xl">✕</button>
+                <!-- Animated Background Pattern -->
+                <div class="absolute inset-0 opacity-5 pointer-events-none">
+                    <div class="absolute top-10 right-10 w-32 h-32 bg-indigo-300 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-10 left-10 w-40 h-40 bg-purple-300 rounded-full blur-3xl"></div>
+                </div>
 
-                <h3 class="text-lg font-bold mb-4 text-center md:text-left">Place Your Order</h3>
+                <div class="relative z-10 p-6 md:p-8">
+                    <!-- Header Section -->
+                    <div class="relative mb-6">
+                        <!-- Close Button -->
+                        <button onclick="closeModal()"
+                            class="absolute top-0 right-0 w-10 h-10 rounded-full bg-slate-100 hover:bg-red-100 text-slate-600 hover:text-red-600 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
 
-                <form id="orderForm" action="https://formspree.io/f/mrboovzb" method="POST"
-                    onsubmit="return validateRecaptcha()">
-
-                    <div class="space-y-4">
-
-                        <!-- Select Item -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Select Your Order Item</label>
-                            <select id="itemSelect" name="service"
-                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
-                                <option value="">Select a product...</option>
-                            </select>
+                        <!-- Title with Gradient -->
+                        <div class="text-center mb-2">
+                            <div
+                                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 mb-3">
+                                <i class="fas fa-shopping-cart text-indigo-600"></i>
+                                <span class="text-xs font-semibold text-indigo-700">Quick Order</span>
+                            </div>
+                            <h3
+                                class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                                Place Your Order
+                            </h3>
+                            <p class="text-slate-500 text-sm mt-2">Fill in the details below and we'll get back to you
+                                soon</p>
                         </div>
+                    </div>
 
-                        <!-- Selected Product Info -->
-                        <div id="selectedProductInfo" class="hidden p-4 bg-slate-50 rounded-lg">
-                            <div class="flex justify-between items-center gap-4">
-                                <div class="flex-1">
-                                    <h4 id="selectedProductName" class="font-semibold"></h4>
-                                    <p id="selectedProductPrice" class="text-slate-600 text-sm"></p>
-                                </div>
-                                <div id="selectedProductImage" class="w-16 h-16 rounded-md overflow-hidden shrink-0">
-                                </div>
-                            </div>
-                        </div>
+                    <form id="orderForm" action="https://formspree.io/f/mrboovzb" method="POST">
 
-                        <!-- Name & Phone -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
-                                <input type="text" name="name" required
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
-                                    placeholder="Enter your name">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                                <input type="tel" name="phone" required
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
-                                    placeholder="Enter your phone">
-                            </div>
-                        </div>
+                        <div class="space-y-4">
 
-                        <!-- Email & Urgency -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Select Item -->
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                                <input type="email" name="email" required
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
-                                    placeholder="Enter your email">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Urgency Level</label>
-                                <select name="urgency"
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500">
-                                    <option value="normal">Normal (10-15 days)</option>
-                                    <option value="urgent">Urgent (3-5 days)</option>
-                                    <option value="very-urgent">Very Urgent (1-2 days)</option>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                                    <i class="fas fa-box text-indigo-600"></i>
+                                    <span>Select Your Order Item</span>
+                                </label>
+                                <select id="itemSelect" name="service"
+                                    class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white shadow-sm hover:shadow-md transition-all duration-300 font-medium">
+                                    <option value="">Select a product...</option>
                                 </select>
                             </div>
-                        </div>
 
-                        <!-- Project Details -->
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Project Details</label>
-                            <textarea name="details" rows="4" required
-                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 resize-none"
-                                placeholder="Describe your project requirements..."></textarea>
-                        </div>
+                            <!-- Selected Product Info -->
+                            <div id="selectedProductInfo"
+                                class="hidden p-5 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl border-2 border-indigo-200 shadow-md">
+                                <div class="flex justify-between items-center gap-4">
+                                    <div class="flex-1">
+                                        <h4 id="selectedProductName" class="font-bold text-indigo-900 mb-1"></h4>
+                                        <p id="selectedProductPrice" class="text-indigo-700 text-sm font-semibold">
+                                            <i class="fas fa-tag mr-1"></i>
+                                        </p>
+                                    </div>
+                                    <div id="selectedProductImage"
+                                        class="w-20 h-20 rounded-xl overflow-hidden shrink-0 border-2 border-indigo-200 shadow-md">
+                                    </div>
+                                </div>
+                            </div>
 
-                        <!-- Google reCAPTCHA -->
-                        <div class="mt-4">
-                            <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"></div>
-                            <div id="status" class="text-red-500 text-sm mt-2 hidden">Please complete the reCAPTCHA
-                                challenge.</div>
-                        </div>
+                            <!-- Name & Phone -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-user text-indigo-600"></i>
+                                        <span>Your Name</span>
+                                    </label>
+                                    <input type="text" name="name" required
+                                        class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                                        placeholder="Enter your name">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-phone text-indigo-600"></i>
+                                        <span>Phone Number</span>
+                                    </label>
+                                    <input type="tel" name="phone" required
+                                        class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                                        placeholder="Enter your phone">
+                                </div>
+                            </div>
 
-                        <!-- Submit Button -->
-                        <div class="flex justify-center md:justify-end mt-6">
-                            <button type="submit"
-                                class="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 w-full md:w-auto justify-center">
-                                <i class="fas fa-shopping-cart"></i> Place Order
-                            </button>
-                        </div>
+                            <!-- Email & Urgency -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-envelope text-indigo-600"></i>
+                                        <span>Email Address</span>
+                                    </label>
+                                    <input type="email" name="email" required
+                                        class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                                        placeholder="Enter your email">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-clock text-indigo-600"></i>
+                                        <span>Urgency Level</span>
+                                    </label>
+                                    <select name="urgency"
+                                        class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white shadow-sm hover:shadow-md transition-all duration-300 font-medium">
+                                        <option value="normal">Normal (10-15 days)</option>
+                                        <option value="urgent">Urgent (3-5 days)</option>
+                                        <option value="very-urgent">Very Urgent (1-2 days)</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                    </div>
-                </form>
+                            <!-- Project Details -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                                    <i class="fas fa-file-alt text-indigo-600"></i>
+                                    <span>Project Details</span>
+                                </label>
+                                <textarea name="details" rows="4" required
+                                    class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                                    placeholder="Describe your project requirements..."></textarea>
+                            </div>
+
+                            <!-- Google reCAPTCHA (Optional) -->
+                            <div id="recaptchaContainer" class="mt-4 hidden">
+                                <div class="g-recaptcha" data-sitekey="6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz"></div>
+                                <div id="recaptchaError" class="text-red-500 text-sm mt-2 hidden"></div>
+                            </div>
+                            <div id="status" class="text-red-500 text-sm mt-2 hidden"></div>
+
+                            <!-- Submit Button -->
+                            <div class="flex justify-center md:justify-end mt-8">
+                                <button type="submit"
+                                    class="group relative w-full md:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white font-bold text-lg hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105 overflow-hidden">
+                                    <!-- Shimmer effect -->
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+                                    </div>
+                                    <i class="fas fa-shopping-cart text-xl"></i>
+                                    <span>Place Order</span>
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
-        <!-- WhatsApp Floating Button -->
-        <div class="fixed bottom-6 right-6 z-50">
-            <button id="whatsappFloating"
-                class="w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all flex items-center justify-center text-xl">
-                <i class="fa-brands fa-whatsapp"></i>
-            </button>
+        <!-- Reviews Modal -->
+        <div id="reviewsModal"
+            class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 animate-fadeIn">
+            <!-- Modal Box -->
+            <div
+                class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden overflow-y-auto max-h-[90vh] border-2 border-purple-100">
+                <!-- Gradient Background Decoration -->
+                <div
+                    class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500">
+                </div>
+
+                <!-- Animated Background Pattern -->
+                <div class="absolute inset-0 opacity-5 pointer-events-none">
+                    <div class="absolute top-10 right-10 w-32 h-32 bg-purple-300 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-10 left-10 w-40 h-40 bg-pink-300 rounded-full blur-3xl"></div>
+                </div>
+
+                <div class="relative z-10 p-6 md:p-8">
+                    <!-- Header Section -->
+                    <div class="relative mb-6">
+                        <!-- Close Button -->
+                        <button onclick="closeReviewsModal()"
+                            class="absolute top-0 right-0 w-10 h-10 rounded-full bg-slate-100 hover:bg-red-100 text-slate-600 hover:text-red-600 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+
+                        <!-- Title with Gradient -->
+                        <div class="text-center mb-6">
+                            <div
+                                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 mb-3">
+                                <i class="fas fa-star text-purple-600"></i>
+                                <span class="text-xs font-semibold text-purple-700">Customer Reviews</span>
+                            </div>
+                            <h3
+                                class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                                Reviews & Ratings
+                            </h3>
+                            <p class="text-slate-500 text-sm mt-2">আমাদের কাছ থেকে প্রজেক্ট নিয়েছেন? আপনার অভিজ্ঞতা
+                                শেয়ার করুন</p>
+                        </div>
+                    </div>
+
+                    <!-- Average Rating Display -->
+                    <div class="mb-8 text-center">
+                        <div
+                            class="inline-block bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-200 shadow-lg">
+                            <div
+                                class="text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                                <span id="averageRating">4.8</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-2">
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                                <i class="fas fa-star text-yellow-400 text-xl"></i>
+                            </div>
+                            <p class="text-slate-600 font-semibold text-sm">
+                                <span id="totalReviews">24</span> টি রিভিউ থেকে গড় রেটিং
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Review Form -->
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-200 p-6 mb-8">
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fas fa-edit text-purple-600"></i>
+                            <span>আপনার রিভিউ দিন</span>
+                        </h4>
+
+                        <form id="reviewForm" class="space-y-4">
+                            <!-- Name & Project Type -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                        <i class="fas fa-user text-purple-600 mr-1"></i>আপনার নাম
+                                    </label>
+                                    <input type="text" id="reviewerName" required
+                                        class="w-full px-4 py-2.5 border-2 border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white shadow-sm hover:shadow-md transition-all text-sm"
+                                        placeholder="আপনার নাম">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                        <i class="fas fa-box text-purple-600 mr-1"></i>প্রজেক্টের ধরন
+                                    </label>
+                                    <input type="text" id="projectType" required
+                                        class="w-full px-4 py-2.5 border-2 border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white shadow-sm hover:shadow-md transition-all text-sm"
+                                        placeholder="যেমন: Web Development">
+                                </div>
+                            </div>
+
+                            <!-- Rating -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                    <i class="fas fa-star text-purple-600 mr-1"></i>রেটিং দিন
+                                </label>
+                                <div class="flex items-center gap-2" id="ratingStars">
+                                    <button type="button"
+                                        class="star-btn text-2xl text-gray-300 hover:text-yellow-400 transition-colors"
+                                        data-rating="1">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="star-btn text-2xl text-gray-300 hover:text-yellow-400 transition-colors"
+                                        data-rating="2">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="star-btn text-2xl text-gray-300 hover:text-yellow-400 transition-colors"
+                                        data-rating="3">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="star-btn text-2xl text-gray-300 hover:text-yellow-400 transition-colors"
+                                        data-rating="4">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="star-btn text-2xl text-gray-300 hover:text-yellow-400 transition-colors"
+                                        data-rating="5">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                    <span id="ratingText" class="ml-3 text-purple-600 font-semibold text-sm"></span>
+                                </div>
+                                <input type="hidden" id="ratingValue" required>
+                            </div>
+
+                            <!-- Review Text -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                    <i class="fas fa-comment-alt text-purple-600 mr-1"></i>আপনার রিভিউ
+                                </label>
+                                <textarea id="reviewText" rows="4" required
+                                    class="w-full px-4 py-2.5 border-2 border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none bg-white shadow-sm hover:shadow-md transition-all text-sm"
+                                    placeholder="আপনার অভিজ্ঞতা সম্পর্কে লিখুন..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 text-white font-bold hover:from-purple-700 hover:via-pink-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>রিভিউ জমা দিন</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Reviews Display -->
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fas fa-comments text-purple-600"></i>
+                            <span>কাস্টমার রিভিউ</span>
+                        </h4>
+                        <div id="reviewsContainer"
+                            class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto pr-2">
+                            <!-- Reviews will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Floating Button with Enhanced Animation -->
+        <div class="fixed bottom-6 right-6 z-50 group">
+            <div class="relative">
+                <!-- Pulse ring effect -->
+                <div class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75"></div>
+                <button id="whatsappFloating"
+                    class="relative w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white shadow-2xl hover:shadow-green-500/50 transition-all duration-300 flex items-center justify-center text-2xl transform hover:scale-110 hover:rotate-12">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
         </div>
     </main>
 
@@ -902,15 +2133,24 @@
 
                 <!-- Brand Section -->
                 <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="assets/Getly_logo.png" alt="Site Logo" class="w-10 h-10">
+                    <div class="flex items-center gap-3 mb-4 group">
+                        <div class="relative">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity blur-sm">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
+                                <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                            </div>
+                        </div>
                         <div>
                             <div class="text-lg font-bold gradient-text">Getly Project Shop</div>
                             <div class="text-sm text-slate-300">Service & Product Marketplace</div>
                         </div>
                     </div>
                     <p class="text-slate-300 mb-4">
-                        Providing quality project assistance and development services for students and professionals.
+                        Providing quality project assistance and <br>development services for students and
+                        <br>professionals.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.facebook.com/getly.top" target="_blank"
@@ -935,9 +2175,14 @@
                         <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">Services</a>
                         </li>
                         <li><a href="#shop" class="text-slate-300 hover:text-white transition-colors">Shop</a></li>
+                        <li><a href="#team" class="text-slate-300 hover:text-white transition-colors">Our Team</a></li>
                         <li><a href="#about" class="text-slate-300 hover:text-white transition-colors">About Us</a></li>
                         <li><a href="#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a>
                         </li>
+                        <li><a href="terms-and-conditions.html"
+                                class="text-slate-300 hover:text-white transition-colors">Terms and Conditions</a></li>
+                        <li><a href="refund-policy.html"
+                                class="text-slate-300 hover:text-white transition-colors">Refund Policy</a></li>
                     </ul>
                 </div>
 
@@ -962,7 +2207,7 @@
             </div>
 
             <div class="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400 text-sm">
-                <p>© 2023 Getly Project Shop. All rights reserved.</p>
+                <p>© <span id="year"></span> Getly Project Shop. All rights reserved.</p>
             </div>
         </div>
     </footer>
