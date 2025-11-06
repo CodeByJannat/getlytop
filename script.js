@@ -381,15 +381,15 @@ function initStarRating() {
     const starButtons = document.querySelectorAll('.star-btn');
     const ratingValue = document.getElementById('ratingValue');
     const ratingText = document.getElementById('ratingText');
-    
+
     if (!starButtons.length || !ratingValue || !ratingText) return;
-    
+
     starButtons.forEach((btn, index) => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const rating = parseInt(this.getAttribute('data-rating'));
             currentRating = rating;
             ratingValue.value = rating;
-            
+
             // Update star colors
             starButtons.forEach((star, i) => {
                 if (i < rating) {
@@ -400,7 +400,7 @@ function initStarRating() {
                     star.querySelector('i').classList.add('text-gray-300');
                 }
             });
-            
+
             // Update rating text
             const ratingTexts = {
                 1: "খুব খারাপ",
@@ -411,8 +411,8 @@ function initStarRating() {
             };
             ratingText.textContent = ratingTexts[rating] || '';
         });
-        
-        btn.addEventListener('mouseenter', function() {
+
+        btn.addEventListener('mouseenter', function () {
             const hoverRating = parseInt(this.getAttribute('data-rating'));
             starButtons.forEach((star, i) => {
                 if (i < hoverRating) {
@@ -420,8 +420,8 @@ function initStarRating() {
                 }
             });
         });
-        
-        btn.addEventListener('mouseleave', function() {
+
+        btn.addEventListener('mouseleave', function () {
             starButtons.forEach((star, i) => {
                 if (i >= currentRating) {
                     star.querySelector('i').classList.remove('text-yellow-300');
@@ -435,19 +435,19 @@ function initStarRating() {
 function displayReviews() {
     const container = document.getElementById('reviewsContainer');
     if (!container) return;
-    
+
     container.innerHTML = '';
-    
+
     reviews.forEach(review => {
         const reviewCard = document.createElement('div');
         reviewCard.className = 'review-card bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1';
-        
+
         const starIcons = Array.from({ length: 5 }, (_, i) => {
-            return i < review.rating 
-                ? '<i class="fas fa-star text-yellow-400"></i>' 
+            return i < review.rating
+                ? '<i class="fas fa-star text-yellow-400"></i>'
                 : '<i class="far fa-star text-gray-300"></i>';
         }).join('');
-        
+
         reviewCard.innerHTML = `
             <div class="flex items-start justify-between mb-4">
                 <div class="flex-1">
@@ -461,23 +461,23 @@ function displayReviews() {
             </div>
             <p class="text-slate-600 leading-relaxed">${review.review}</p>
         `;
-        
+
         container.appendChild(reviewCard);
     });
-    
+
     updateAverageRating();
 }
 
 // Update average rating
 function updateAverageRating() {
     if (reviews.length === 0) return;
-    
+
     const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
     const average = (totalRating / reviews.length).toFixed(1);
-    
+
     const averageRatingEl = document.getElementById('averageRating');
     const totalReviewsEl = document.getElementById('totalReviews');
-    
+
     if (averageRatingEl) averageRatingEl.textContent = average;
     if (totalReviewsEl) totalReviewsEl.textContent = reviews.length;
 }
@@ -485,29 +485,29 @@ function updateAverageRating() {
 // Handle review form submission
 function handleReviewSubmit(e) {
     e.preventDefault();
-    
+
     const reviewerName = document.getElementById('reviewerName');
     const projectType = document.getElementById('projectType');
     const ratingValue = document.getElementById('ratingValue');
     const reviewText = document.getElementById('reviewText');
-    
+
     if (!reviewerName || !projectType || !ratingValue || !reviewText) return;
-    
+
     const name = reviewerName.value.trim();
     const project = projectType.value.trim();
     const rating = parseInt(ratingValue.value);
     const text = reviewText.value.trim();
-    
+
     if (!rating || rating < 1 || rating > 5) {
         showToast('Please select a rating');
         return;
     }
-    
+
     if (!name || !project || !text) {
         showToast('Please fill in all fields');
         return;
     }
-    
+
     // Create new review
     const newReview = {
         id: reviews.length + 1,
@@ -517,14 +517,14 @@ function handleReviewSubmit(e) {
         review: text,
         date: new Date().toISOString().split('T')[0]
     };
-    
+
     // Add to reviews array (in real app, send to backend)
     reviews.unshift(newReview);
-    
+
     // Reset form
     const reviewForm = document.getElementById('reviewForm');
     if (reviewForm) reviewForm.reset();
-    
+
     currentRating = 0;
     const starButtons = document.querySelectorAll('.star-btn');
     starButtons.forEach(star => {
@@ -534,16 +534,16 @@ function handleReviewSubmit(e) {
             icon.classList.add('text-gray-300');
         }
     });
-    
+
     const ratingTextEl = document.getElementById('ratingText');
     if (ratingTextEl) ratingTextEl.textContent = '';
-    
+
     // Update display
     displayReviews();
-    
+
     // Show success message
     showToast('ধন্যবাদ! আপনার রিভিউ সফলভাবে জমা হয়েছে।');
-    
+
     // Scroll to reviews in modal
     setTimeout(() => {
         const reviewsContainer = document.getElementById('reviewsContainer');
@@ -553,7 +553,7 @@ function handleReviewSubmit(e) {
     }, 300);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
     addParticleEffect();
 });
@@ -562,11 +562,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function addParticleEffect() {
     const hero = document.querySelector('section.relative');
     if (!hero) return;
-    
+
     const particlesContainer = document.createElement('div');
     particlesContainer.className = 'particles';
     hero.appendChild(particlesContainer);
-    
+
     // Create particles
     for (let i = 0; i < 20; i++) {
         const particle = document.createElement('div');
@@ -581,16 +581,16 @@ function addParticleEffect() {
 function initializeApp() {
     // Load products
     loadProducts();
-    
+
     // Setup event listeners
     setupEventListeners();
-    
+
     // Initialize modals
     initializeModals();
-    
+
     // Setup form handlers
     setupFormHandlers();
-    
+
     // Add mobile menu button
     addMobileMenuButton();
 }
@@ -598,21 +598,21 @@ function initializeApp() {
 function addMobileMenuButton() {
     const header = document.querySelector('header');
     const nav = header.querySelector('.flex.items-center.justify-between');
-    
+
     const mobileMenuButton = document.createElement('button');
     mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
     mobileMenuButton.className = 'md:hidden p-2 text-slate-700 mobile-menu-button';
     mobileMenuButton.addEventListener('click', toggleMobileMenu);
-    
+
     nav.appendChild(mobileMenuButton);
 }
 
 function loadProducts() {
     const container = document.getElementById('productsContainer');
     if (!container) return;
-    
+
     container.innerHTML = '';
-    
+
     products.forEach(product => {
         const productCard = createProductCard(product);
         container.appendChild(productCard);
@@ -622,7 +622,7 @@ function loadProducts() {
 function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden fade-in-on-scroll flex flex-col';
-    
+
     card.innerHTML = `
         <div class="relative overflow-hidden group flex-shrink-0">
             <img src="${product.image}" alt="${product.name}" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
@@ -657,7 +657,7 @@ function createProductCard(product) {
             </div>
         </div>
     `;
-    
+
     return card;
 }
 
@@ -667,34 +667,34 @@ function setupEventListeners() {
     if (quickOrderBtn) {
         quickOrderBtn.addEventListener('click', openOrderModal);
     }
-    
+
     // WhatsApp buttons
     const whatsappBtn = document.getElementById('whatsappBtn');
     const whatsappFloating = document.getElementById('whatsappFloating');
-    
+
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', openWhatsApp);
     }
-    
+
     if (whatsappFloating) {
         whatsappFloating.addEventListener('click', openWhatsApp);
     }
-    
+
     // Sort products
     const sortSelect = document.getElementById('sortSelect');
     if (sortSelect) {
         sortSelect.addEventListener('change', sortProducts);
     }
-    
+
     // Close modals when clicking outside
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         const serviceModal = document.getElementById('serviceModal');
         const customModal = document.getElementById('customModal');
-        
+
         if (serviceModal && event.target === serviceModal) {
             serviceModal.close();
         }
-        
+
         if (customModal && event.target === customModal) {
             closeModal();
         }
@@ -705,22 +705,22 @@ function initializeModals() {
     // Service modal
     const serviceModal = document.getElementById('serviceModal');
     if (serviceModal) {
-        serviceModal.addEventListener('click', function(event) {
+        serviceModal.addEventListener('click', function (event) {
             if (event.target === serviceModal) {
                 serviceModal.close();
             }
         });
     }
-    
+
     // Custom modal (order modal)
     const customModal = document.getElementById('customModal');
     if (customModal) {
-        customModal.addEventListener('click', function(event) {
+        customModal.addEventListener('click', function (event) {
             if (event.target === customModal) {
                 closeModal();
             }
         });
-        
+
         // Populate product options in order form
         const itemSelect = document.getElementById('itemSelect');
         if (itemSelect) {
@@ -731,7 +731,7 @@ function initializeModals() {
                 option.textContent = serviceDetails[key].title + ' (Service)';
                 itemSelect.appendChild(option);
             });
-            
+
             // Add product options
             products.forEach(product => {
                 const option = document.createElement('option');
@@ -740,27 +740,27 @@ function initializeModals() {
                 option.setAttribute('data-product-id', product.id);
                 itemSelect.appendChild(option);
             });
-            
+
             // Add custom option
             const customOption = document.createElement('option');
             customOption.value = 'custom';
             customOption.textContent = 'Custom Project (Describe in details)';
             itemSelect.appendChild(customOption);
-            
+
             // Add event listener for product selection
-            itemSelect.addEventListener('change', function() {
+            itemSelect.addEventListener('change', function () {
                 updateSelectedProductInfo(this.value);
             });
         }
     }
-    
+
     // Add event listeners for product order buttons
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         if (event.target.classList.contains('order-btn')) {
             const productId = event.target.getAttribute('data-id');
             openOrderModalWithProduct(productId);
         }
-        
+
         if (event.target.classList.contains('view-details-btn')) {
             const productId = event.target.getAttribute('data-id');
             viewProductDetails(productId);
@@ -774,28 +774,28 @@ function setupFormHandlers() {
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactFormSubmit);
     }
-    
+
     // Order form with reCAPTCHA
     const orderForm = document.getElementById('orderForm');
     if (orderForm) {
         orderForm.addEventListener('submit', handleOrderFormSubmit);
     }
-    
+
     // Review form
     const reviewForm = document.getElementById('reviewForm');
     if (reviewForm) {
         reviewForm.addEventListener('submit', handleReviewSubmit);
     }
-    
+
     // Reviews button
     const reviewsBtn = document.getElementById('reviewsBtn');
     if (reviewsBtn) {
         reviewsBtn.addEventListener('click', openReviewsModal);
     }
-    
+
     // Initialize star rating
     initStarRating();
-    
+
     // Display existing reviews
     displayReviews();
 }
@@ -803,25 +803,25 @@ function setupFormHandlers() {
 // ✅ Order form handler with optional reCAPTCHA
 async function handleOrderFormSubmit(e) {
     e.preventDefault();
-    
+
     const status = document.getElementById('status');
     const submitBtn = e.target.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     const orderForm = document.getElementById('orderForm');
-    
+
     // Check if reCAPTCHA is available and validate if present
     let recaptchaValid = true;
     if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse) {
         try {
-    const recaptchaResponse = grecaptcha.getResponse();
+            const recaptchaResponse = grecaptcha.getResponse();
             const recaptchaContainer = document.getElementById('recaptchaContainer');
-            
+
             // Only validate if reCAPTCHA container is visible
             if (recaptchaContainer && !recaptchaContainer.classList.contains('hidden')) {
                 if (!recaptchaResponse || recaptchaResponse.length === 0) {
-        status.innerText = "❌ Please complete the reCAPTCHA verification";
-        status.style.color = "#ef4444";
-        status.classList.remove('hidden');
+                    status.innerText = "❌ Please complete the reCAPTCHA verification";
+                    status.style.color = "#ef4444";
+                    status.classList.remove('hidden');
                     recaptchaValid = false;
                     return;
                 }
@@ -847,17 +847,17 @@ async function handleOrderFormSubmit(e) {
 
     // Get form data
     const formData = new FormData(orderForm);
-    
+
     // Add additional form data for better tracking
     formData.append('_subject', 'New Order from Getly Project Shop');
     formData.append('_format', 'plain');
-    
+
     // Also create a readable message format
     const formObject = {};
     formData.forEach((value, key) => {
         formObject[key] = value;
     });
-    
+
     // Create a formatted message
     const messageBody = `
 New Order Received:
@@ -875,9 +875,9 @@ Details: ${formObject.details || 'N/A'}
         let response;
         try {
             response = await fetch(orderForm.action, {
-            method: "POST",
-            body: formData,
-                headers: { 
+                method: "POST",
+                body: formData,
+                headers: {
                     "Accept": "application/json"
                 }
             });
@@ -896,7 +896,7 @@ Details: ${formObject.details || 'N/A'}
             }
 
             // Check for Formspree success indicators
-            if (response.ok || response.status === 200 || response.status === 302 || 
+            if (response.ok || response.status === 200 || response.status === 302 ||
                 (responseData && (responseData.success || responseData.next))) {
                 // Success - Show congratulations message
                 status.innerHTML = `
@@ -917,31 +917,31 @@ Details: ${formObject.details || 'N/A'}
                     </div>
                 `;
                 status.classList.remove('hidden');
-                
-            orderForm.reset();
-                
+
+                orderForm.reset();
+
                 // Reset reCAPTCHA if available
                 if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) {
                     try {
-            grecaptcha.reset();
+                        grecaptcha.reset();
                     } catch (error) {
                         // Ignore reCAPTCHA reset errors
                     }
                 }
-            
+
                 // Close modal after 5 seconds
-            setTimeout(() => {
-                closeModal();
-                status.innerText = "";
-                status.classList.add('hidden');
+                setTimeout(() => {
+                    closeModal();
+                    status.innerText = "";
+                    status.classList.add('hidden');
                 }, 5000);
-        } else {
+            } else {
                 // Form submission failed - show WhatsApp option
                 console.log('Formspree submission failed, showing WhatsApp option...');
-                
+
                 // Create WhatsApp message with order details
                 const whatsappMessage = encodeURIComponent(`🎓 নতুন অর্ডার - Getly Project Shop\n\n📋 Order Details:\n\n${messageBody}\n\nআমরা শীঘ্রই আপনার সাথে যোগাযোগ করবো।`);
-                
+
                 // Show WhatsApp option
                 status.innerHTML = `
                     <div class="space-y-3 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
@@ -956,7 +956,7 @@ Details: ${formObject.details || 'N/A'}
                     </div>
                 `;
                 status.classList.remove('hidden');
-                
+
                 // Don't reset form so user can see their data
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
@@ -967,10 +967,10 @@ Details: ${formObject.details || 'N/A'}
         }
     } catch (error) {
         console.error('Order submission error:', error);
-        
+
         // Show WhatsApp option on error
         const whatsappMessage = encodeURIComponent(`🎓 নতুন অর্ডার - Getly Project Shop\n\n📋 Order Details:\n\n${messageBody}\n\nআমরা শীঘ্রই আপনার সাথে যোগাযোগ করবো।`);
-        
+
         status.innerHTML = `
             <div class="space-y-3 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
                 <p class="text-green-800 font-semibold">📱 WhatsApp-এ Order পাঠান:</p>
@@ -994,12 +994,12 @@ Details: ${formObject.details || 'N/A'}
 function openServiceModal(serviceId) {
     const modal = document.getElementById('serviceModal');
     const content = document.getElementById('serviceModalContent');
-    
+
     if (!modal || !content) return;
-    
+
     const service = serviceDetails[serviceId];
     if (!service) return;
-    
+
     // Get service color theme
     const serviceColors = {
         'web-development': { primary: 'indigo', gradient: 'from-indigo-600 to-purple-600', icon: 'fas fa-code' },
@@ -1007,9 +1007,9 @@ function openServiceModal(serviceId) {
         'mobile-apps': { primary: 'green', gradient: 'from-green-600 to-emerald-600', icon: 'fas fa-mobile-alt' },
         'ready-products': { primary: 'purple', gradient: 'from-purple-600 to-violet-600', icon: 'fas fa-box' }
     };
-    
+
     const theme = serviceColors[serviceId] || { primary: 'indigo', gradient: 'from-indigo-600 to-purple-600', icon: 'fas fa-code' };
-    
+
     content.innerHTML = `
         <div class="space-y-6">
             <!-- Header Section -->
@@ -1164,7 +1164,7 @@ function openServiceModal(serviceId) {
             </div>
         </div>
     `;
-    
+
     modal.showModal();
 }
 
@@ -1185,7 +1185,7 @@ function closeModal() {
     // Reset reCAPTCHA when closing modal (if available)
     if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) {
         try {
-        grecaptcha.reset();
+            grecaptcha.reset();
         } catch (error) {
             // Ignore reCAPTCHA reset errors
         }
@@ -1215,14 +1215,14 @@ function closeReviewsModal() {
 function openOrderModalWithProduct(productId) {
     const modal = document.getElementById('customModal');
     const itemSelect = document.getElementById('itemSelect');
-    
+
     if (modal && itemSelect) {
         const product = products.find(p => p.id == productId);
         if (product) {
             itemSelect.value = product.name;
             updateSelectedProductInfo(product.name);
         }
-        
+
         openModal();
     }
 }
@@ -1230,13 +1230,13 @@ function openOrderModalWithProduct(productId) {
 function openOrderModalWithService(serviceName) {
     const modal = document.getElementById('customModal');
     const itemSelect = document.getElementById('itemSelect');
-    
+
     if (modal && itemSelect) {
         itemSelect.value = serviceName;
         updateSelectedProductInfo(serviceName);
         openModal();
     }
-    
+
     // Close service modal
     closeServiceModal();
 }
@@ -1246,9 +1246,9 @@ function updateSelectedProductInfo(selectedValue) {
     const productName = document.getElementById('selectedProductName');
     const productPrice = document.getElementById('selectedProductPrice');
     const productImage = document.getElementById('selectedProductImage');
-    
+
     if (!productInfo || !productName || !productPrice || !productImage) return;
-    
+
     // Check if it's a product
     const product = products.find(p => p.name === selectedValue);
     if (product) {
@@ -1258,12 +1258,12 @@ function updateSelectedProductInfo(selectedValue) {
         productInfo.classList.remove('hidden');
         return;
     }
-    
+
     // Check if it's a service
-    const serviceKey = Object.keys(serviceDetails).find(key => 
+    const serviceKey = Object.keys(serviceDetails).find(key =>
         serviceDetails[key].title === selectedValue
     );
-    
+
     if (serviceKey) {
         const service = serviceDetails[serviceKey];
         productName.textContent = service.title;
@@ -1272,7 +1272,7 @@ function updateSelectedProductInfo(selectedValue) {
         productInfo.classList.remove('hidden');
         return;
     }
-    
+
     // Hide if custom or no selection
     productInfo.classList.add('hidden');
 }
@@ -1280,12 +1280,12 @@ function updateSelectedProductInfo(selectedValue) {
 function viewProductDetails(productId) {
     const product = products.find(p => p.id == productId);
     if (!product) return;
-    
+
     const modal = document.getElementById('serviceModal');
     const content = document.getElementById('serviceModalContent');
-    
+
     if (!modal || !content) return;
-    
+
     // Get category color
     const categoryColors = {
         'web': { bg: 'from-blue-500 to-cyan-600', icon: 'fas fa-globe' },
@@ -1294,7 +1294,7 @@ function viewProductDetails(productId) {
         'ready': { bg: 'from-purple-500 to-violet-600', icon: 'fas fa-box' }
     };
     const catColor = categoryColors[product.category] || { bg: 'from-indigo-500 to-purple-600', icon: 'fas fa-cube' };
-    
+
     content.innerHTML = `
         <div class="space-y-6">
             <!-- Header Section -->
@@ -1466,25 +1466,25 @@ function viewProductDetails(productId) {
             </div>
         </div>
     `;
-    
+
     modal.showModal();
 }
 
 function sortProducts() {
     const sortSelect = document.getElementById('sortSelect');
     if (!sortSelect) return;
-    
+
     const sortBy = sortSelect.value;
     let filteredProducts = [];
-    
-    switch(sortBy) {
+
+    switch (sortBy) {
         case 'newest':
             // Show all products (newest first based on ID - higher ID = newer)
             filteredProducts = [...products].sort((a, b) => b.id - a.id);
             break;
         case 'bestselling':
             // Show only products with "bestseller" tag
-            filteredProducts = products.filter(product => 
+            filteredProducts = products.filter(product =>
                 product.tags && product.tags.includes('bestselling')
             );
             // If no bestseller, show all
@@ -1494,7 +1494,7 @@ function sortProducts() {
             break;
         case 'popular':
             // Show only products with "popular" tag
-            filteredProducts = products.filter(product => 
+            filteredProducts = products.filter(product =>
                 product.tags && product.tags.includes('popular')
             );
             // If no popular, show all
@@ -1505,10 +1505,10 @@ function sortProducts() {
         default:
             filteredProducts = [...products];
     }
-    
+
     const container = document.getElementById('productsContainer');
     if (!container) return;
-    
+
     // Show message if no products found
     if (filteredProducts.length === 0) {
         container.innerHTML = `
@@ -1520,30 +1520,30 @@ function sortProducts() {
         `;
         return;
     }
-    
+
     container.innerHTML = '';
     filteredProducts.forEach(product => {
         const productCard = createProductCard(product);
         container.appendChild(productCard);
     });
-    
+
     // Scroll to products section immediately when sort changes
     const shopSection = document.getElementById('shop');
     if (shopSection) {
         // Use scrollIntoView for better compatibility
-        shopSection.scrollIntoView({ 
-            behavior: 'smooth', 
+        shopSection.scrollIntoView({
+            behavior: 'smooth',
             block: 'start',
             inline: 'nearest'
         });
-        
+
         // Also ensure scroll with offset
         setTimeout(() => {
             const headerHeight = 80;
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
             const shopTop = shopSection.offsetTop;
             const targetScroll = shopTop - headerHeight;
-            
+
             if (Math.abs(currentScroll - targetScroll) > 10) {
                 window.scrollTo({
                     top: targetScroll,
@@ -1563,22 +1563,22 @@ function openWhatsApp() {
 
 function handleContactFormSubmit(event) {
     event.preventDefault();
-    
+
     const submitBtn = document.getElementById('submitBtn');
     const originalText = submitBtn.innerHTML;
-    
+
     // Show loading state
     submitBtn.innerHTML = '<div class="loading-spinner mr-2"></div> Sending...';
     submitBtn.disabled = true;
-    
+
     // Simulate form submission
     setTimeout(() => {
         // Show success message
         showToast('Message sent successfully! We will contact you soon.');
-        
+
         // Reset form
         document.getElementById('contactForm').reset();
-        
+
         // Reset button
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
@@ -1609,7 +1609,7 @@ function showOrderConfirmation() {
                 </div>
             `;
             status.classList.remove('hidden');
-            
+
             // Reset form after showing confirmation
             const orderForm = document.getElementById('orderForm');
             if (orderForm) {
@@ -1627,16 +1627,16 @@ function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
     toast.textContent = message;
-    
+
     // Add to page
     document.body.appendChild(toast);
-    
+
     // Show toast
     setTimeout(() => {
         toast.classList.remove('translate-x-full');
         toast.classList.add('translate-x-0');
     }, 100);
-    
+
     // Hide and remove after delay
     setTimeout(() => {
         toast.classList.remove('translate-x-0');
@@ -1658,10 +1658,10 @@ function toggleMobileMenu() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             targetElement.scrollIntoView({
@@ -1675,23 +1675,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Enhanced scroll animation for elements
 function checkScroll() {
     const elements = document.querySelectorAll('.service-card, .fade-in, .product-card');
-    
+
     elements.forEach((element, index) => {
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
-        
+
         if (elementTop < window.innerHeight - elementVisible) {
             element.style.opacity = "1";
             element.style.transform = "translateY(0)";
             element.classList.add('visible');
         }
     });
-    
+
     // Add fade-in-on-scroll class for staggered animations
     document.querySelectorAll('.fade-in-on-scroll').forEach((element, index) => {
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 100;
-        
+
         if (elementTop < window.innerHeight - elementVisible) {
             setTimeout(() => {
                 element.classList.add('visible');
@@ -1705,13 +1705,13 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
-    
+
     lastScroll = currentScroll;
     checkScroll();
 });
@@ -1754,27 +1754,27 @@ function ensureRecaptchaRendering() {
     try {
         const recaptchaContainer = document.getElementById('recaptchaContainer');
         if (!recaptchaContainer) return;
-        
+
         // Always hide reCAPTCHA by default (will show only if successfully loaded)
         recaptchaContainer.classList.add('hidden');
-        
+
         // Check if reCAPTCHA is available and properly loaded
         if (typeof grecaptcha !== 'undefined' && grecaptcha.render && grecaptcha.getResponse) {
             try {
-        const recaptchaElement = document.querySelector('.g-recaptcha');
+                const recaptchaElement = document.querySelector('.g-recaptcha');
                 if (recaptchaElement) {
                     // Check if already rendered
                     const widgetId = recaptchaElement.getAttribute('data-widget-id');
                     if (!widgetId) {
                         // Try to render only if not already rendered
                         try {
-            grecaptcha.render(recaptchaElement, {
+                            grecaptcha.render(recaptchaElement, {
                                 sitekey: '6Ldutv4rAAAAAOV9_-EgukKngBodNashC6XxPfPz',
-                                'error-callback': function() {
+                                'error-callback': function () {
                                     // Hide reCAPTCHA if there's an error
                                     recaptchaContainer.classList.add('hidden');
                                 },
-                                'expired-callback': function() {
+                                'expired-callback': function () {
                                     recaptchaContainer.classList.add('hidden');
                                 }
                             });
@@ -1812,13 +1812,13 @@ function ensureRecaptchaRendering() {
 }
 
 // Call this when modal opens
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Add event listener to ensure reCAPTCHA renders properly when modal opens
     const modal = document.getElementById('customModal');
     if (modal) {
         // Use MutationObserver to detect when modal becomes visible
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
+        const observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
                 if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     if (!modal.classList.contains('hidden')) {
                         // Modal is now visible, ensure reCAPTCHA is rendered
@@ -1827,7 +1827,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         observer.observe(modal, {
             attributes: true,
             attributeFilter: ['class']
@@ -1839,24 +1839,24 @@ document.addEventListener('DOMContentLoaded', function() {
 function openFeatureModal(featureId) {
     const modal = document.getElementById('serviceModal');
     const content = document.getElementById('serviceModalContent');
-    
+
     if (!modal || !content) return;
-    
+
     const feature = featureDetails[featureId];
     if (!feature) return;
-    
+
     const colorClasses = {
         'green': 'from-green-100 to-emerald-100 text-green-600',
         'blue': 'from-blue-100 to-cyan-100 text-blue-600',
         'purple': 'from-purple-100 to-pink-100 text-purple-600'
     };
-    
+
     const bgColorClasses = {
         'green': 'bg-green-50 border-green-200',
         'blue': 'bg-blue-50 border-blue-200',
         'purple': 'bg-purple-50 border-purple-200'
     };
-    
+
     content.innerHTML = `
         <div class="space-y-6">
             <div class="flex items-center gap-4 mb-6">
@@ -1911,7 +1911,7 @@ function openFeatureModal(featureId) {
             </div>
         </div>
     `;
-    
+
     modal.showModal();
 }
 
@@ -1919,12 +1919,12 @@ function openFeatureModal(featureId) {
 function toggleFaq(element) {
     const faqItem = element.closest('.faq-item');
     const isActive = faqItem.classList.contains('active');
-    
+
     // Close all FAQ items
     document.querySelectorAll('.faq-item').forEach(item => {
         item.classList.remove('active');
     });
-    
+
     // Open clicked item if it wasn't active
     if (!isActive) {
         faqItem.classList.add('active');
@@ -1936,17 +1936,56 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 
 // Mobile menu button functionality
-    document.getElementById('mobileWhatsappBtn').addEventListener('click', function() {
-        window.open('https://wa.me/8801732854793', '_blank');
-        mobileMenu.classList.add('hidden'); // Close menu after click
-    });
-    
-    document.getElementById('mobileQuickOrderBtn').addEventListener('click', function() {
-        openOrderModal(); // Use your existing function
-        mobileMenu.classList.add('hidden'); // Close menu after click
-    });
-    
-    document.getElementById('mobileReviewsBtn').addEventListener('click', function() {
-        openReviewsModal(); // Use your existing function
-        mobileMenu.classList.add('hidden'); // Close menu after click
-    });
+document.getElementById('mobileWhatsappBtn').addEventListener('click', function () {
+    window.open('https://wa.me/8801732854793', '_blank');
+    mobileMenu.classList.add('hidden'); // Close menu after click
+});
+
+document.getElementById('mobileQuickOrderBtn').addEventListener('click', function () {
+    openOrderModal(); // Use your existing function
+    mobileMenu.classList.add('hidden'); // Close menu after click
+});
+
+document.getElementById('mobileReviewsBtn').addEventListener('click', function () {
+    openReviewsModal(); // Use your existing function
+    mobileMenu.classList.add('hidden'); // Close menu after click
+});
+
+// Handle reCAPTCHA loading errors
+function handleRecaptchaError() {
+    const recaptchaContainer = document.getElementById('recaptchaContainer');
+    if (recaptchaContainer) {
+        recaptchaContainer.classList.add('hidden');
+    }
+}
+
+// Check for reCAPTCHA domain errors after page load
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        // Check if reCAPTCHA loaded successfully
+        if (typeof grecaptcha === 'undefined') {
+            const recaptchaContainer = document.getElementById('recaptchaContainer');
+            if (recaptchaContainer) {
+                recaptchaContainer.classList.add('hidden');
+            }
+        }
+    }, 2000);
+});
+
+// Disable right-click
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Disable Ctrl+C, Ctrl+U, Ctrl+Shift+I
+document.addEventListener('keydown', e => {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || (e.shiftKey && e.key === 'I'))) {
+        e.preventDefault();
+        alert('Copying is prohibited!');
+    }
+});
+
+// Disable F12
+document.addEventListener('keydown', e => {
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+});

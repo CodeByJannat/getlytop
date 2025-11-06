@@ -14,16 +14,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
+<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased" style="user-select:none; -webkit-user-drag:none;">
     <!-- Navigation -->
     <header class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity blur-sm"></div>
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
-                            <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity blur-sm">
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
+                            <img src="assets/Getly_logo.png" oncontextmenu="return false;" draggable="false"
+                                style="user-select:none; -webkit-user-drag:none;" alt="Getly Logo"
+                                class="w-full h-full object-contain">
                         </div>
                     </div>
                     <div class="hidden sm:block">
@@ -32,7 +37,8 @@
                     </div>
                 </a>
                 <nav class="hidden md:flex items-center gap-6">
-                    <a href="index.html#services" class="hover:text-indigo-600 font-medium transition-colors">Services</a>
+                    <a href="index.html#services"
+                        class="hover:text-indigo-600 font-medium transition-colors">Services</a>
                     <a href="index.html#shop" class="hover:text-indigo-600 font-medium transition-colors">Shop</a>
                     <a href="index.html#team" class="hover:text-indigo-600 font-medium transition-colors">Our Team</a>
                     <a href="index.html#about" class="hover:text-indigo-600 font-medium transition-colors">About</a>
@@ -57,11 +63,13 @@
         <!-- Mobile menu -->
         <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
             <div class="px-4 py-3 flex flex-col gap-2">
-                <a href="index.html#services" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Services</a>
+                <a href="index.html#services"
+                    class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Services</a>
                 <a href="index.html#shop" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Shop</a>
                 <a href="index.html#team" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Our Team</a>
                 <a href="index.html#about" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">About</a>
-                <a href="index.html#contact" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Contact</a>
+                <a href="index.html#contact"
+                    class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Contact</a>
             </div>
         </div>
     </header>
@@ -71,13 +79,20 @@
         <section class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 overflow-hidden">
             <!-- Animated Background Elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div class="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                <div
+                    class="absolute top-20 left-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+                </div>
+                <div
+                    class="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+                </div>
             </div>
-            
+
             <div class="text-center relative z-10">
-                <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800 text-sm font-medium mb-6 animate-pulse-slow">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800 text-sm font-medium mb-6 animate-pulse-slow">
                     <i class="fas fa-file-contract mr-2"></i> Legal Information
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
@@ -85,7 +100,7 @@
                     <span class="block gradient-text animate-gradient">Conditions</span>
                 </h1>
                 <p class="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
-                    Please read these terms and conditions carefully before using our website and services. 
+                    Please read these terms and conditions carefully before using our website and services.
                     By accessing or using Getly, you agree to be bound by these terms.
                 </p>
             </div>
@@ -98,148 +113,200 @@
                     <!-- Introduction -->
                     <div class="mb-12">
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center shadow-lg">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center shadow-lg">
                                 <i class="fas fa-info-circle text-xl"></i>
                             </div>
                             <h2 class="text-2xl font-bold text-slate-800">Introduction</h2>
                         </div>
                         <p class="text-slate-600 leading-relaxed">
-                            Getly তে আপনাকে স্বাগতম। আপনি এই ওয়েবসাইটের সকল টার্মস এবং কন্ডিশনস মেনে ওয়েবসাইটটি ব্যবহার করছেন অথবা করতে চাচ্ছেন বলে আমরা ধরে নিচ্ছি। এই ওয়েবসাইটে ব্যবহৃত "আমরা", "আমাদের" বলতে মূলত "Getly" কর্তৃপক্ষকে বুঝানো হয়েছে। আপনার যদি কোনো টার্মস এবং কন্ডিশনস বুঝতে সমস্যা হয়ে থাকে তাহলে আপনি আমাদের ইমেইল অথবা ফেসবুক পেজে যোগাযোগ করতে পারেন। টার্মস এবং কন্ডিশনসের ব্যাপারে "Getly" কর্তৃপক্ষের সিদ্ধান্তই চূড়ান্ত এবং যেকোনো সময় তা পরিবর্তনের ক্ষমতা কর্তৃপক্ষের রয়েছে।
+                            Getly তে আপনাকে স্বাগতম। আপনি এই ওয়েবসাইটের সকল টার্মস এবং কন্ডিশনস মেনে ওয়েবসাইটটি ব্যবহার
+                            করছেন অথবা করতে চাচ্ছেন বলে আমরা ধরে নিচ্ছি। এই ওয়েবসাইটে ব্যবহৃত "আমরা", "আমাদের" বলতে মূলত
+                            "Getly" কর্তৃপক্ষকে বুঝানো হয়েছে। আপনার যদি কোনো টার্মস এবং কন্ডিশনস বুঝতে সমস্যা হয়ে থাকে
+                            তাহলে আপনি আমাদের ইমেইল অথবা ফেসবুক পেজে যোগাযোগ করতে পারেন। টার্মস এবং কন্ডিশনসের ব্যাপারে
+                            "Getly" কর্তৃপক্ষের সিদ্ধান্তই চূড়ান্ত এবং যেকোনো সময় তা পরিবর্তনের ক্ষমতা কর্তৃপক্ষের
+                            রয়েছে।
                         </p>
                     </div>
 
                     <!-- Terms List -->
                     <div class="space-y-10">
                         <!-- Term 1 -->
-                        <div class="group p-6 bg-gradient-to-br from-indigo-50 to-indigo-100/30 rounded-2xl border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-indigo-50 to-indigo-100/30 rounded-2xl border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">১</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">অ্যাকাউন্ট নিরাপত্তা</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        আপনার অ্যাকাউন্ট ক্রেডেনশিয়ালস (ইউজারনেম এবং পাসওয়ার্ড) একান্তই আপনার ব্যক্তিগত। এগুলো অন্য কোনো ব্যক্তি/মাধ্যমের সাথে শেয়ার করা সম্পূর্ণ নিষিদ্ধ। অ্যাকাউন্ট ক্রেডেনশিয়ালস শেয়ার করা হলে আপনার অ্যাকাউন্ট যেকোনো সময় বিনা নোটিশে সাসপেন্ড বা টার্মিনেট করা হতে পারে এবং সেক্ষেত্রে আপনি আর এই অ্যাকাউন্ট ব্যবহার করতে পারবেন না।
+                                        আপনার অ্যাকাউন্ট ক্রেডেনশিয়ালস (ইউজারনেম এবং পাসওয়ার্ড) একান্তই আপনার ব্যক্তিগত।
+                                        এগুলো অন্য কোনো ব্যক্তি/মাধ্যমের সাথে শেয়ার করা সম্পূর্ণ নিষিদ্ধ। অ্যাকাউন্ট
+                                        ক্রেডেনশিয়ালস শেয়ার করা হলে আপনার অ্যাকাউন্ট যেকোনো সময় বিনা নোটিশে সাসপেন্ড বা
+                                        টার্মিনেট করা হতে পারে এবং সেক্ষেত্রে আপনি আর এই অ্যাকাউন্ট ব্যবহার করতে পারবেন
+                                        না।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 2 -->
-                        <div class="group p-6 bg-gradient-to-br from-purple-50 to-purple-100/30 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-purple-50 to-purple-100/30 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">২</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">ম্যাটেরিয়াল ডিস্ট্রিবিউশন</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        কর্তৃপক্ষের লিখিত অনুমতি ব্যতিত যেকোনো প্রজেক্ট ফাইল, অ্যাসাইনমেন্ট সল্যুশন, ডকুমেন্টেশন, নোট, প্র্যাকটিক্যাল গাইড বা অন্যান্য স্টাডি ম্যাটেরিয়ালসের ডিস্ট্রিবিউশন, কপি বা শেয়ার সম্পূর্ণ নিষিদ্ধ এবং আইনত দন্ডনীয়। এটি বিশ্ববিদ্যালয়ের একাডেমিক সততা লঙ্ঘন করতে পারে এবং সকলকে ক্ষতিগ্রস্ত করে। আমরা আশা করি, এ ব্যাপারে আপনি সচেতন থাকবেন।
+                                        কর্তৃপক্ষের লিখিত অনুমতি ব্যতিত যেকোনো প্রজেক্ট ফাইল, অ্যাসাইনমেন্ট সল্যুশন,
+                                        ডকুমেন্টেশন, নোট, প্র্যাকটিক্যাল গাইড বা অন্যান্য স্টাডি ম্যাটেরিয়ালসের
+                                        ডিস্ট্রিবিউশন, কপি বা শেয়ার সম্পূর্ণ নিষিদ্ধ এবং আইনত দন্ডনীয়। এটি
+                                        বিশ্ববিদ্যালয়ের একাডেমিক সততা লঙ্ঘন করতে পারে এবং সকলকে ক্ষতিগ্রস্ত করে। আমরা
+                                        আশা করি, এ ব্যাপারে আপনি সচেতন থাকবেন।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 3 -->
-                        <div class="group p-6 bg-gradient-to-br from-pink-50 to-pink-100/30 rounded-2xl border-2 border-pink-200 hover:border-pink-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-pink-50 to-pink-100/30 rounded-2xl border-2 border-pink-200 hover:border-pink-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৩</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">কপিরাইট ও আইনি সুরক্ষা</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        Getly থেকে প্রাপ্ত কোনো প্রজেক্ট, অ্যাসাইনমেন্ট, ডকুমেন্টেশন, নোট, প্র্যাকটিক্যাল বা স্টাডি সামগ্রী অন্য কারও সাথে অর্থের বিনিময়ে বা বিনামূল্যে শেয়ার, বিক্রি বা আদান-প্রদান করা আইনত দন্ডনীয়। গুগল ড্রাইভ, ফেসবুক, হোয়াটসঅ্যাপ, ইউটিউব, পেনড্রাইভ বা অন্য কোনো মাধ্যমে শেয়ার করলে "Getly" টিম বা এর আইনানুগ প্রতিনিধি গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের কপিরাইট আইন, কপিরাইট এক্ট ২০০০, ২০০৫ সংশোধনী (সেকশন ৮৪), ডিজিটাল সিকিউরিটি অ্যাক্ট ২০১৮ (সেকশন ১৯) এবং সাইবার সিকিউরিটি আইন অনুযায়ী প্রয়োজনীয় আইনি ব্যবস্থা গ্রহণ করতে পারবে।
+                                        Getly থেকে প্রাপ্ত কোনো প্রজেক্ট, অ্যাসাইনমেন্ট, ডকুমেন্টেশন, নোট,
+                                        প্র্যাকটিক্যাল বা স্টাডি সামগ্রী অন্য কারও সাথে অর্থের বিনিময়ে বা বিনামূল্যে
+                                        শেয়ার, বিক্রি বা আদান-প্রদান করা আইনত দন্ডনীয়। গুগল ড্রাইভ, ফেসবুক, হোয়াটসঅ্যাপ,
+                                        ইউটিউব, পেনড্রাইভ বা অন্য কোনো মাধ্যমে শেয়ার করলে "Getly" টিম বা এর আইনানুগ
+                                        প্রতিনিধি গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের কপিরাইট আইন, কপিরাইট এক্ট ২০০০, ২০০৫
+                                        সংশোধনী (সেকশন ৮৪), ডিজিটাল সিকিউরিটি অ্যাক্ট ২০১৮ (সেকশন ১৯) এবং সাইবার
+                                        সিকিউরিটি আইন অনুযায়ী প্রয়োজনীয় আইনি ব্যবস্থা গ্রহণ করতে পারবে।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 4 -->
-                        <div class="group p-6 bg-gradient-to-br from-blue-50 to-blue-100/30 rounded-2xl border-2 border-blue-200 hover:border-blue-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-blue-50 to-blue-100/30 rounded-2xl border-2 border-blue-200 hover:border-blue-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৪</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">ব্যবহারকারী আচরণ</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        অনুগ্রহ করে "Getly" সাপোর্ট চ্যাট, গ্রুপ চ্যাট, ফেসবুক গ্রুপ, কমেন্ট, ফোরাম বা পেজে ব্যক্তিগত আক্রমণ, রাজনৈতিক আলোচনা, হিংসাত্মক বা অশালীন ভাষা থেকে বিরত থাকুন। এরকম আচরণের জন্য আপনাকে মিউট/রিমুভ করা হবে এবং পুনরাবৃত্তি হলে অ্যাকাউন্ট টার্মিনেট করা হতে পারে।
+                                        অনুগ্রহ করে "Getly" সাপোর্ট চ্যাট, গ্রুপ চ্যাট, ফেসবুক গ্রুপ, কমেন্ট, ফোরাম বা
+                                        পেজে ব্যক্তিগত আক্রমণ, রাজনৈতিক আলোচনা, হিংসাত্মক বা অশালীন ভাষা থেকে বিরত
+                                        থাকুন। এরকম আচরণের জন্য আপনাকে মিউট/রিমুভ করা হবে এবং পুনরাবৃত্তি হলে অ্যাকাউন্ট
+                                        টার্মিনেট করা হতে পারে।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 5 -->
-                        <div class="group p-6 bg-gradient-to-br from-green-50 to-green-100/30 rounded-2xl border-2 border-green-200 hover:border-green-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-green-50 to-green-100/30 rounded-2xl border-2 border-green-200 hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৫</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">সার্ভিস অর্ডার</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        সার্ভিস অর্ডার করার পূর্বে সার্ভিস ডিটেইলস, স্কোপ, ডেলিভারি টাইম এবং প্রাইসিং ভালোভাবে যাচাই করে নিন। অর্ডার কনফার্ম হওয়ার পর কোনো অভিযোগ গ্রহণযোগ্য নয়। সার্ভিস কাস্টমাইজেশনের জন্য সাপোর্ট চ্যাট, ইমেইল বা ফেসবুক পেজে যোগাযোগ করুন।
+                                        সার্ভিস অর্ডার করার পূর্বে সার্ভিস ডিটেইলস, স্কোপ, ডেলিভারি টাইম এবং প্রাইসিং
+                                        ভালোভাবে যাচাই করে নিন। অর্ডার কনফার্ম হওয়ার পর কোনো অভিযোগ গ্রহণযোগ্য নয়।
+                                        সার্ভিস কাস্টমাইজেশনের জন্য সাপোর্ট চ্যাট, ইমেইল বা ফেসবুক পেজে যোগাযোগ করুন।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 6 -->
-                        <div class="group p-6 bg-gradient-to-br from-yellow-50 to-yellow-100/30 rounded-2xl border-2 border-yellow-200 hover:border-yellow-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-yellow-50 to-yellow-100/30 rounded-2xl border-2 border-yellow-200 hover:border-yellow-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৬</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">অ্যাকাউন্ট ট্রান্সফার</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        সার্ভিস চলাকালীন সময়ে অন্য ইমেইল বা অ্যাকাউন্টে ট্রান্সফার সম্ভব নয়। অর্ডার প্লেস করার পূর্বে রেজিস্ট্রেশন তথ্য সঠিকভাবে দিন; কাজ শুরু হওয়ার পর পরিবর্তন গ্রহণযোগ্য নয়।
+                                        সার্ভিস চলাকালীন সময়ে অন্য ইমেইল বা অ্যাকাউন্টে ট্রান্সফার সম্ভব নয়। অর্ডার
+                                        প্লেস করার পূর্বে রেজিস্ট্রেশন তথ্য সঠিকভাবে দিন; কাজ শুরু হওয়ার পর পরিবর্তন
+                                        গ্রহণযোগ্য নয়।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 7 -->
-                        <div class="group p-6 bg-gradient-to-br from-red-50 to-red-100/30 rounded-2xl border-2 border-red-200 hover:border-red-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-red-50 to-red-100/30 rounded-2xl border-2 border-red-200 hover:border-red-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৭</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">রেফারেন্স ম্যাটেরিয়াল</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        সার্ভিসের অংশ হিসেবে প্রদত্ত ওয়েবসাইট লিঙ্ক, রেফারেন্স ম্যাটেরিয়াল, টুলস বা গাইড কেবল আপনার ব্যক্তিগত অনুশীলন ও শিক্ষার জন্য। এগুলো পাবলিকলি শেয়ার বা বাণিজ্যিক ব্যবহার নিষিদ্ধ।
+                                        সার্ভিসের অংশ হিসেবে প্রদত্ত ওয়েবসাইট লিঙ্ক, রেফারেন্স ম্যাটেরিয়াল, টুলস বা গাইড
+                                        কেবল আপনার ব্যক্তিগত অনুশীলন ও শিক্ষার জন্য। এগুলো পাবলিকলি শেয়ার বা বাণিজ্যিক
+                                        ব্যবহার নিষিদ্ধ।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 8 -->
-                        <div class="group p-6 bg-gradient-to-br from-indigo-50 to-indigo-100/30 rounded-2xl border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-indigo-50 to-indigo-100/30 rounded-2xl border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৮</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">স্প্যামিং নিষিদ্ধ</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        গ্রুপ চ্যাট, ফেসবুক গ্রুপ, কমেন্ট বা ফোরামে কোনো প্রকার প্রমোশনাল পোস্ট, স্প্যাম, লিঙ্ক শেয়ার বা অপ্রাসঙ্গিক কনটেন্ট থেকে বিরত থাকুন। এরকম কাজের জন্য মিউট/রিমুভ করা হবে এবং পুনরাবৃত্তিতে অ্যাকাউন্ট টার্মিনেট হতে পারে।
+                                        গ্রুপ চ্যাট, ফেসবুক গ্রুপ, কমেন্ট বা ফোরামে কোনো প্রকার প্রমোশনাল পোস্ট,
+                                        স্প্যাম, লিঙ্ক শেয়ার বা অপ্রাসঙ্গিক কনটেন্ট থেকে বিরত থাকুন। এরকম কাজের জন্য
+                                        মিউট/রিমুভ করা হবে এবং পুনরাবৃত্তিতে অ্যাকাউন্ট টার্মিনেট হতে পারে।
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Term 9 -->
-                        <div class="group p-6 bg-gradient-to-br from-purple-50 to-purple-100/30 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300">
+                        <div
+                            class="group p-6 bg-gradient-to-br from-purple-50 to-purple-100/30 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                     <span class="font-bold">৯</span>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-3">পেমেন্ট পলিসি</h3>
                                     <p class="text-slate-600 leading-relaxed">
-                                        সকল পেমেন্ট সংক্রান্ত সিদ্ধান্ত "Getly" কর্তৃপক্ষের। পেমেন্টের পূর্বে সার্ভিসের মূল্য, পেমেন্ট মাধ্যম (বিকাশ, নগদ, ব্যাংক ট্রান্সফার, SSL Commerce) ভালোভাবে যাচাই করুন। পেমেন্ট সংক্রান্ত যেকোনো প্রশ্নের জন্য সাপোর্ট চ্যাট, ইমেইল বা ফেসবুক পেজে যোগাযোগ করুন।
+                                        সকল পেমেন্ট সংক্রান্ত সিদ্ধান্ত "Getly" কর্তৃপক্ষের। পেমেন্টের পূর্বে সার্ভিসের
+                                        মূল্য, পেমেন্ট মাধ্যম (বিকাশ, নগদ, ব্যাংক ট্রান্সফার, SSL Commerce) ভালোভাবে
+                                        যাচাই করুন। পেমেন্ট সংক্রান্ত যেকোনো প্রশ্নের জন্য সাপোর্ট চ্যাট, ইমেইল বা
+                                        ফেসবুক পেজে যোগাযোগ করুন।
                                     </p>
                                 </div>
                             </div>
@@ -249,13 +316,15 @@
                     <!-- Conclusion -->
                     <div class="mt-12 p-6 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl text-white">
                         <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
                                 <i class="fas fa-handshake text-3xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold mb-2">Agreement</h3>
                                 <p class="text-indigo-100">
-                                    আশা করছি, উপরের টার্মস এবং কন্ডিশনস মেনে চলবেন এবং Getly থেকে সর্বোচ্চ সুবিধা নিয়ে আপনার একাডেমিক যাত্রা সফল করবেন।
+                                    আশা করছি, উপরের টার্মস এবং কন্ডিশনস মেনে চলবেন এবং Getly থেকে সর্বোচ্চ সুবিধা নিয়ে
+                                    আপনার একাডেমিক যাত্রা সফল করবেন।
                                 </p>
                             </div>
                         </div>
@@ -361,9 +430,14 @@
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4 group">
                         <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity blur-sm"></div>
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
-                                <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity blur-sm">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
+                                <img src="assets/Getly_logo.png" oncontextmenu="return false;" draggable="false"
+                                    style="user-select:none; -webkit-user-drag:none;" alt="Getly Logo"
+                                    class="w-full h-full object-contain">
                             </div>
                         </div>
                         <div>
@@ -372,7 +446,8 @@
                         </div>
                     </div>
                     <p class="text-slate-300 mb-4">
-                        Providing quality project assistance and <br>development services for students and <br>professionals.
+                        Providing quality project assistance and <br>development services for students and
+                        <br>professionals.
                     </p>
                     <div class="flex gap-4">
                         <a href="https://www.facebook.com/getly.top" target="_blank"
@@ -394,13 +469,20 @@
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html#services" class="text-slate-300 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="index.html#shop" class="text-slate-300 hover:text-white transition-colors">Shop</a></li>
-                        <li><a href="index.html#team" class="text-slate-300 hover:text-white transition-colors">Our Team</a></li>
-                        <li><a href="index.html#about" class="text-slate-300 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="index.html#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="terms-and-conditions.html" class="text-slate-300 hover:text-white transition-colors">Terms and Conditions</a></li>
-                        <li><a href="refund-policy.html" class="text-slate-300 hover:text-white transition-colors">Refund Policy</a></li>
+                        <li><a href="index.html#services"
+                                class="text-slate-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="index.html#shop" class="text-slate-300 hover:text-white transition-colors">Shop</a>
+                        </li>
+                        <li><a href="index.html#team" class="text-slate-300 hover:text-white transition-colors">Our
+                                Team</a></li>
+                        <li><a href="index.html#about" class="text-slate-300 hover:text-white transition-colors">About
+                                Us</a></li>
+                        <li><a href="index.html#contact"
+                                class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="terms-and-conditions.html"
+                                class="text-slate-300 hover:text-white transition-colors">Terms and Conditions</a></li>
+                        <li><a href="refund-policy.html"
+                                class="text-slate-300 hover:text-white transition-colors">Refund Policy</a></li>
                     </ul>
                 </div>
 
@@ -435,16 +517,16 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // WhatsApp functionality
-        document.getElementById('whatsappBtn').addEventListener('click', function() {
+        document.getElementById('whatsappBtn').addEventListener('click', function () {
             window.open('https://wa.me/8801732854793', '_blank');
         });
 
-        document.getElementById('whatsappFloating').addEventListener('click', function() {
+        document.getElementById('whatsappFloating').addEventListener('click', function () {
             window.open('https://wa.me/8801732854793', '_blank');
         });
 
         // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuToggle = document.createElement('button');
             menuToggle.className = 'md:hidden flex flex-col items-center justify-center w-10 h-10';
@@ -453,13 +535,30 @@
                 <span class="w-6 h-0.5 bg-slate-700 mb-1.5 transition-all"></span>
                 <span class="w-6 h-0.5 bg-slate-700 transition-all"></span>
             `;
-            
+
             // Insert menu toggle button
             document.querySelector('header .flex.items-center.justify-between').appendChild(menuToggle);
-            
-            menuToggle.addEventListener('click', function() {
+
+            menuToggle.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
             });
+        });
+        // Disable right-click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // Disable Ctrl+C, Ctrl+U, Ctrl+Shift+I
+        document.addEventListener('keydown', e => {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || (e.shiftKey && e.key === 'I'))) {
+                e.preventDefault();
+                alert('Copying is prohibited!');
+            }
+        });
+
+        // Disable F12
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
         });
     </script>
 </body>

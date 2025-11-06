@@ -68,7 +68,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <script src="style-obfuscated.js"></script>
     <link rel="shortcut icon" href="assets/Getly_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -77,31 +77,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- ✅ reCAPTCHA script (Optional - will be hidden if domain is invalid) -->
     <script src="https://www.google.com/recaptcha/api.js" async defer onerror="handleRecaptchaError()"></script>
-    <script>
-        // Handle reCAPTCHA loading errors
-        function handleRecaptchaError() {
-            const recaptchaContainer = document.getElementById('recaptchaContainer');
-            if (recaptchaContainer) {
-                recaptchaContainer.classList.add('hidden');
-            }
-        }
-
-        // Check for reCAPTCHA domain errors after page load
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                // Check if reCAPTCHA loaded successfully
-                if (typeof grecaptcha === 'undefined') {
-                    const recaptchaContainer = document.getElementById('recaptchaContainer');
-                    if (recaptchaContainer) {
-                        recaptchaContainer.classList.add('hidden');
-                    }
-                }
-            }, 2000);
-        });
-    </script>
 </head>
 
-<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
+<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased" style="user-select:none; -webkit-user-drag:none;">
     <!-- Navigation -->
     <header class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,7 +91,11 @@
                         </div>
                         <div
                             class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
-                            <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                            <img src="assets/Getly_logo.png"
+                                oncontextmenu="return false;"
+                                draggable="false"
+                                style="user-select:none; -webkit-user-drag:none;"
+                                alt="Getly Logo" class="w-full h-full object-contain">
                         </div>
                     </div>
                     <div>
@@ -2140,7 +2122,11 @@
                             </div>
                             <div
                                 class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
-                                <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                                <img src="assets/Getly_logo.png"
+                                    oncontextmenu="return false;"
+                                    draggable="false"
+                                    style="user-select:none; -webkit-user-drag:none;"
+                                    alt="Getly Logo" class="w-full h-full object-contain">
                             </div>
                         </div>
                         <div>
@@ -2212,7 +2198,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="script-obfuscated.js" defer></script>
 </body>
 
 </html>

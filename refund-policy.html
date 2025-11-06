@@ -14,16 +14,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
+<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased"
+    style="user-select:none; -webkit-user-drag:none;">
     <!-- Navigation -->
     <header class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity blur-sm"></div>
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
-                            <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity blur-sm">
+                        </div>
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
+                            <img src="assets/Getly_logo.png" oncontextmenu="return false;" draggable="false"
+                                style="user-select:none; -webkit-user-drag:none;" alt="Getly Logo"
+                                class="w-full h-full object-contain">
                         </div>
                     </div>
                     <div class="hidden sm:block">
@@ -32,7 +38,8 @@
                     </div>
                 </a>
                 <nav class="hidden md:flex items-center gap-6">
-                    <a href="index.html#services" class="hover:text-indigo-600 font-medium transition-colors">Services</a>
+                    <a href="index.html#services"
+                        class="hover:text-indigo-600 font-medium transition-colors">Services</a>
                     <a href="index.html#shop" class="hover:text-indigo-600 font-medium transition-colors">Shop</a>
                     <a href="index.html#team" class="hover:text-indigo-600 font-medium transition-colors">Our Team</a>
                     <a href="index.html#about" class="hover:text-indigo-600 font-medium transition-colors">About</a>
@@ -57,11 +64,13 @@
         <!-- Mobile menu -->
         <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
             <div class="px-4 py-3 flex flex-col gap-2">
-                <a href="index.html#services" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Services</a>
+                <a href="index.html#services"
+                    class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Services</a>
                 <a href="index.html#shop" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Shop</a>
                 <a href="index.html#team" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Our Team</a>
                 <a href="index.html#about" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">About</a>
-                <a href="index.html#contact" class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Contact</a>
+                <a href="index.html#contact"
+                    class="py-2 px-2 hover:bg-slate-50 rounded-md transition-colors">Contact</a>
             </div>
         </div>
     </header>
@@ -71,13 +80,20 @@
         <section class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 overflow-hidden">
             <!-- Animated Background Elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div class="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                <div
+                    class="absolute top-20 left-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+                </div>
+                <div
+                    class="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+                </div>
             </div>
-            
+
             <div class="text-center relative z-10">
-                <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800 text-sm font-medium mb-6 animate-pulse-slow">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800 text-sm font-medium mb-6 animate-pulse-slow">
                     <i class="fas fa-money-bill-wave mr-2"></i> Refund Policy
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
@@ -85,11 +101,12 @@
                     <span class="block gradient-text animate-gradient">Refund Policy</span>
                 </h1>
                 <p class="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
-                    আপনার সন্তুষ্টি আমাদের প্রথম অগ্রাধিকার। আমাদের রিফান্ড পলিসি সম্পর্কে বিস্তারিত জানুন এবং 
+                    আপনার সন্তুষ্টি আমাদের প্রথম অগ্রাধিকার। আমাদের রিফান্ড পলিসি সম্পর্কে বিস্তারিত জানুন এবং
                     আপনার কেনা সার্ভিসের জন্য সঠিক সিদ্ধান্ত নিন।
                 </p>
                 <div class="mt-8 flex justify-center">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
                         <i class="fas fa-clock"></i>
                         <span>শেষ আপডেট: ০৬ নভেম্বর, ২০২৫</span>
                     </div>
@@ -103,9 +120,11 @@
                 <!-- Introduction -->
                 <div class="mb-12 text-center">
                     <p class="text-slate-600 leading-relaxed text-lg">
-                        Getly-তে আপনার সন্তুষ্টি আমাদের প্রথম অগ্রাধিকার। আমরা বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য প্রজেক্ট, 
-                        অ্যাসাইনমেন্ট, ডকুমেন্টেশন, নোট, প্র্যাকটিক্যাল বা অন্যান্য স্টাডি-সংক্রান্ত সার্ভিস প্রদান করি। 
-                        যেহেতু আমাদের সার্ভিসগুলো <strong>ডিজিটাল ও কাস্টমাইজড</strong>, তাই রিফান্ড নীতি কঠোরভাবে নির্ধারিত।
+                        Getly-তে আপনার সন্তুষ্টি আমাদের প্রথম অগ্রাধিকার। আমরা বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য
+                        প্রজেক্ট,
+                        অ্যাসাইনমেন্ট, ডকুমেন্টেশন, নোট, প্র্যাকটিক্যাল বা অন্যান্য স্টাডি-সংক্রান্ত সার্ভিস প্রদান করি।
+                        যেহেতু আমাদের সার্ভিসগুলো <strong>ডিজিটাল ও কাস্টমাইজড</strong>, তাই রিফান্ড নীতি কঠোরভাবে
+                        নির্ধারিত।
                     </p>
                 </div>
 
@@ -113,7 +132,8 @@
                     <!-- Section 1: Eligibility -->
                     <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-slate-100">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center shadow-lg">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center shadow-lg">
                                 <i class="fas fa-check-circle text-2xl"></i>
                             </div>
                             <div>
@@ -127,7 +147,8 @@
                             <div class="space-y-4">
                                 <div class="p-4 bg-red-50 rounded-xl border-2 border-red-200">
                                     <div class="flex items-center gap-3 mb-3">
-                                        <div class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0">
                                             <i class="fas fa-times"></i>
                                         </div>
                                         <h3 class="font-bold text-red-800 text-lg">কোনো রিফান্ড নেই</h3>
@@ -154,7 +175,8 @@
                                 <!-- Full Refund -->
                                 <div class="p-4 bg-green-50 rounded-xl border-2 border-green-200">
                                     <div class="flex items-center gap-3 mb-3">
-                                        <div class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0">
                                             <i class="fas fa-check"></i>
                                         </div>
                                         <h3 class="font-bold text-green-800 text-lg">পূর্ণ রিফান্ড (100%)</h3>
@@ -174,7 +196,8 @@
                                 <!-- Partial Refund -->
                                 <div class="p-4 bg-blue-50 rounded-xl border-2 border-blue-200">
                                     <div class="flex items-center gap-3 mb-3">
-                                        <div class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center flex-shrink-0">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center flex-shrink-0">
                                             <i class="fas fa-percentage"></i>
                                         </div>
                                         <h3 class="font-bold text-blue-800 text-lg">আংশিক রিফান্ড (50%)</h3>
@@ -197,7 +220,8 @@
                     <!-- Section 2: Refund Process -->
                     <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-slate-100">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shadow-lg">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shadow-lg">
                                 <i class="fas fa-cogs text-2xl"></i>
                             </div>
                             <div>
@@ -208,8 +232,11 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- Step 1 -->
-                            <div class="text-center p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border-2 border-indigo-200">
-                                <div class="w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">১</div>
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border-2 border-indigo-200">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                                    ১</div>
                                 <h3 class="font-bold text-indigo-800 mb-3">রিকোয়েস্ট জমা</h3>
                                 <p class="text-slate-600 text-sm">
                                     সাপোর্ট চ্যাট / ইমেইল / ফেসবুক পেজে লিখিতভাবে জানান
@@ -217,8 +244,11 @@
                             </div>
 
                             <!-- Step 2 -->
-                            <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-200">
-                                <div class="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">২</div>
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-200">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                                    ২</div>
                                 <h3 class="font-bold text-purple-800 mb-3">পর্যালোচনা</h3>
                                 <p class="text-slate-600 text-sm">
                                     আমরা ৪৮ ঘণ্টার মধ্যে আপনার রিকোয়েস্ট রিভিউ করব
@@ -226,8 +256,11 @@
                             </div>
 
                             <!-- Step 3 -->
-                            <div class="text-center p-6 bg-gradient-to-br from-pink-50 to-red-50 rounded-2xl border-2 border-pink-200">
-                                <div class="w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">৩</div>
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-pink-50 to-red-50 rounded-2xl border-2 border-pink-200">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                                    ৩</div>
                                 <h3 class="font-bold text-pink-800 mb-3">রিফান্ড প্রদান</h3>
                                 <p class="text-slate-600 text-sm">
                                     ৭-১০ কার্যদিবসের মধ্যে টাকা ফেরত দেওয়া হবে
@@ -239,7 +272,8 @@
                     <!-- Section 3: Non-Refundable Cases -->
                     <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-slate-100">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white flex items-center justify-center shadow-lg">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 text-white flex items-center justify-center shadow-lg">
                                 <i class="fas fa-ban text-2xl"></i>
                             </div>
                             <div>
@@ -287,7 +321,8 @@
                     <!-- Section 4: Revision Policy -->
                     <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-slate-100">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center shadow-lg">
                                 <i class="fas fa-sync-alt text-2xl"></i>
                             </div>
                             <div>
@@ -297,8 +332,10 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border-2 border-blue-200">
-                                <div class="w-16 h-16 rounded-full bg-blue-500 text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border-2 border-blue-200">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-blue-500 text-white flex items-center justify-center mx-auto mb-4 text-2xl">
                                     <i class="fas fa-gift"></i>
                                 </div>
                                 <h3 class="font-bold text-blue-800 mb-3 text-lg">ফ্রি রিভিশন</h3>
@@ -308,8 +345,10 @@
                                 </p>
                             </div>
 
-                            <div class="text-center p-6 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl border-2 border-cyan-200">
-                                <div class="w-16 h-16 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl border-2 border-cyan-200">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-cyan-500 text-white flex items-center justify-center mx-auto mb-4 text-2xl">
                                     <i class="fas fa-dollar-sign"></i>
                                 </div>
                                 <h3 class="font-bold text-cyan-800 mb-3 text-lg">অতিরিক্ত রিভিশন</h3>
@@ -333,14 +372,16 @@
                     <!-- Section 5: Special Note -->
                     <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-8 text-white">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
                                 <i class="fas fa-info-circle text-2xl"></i>
                             </div>
                             <h2 class="text-2xl font-bold">বিশেষ নোট</h2>
                         </div>
                         <div class="space-y-4">
                             <p>
-                                Getly-এর সকল সার্ভিস <strong>শিক্ষার সহায়ক</strong>। এগুলো <strong>অরিজিনাল কাজ জমা দেওয়ার জন্য নয়</strong>। 
+                                Getly-এর সকল সার্ভিস <strong>শিক্ষার সহায়ক</strong>। এগুলো <strong>অরিজিনাল কাজ জমা
+                                    দেওয়ার জন্য নয়</strong>।
                                 প্ল্যাজিয়ারিজম বা একাডেমিক অসততার দায় <strong>আপনার</strong>।
                             </p>
                             <p>
@@ -353,21 +394,22 @@
                     <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-slate-100 text-center">
                         <h2 class="text-2xl font-bold text-slate-800 mb-6">যোগাযোগ করুন</h2>
                         <p class="text-slate-600 mb-6">যেকোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করতে পারেন</p>
-                        
+
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <a href="mailto:support@getly.com" 
-                               class="p-4 bg-gradient-to-br from-red-50 to-red-100 rounded-xl border-2 border-red-200 hover:border-red-400 transition-all group">
+                            <a href="mailto:support@getly.com"
+                                class="p-4 bg-gradient-to-br from-red-50 to-red-100 rounded-xl border-2 border-red-200 hover:border-red-400 transition-all group">
                                 <i class="fas fa-envelope text-red-500 text-2xl mb-2"></i>
                                 <div class="font-bold text-red-700">getlytop@gmail.com</div>
                             </a>
-                            
+
                             <a href="https://facebook.com/getly.top" target="_blank"
-                               class="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200 hover:border-blue-400 transition-all group">
+                                class="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200 hover:border-blue-400 transition-all group">
                                 <i class="fa-brands fa-facebook text-blue-500 text-2xl mb-2"></i>
                                 <div class="font-bold text-blue-700">facebook.com/getly.top</div>
                             </a>
-                            
-                            <div class="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border-2 border-green-200">
+
+                            <div
+                                class="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border-2 border-green-200">
                                 <i class="fas fa-comments text-green-500 text-2xl mb-2"></i>
                                 <div class="font-bold text-green-700">সাপোর্ট চ্যাট</div>
                             </div>
@@ -377,7 +419,8 @@
 
                 <!-- Final Note -->
                 <div class="mt-12 text-center">
-                    <div class="inline-block p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 shadow-lg">
+                    <div
+                        class="inline-block p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 shadow-lg">
                         <h3 class="text-xl font-bold text-green-800 mb-2">ধন্যবাদ, Getly টিম</h3>
                         <p class="text-green-700 italic">আপনার একাডেমিক সাফল্যের সঙ্গী</p>
                     </div>
@@ -477,9 +520,14 @@
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4 group">
                         <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity blur-sm"></div>
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
-                                <img src="assets/Getly_logo.png" alt="Getly Logo" class="w-full h-full object-contain">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity blur-sm">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 p-2 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
+                                <img src="assets/Getly_logo.png" oncontextmenu="return false;" draggable="false"
+                                    style="user-select:none; -webkit-user-drag:none;" alt="Getly Logo"
+                                    class="w-full h-full object-contain">
                             </div>
                         </div>
                         <div>
@@ -510,13 +558,20 @@
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html#services" class="text-slate-300 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="index.html#shop" class="text-slate-300 hover:text-white transition-colors">Shop</a></li>
-                        <li><a href="index.html#team" class="text-slate-300 hover:text-white transition-colors">Our Team</a></li>
-                        <li><a href="index.html#about" class="text-slate-300 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="index.html#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="terms-and-conditions.html" class="text-slate-300 hover:text-white transition-colors">Terms and Conditions</a></li>
-                        <li><a href="refund-policy.html" class="text-slate-300 hover:text-white transition-colors">Refund Policy</a></li>
+                        <li><a href="index.html#services"
+                                class="text-slate-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="index.html#shop" class="text-slate-300 hover:text-white transition-colors">Shop</a>
+                        </li>
+                        <li><a href="index.html#team" class="text-slate-300 hover:text-white transition-colors">Our
+                                Team</a></li>
+                        <li><a href="index.html#about" class="text-slate-300 hover:text-white transition-colors">About
+                                Us</a></li>
+                        <li><a href="index.html#contact"
+                                class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="terms-and-conditions.html"
+                                class="text-slate-300 hover:text-white transition-colors">Terms and Conditions</a></li>
+                        <li><a href="refund-policy.html"
+                                class="text-slate-300 hover:text-white transition-colors">Refund Policy</a></li>
                     </ul>
                 </div>
 
@@ -551,16 +606,16 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // WhatsApp functionality
-        document.getElementById('whatsappBtn').addEventListener('click', function() {
+        document.getElementById('whatsappBtn').addEventListener('click', function () {
             window.open('https://wa.me/8801732854793', '_blank');
         });
 
-        document.getElementById('whatsappFloating').addEventListener('click', function() {
+        document.getElementById('whatsappFloating').addEventListener('click', function () {
             window.open('https://wa.me/8801732854793', '_blank');
         });
 
         // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenu = document.getElementById('mobileMenu');
             const menuToggle = document.createElement('button');
             menuToggle.className = 'md:hidden flex flex-col items-center justify-center w-10 h-10';
@@ -569,13 +624,30 @@
                 <span class="w-6 h-0.5 bg-slate-700 mb-1.5 transition-all"></span>
                 <span class="w-6 h-0.5 bg-slate-700 transition-all"></span>
             `;
-            
+
             // Insert menu toggle button
             document.querySelector('header .flex.items-center.justify-between').appendChild(menuToggle);
-            
-            menuToggle.addEventListener('click', function() {
+
+            menuToggle.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
             });
+        });
+        // Disable right-click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // Disable Ctrl+C, Ctrl+U, Ctrl+Shift+I
+        document.addEventListener('keydown', e => {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || (e.shiftKey && e.key === 'I'))) {
+                e.preventDefault();
+                alert('Copying is prohibited!');
+            }
+        });
+
+        // Disable F12
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
         });
     </script>
 </body>
